@@ -16,3 +16,4 @@ public:
 	void Update(DWORD dt);
 };
 
+typedef Mario* LPMARIO;

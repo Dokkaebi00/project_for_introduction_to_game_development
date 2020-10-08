@@ -2,6 +2,13 @@
 #include"GameObject.h"
 #include"Mario.h"
 
+#include <windows.h>
+#include <d3d9.h>
+#include <d3dx9.h>
+#include<vector>
+
+using namespace std;
+
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
 
@@ -24,6 +31,14 @@ GameObject* brick;
 LPDIRECT3DTEXTURE9 texBrick = NULL;
 #define BRICK_X 0.1f
 #define BRICK_Y 0.1f
+#define BRICK_WIDTH 16.0f
+
+vector<LPGAMEOBJECT> brickFloor;
+int n = (int)SCREEN_WIDTH / BRICK_WIDTH;
+#define BRICK_FLOOR_X 0.0f
+#define BRICK_FLOOR_Y 158.0f
+
+vector<LPMARIO> alotofmario;
 
 #define _W(x)  __W(x)
 #define __W(x)  L##x
@@ -64,12 +79,35 @@ void LoadResources()
 
 	mario = new Mario(MARIO_START_X, MARIO_START_Y, MARIO_VX,texMario);
 	brick = new GameObject(BRICK_X, BRICK_Y, texBrick);
+
+	for (int i = 0; i < n; i++)
+	{
+		float newx =  BRICK_FLOOR_X + i*BRICK_WIDTH;
+		GameObject* newbrick = new GameObject(newx, BRICK_FLOOR_Y, texBrick);
+		brickFloor.push_back(newbrick);
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		float newx = MARIO_START_X + i * MARIO_WIDTH;
+		Mario* newmario = new Mario(newx, 200, MARIO_VX,texMario);
+		alotofmario.push_back(newmario);
+	}
 }
 
 void Update(DWORD dt)
 {
 	mario->Update(dt);
 	brick->Update(dt);
+	for (int i = 0; i < n; i++)
+	{
+		brickFloor[i]->Update(dt);
+	}
+
+	for (int i = 0; i < 10; i++)
+	{
+		alotofmario[i]->Update(dt);
+	}
 }
 
 void Render()
@@ -87,6 +125,16 @@ void Render()
 
 		mario->Render();
 		brick->Render();
+
+		for (int i = 0; i < n; i++)
+		{
+			brickFloor[i]->Render();
+		}
+
+		for (int i = 0; i < 10; i++)
+		{
+			alotofmario[i]->Render();
+		}
 
 		spriteHandler->End();
 		d3ddv->EndScene();

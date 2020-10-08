@@ -67,11 +67,21 @@ LPDIRECT3DTEXTURE9 Game::LoadTexture(LPCWSTR texturePath)
 
 	LPDIRECT3DTEXTURE9 texture;
 
-	HRESULT result = D3DXCreateTextureFromFileEx(
+	D3DXIMAGE_INFO info;
+
+	HRESULT result = D3DXGetImageInfoFromFile(texturePath, &info);
+
+	if (result != D3D_OK)
+	{
+		DebugOut(L"[ERROR] GetImageInfoFromFile failed: %s\n", texturePath);
+		return NULL;
+	}
+
+	result = D3DXCreateTextureFromFileEx(
 		d3ddv,
 		texturePath,
-		D3DX_DEFAULT_NONPOW2,
-		D3DX_DEFAULT_NONPOW2,
+		info.Width,
+		info.Height,
 		1,
 		D3DUSAGE_DYNAMIC,
 		D3DFMT_UNKNOWN,
@@ -79,7 +89,7 @@ LPDIRECT3DTEXTURE9 Game::LoadTexture(LPCWSTR texturePath)
 		D3DX_DEFAULT,
 		D3DX_DEFAULT,
 		D3DCOLOR_XRGB(255, 255, 255),
-		NULL,
+		&info,
 		NULL,
 		&texture
 	);
@@ -90,6 +100,38 @@ LPDIRECT3DTEXTURE9 Game::LoadTexture(LPCWSTR texturePath)
 		return NULL;
 	}
 
+	DebugOut(L"[INFO] Texture loaded Ok: %s \n", texturePath);
+	return texture;
+}
+
+LPDIRECT3D9 Game::GetDirect3D()
+{
+	return this->d3d;
+}
+
+LPDIRECT3DDEVICE9 Game::GetDirect3DDevice()
+{
+	return this->d3ddv;
+}
+
+LPDIRECT3DSURFACE9 Game::GetBackBuffer()
+{
+	return this->backBuffer;
+}
+
+LPD3DXSPRITE Game::GetSpriteHandler()
+{
+	return this->spriteHandler;
+}
+
+int Game::GetBackBufferHeight()
+{
+	return this->backBufferHeight;
+}
+
+int Game::GetBackBufferWidth()
+{
+	return this->backBufferWidth;
 }
 
 void Game::DebugOut(const wchar_t* fmt, ...)
@@ -97,4 +139,22 @@ void Game::DebugOut(const wchar_t* fmt, ...)
 	wchar_t s[4096];
 	VA_PRINTS(s);
 	OutputDebugString(s);
+}
+
+Game* Game::GetInstance()
+{
+	if (__instance == NULL)
+	{
+		__instance = new Game();
+	}
+	
+	return __instance;
+}
+
+Game::~Game()
+{
+	if (spriteHandler != NULL) spriteHandler->Release();
+	if (backBuffer != NULL) backBuffer->Release();
+	if (d3ddv != NULL) d3ddv->Release();
+	if (d3d != NULL) d3d->Release();
 }

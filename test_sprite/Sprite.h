@@ -3,6 +3,9 @@
 #include<Windows.h>
 #include<d3dx9.h>
 #include<unordered_map>
+#include"Game.h"
+
+using namespace std;
 
 class Sprite
 {
@@ -21,4 +24,5 @@ public:
 	void Draw(float x, float y);
 };
 
-typedef Sprite* LPSRITE;
+typedef Sprite* LPSPRITE;
+

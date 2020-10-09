@@ -1,4 +1,5 @@
 #include"Game.h"
+#include"Mario.h"
 
 #define SCREEN_WIDTH 640
 #define SCREEN_HEIGHT 480
@@ -21,7 +22,16 @@
 
 Game* game;
 
-void DebugOut(wchar_t* fmt, ...)
+Mario* mario;
+#define MARIO_TEX 00
+#define MARIO_GO_RIGHT_1 1
+#define MARIO_GO_RIGHT_2 2
+#define MARIO_GO_RIGHT_3 3
+#define MARIO_GO_LEFT_1 4
+#define MARIO_GO_LEFT_2 5
+#define MARIO_GO_LEFT_3 6
+
+void DebugOut(const wchar_t* fmt, ...)
 {
 	va_list argp;
 	va_start(argp, fmt);
@@ -44,6 +54,65 @@ LRESULT CALLBACK WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 
 	return 0;
 }
+
+void LoadResources()
+{
+	Textures* textures = Textures::GetInstance();
+
+	textures->Add(MARIO_TEX, L"textures\\mario.png", D3DCOLOR_XRGB(0, 0, 0));
+
+	Sprites* sprites = Sprites::GetInstance();
+
+	LPDIRECT3DTEXTURE9 texMario = textures->Get(MARIO_TEX);
+	bool a = texMario == NULL;
+	if (a)
+	{
+		DebugOut(L"[INFO] can not get mario_texture");
+	}
+	else
+	{
+		DebugOut(L"[INFO] can get mario_texture");
+	}
+
+	sprites->Add(MARIO_GO_RIGHT_1, 246, 154, 259, 181, texMario);
+	sprites->Add(MARIO_GO_RIGHT_2, 275, 154, 290, 181, texMario);
+	sprites->Add(MARIO_GO_RIGHT_3, 304, 154, 321, 181, texMario);
+
+	sprites->Add(MARIO_GO_LEFT_1, 186, 154, 199, 181, texMario);
+	sprites->Add(MARIO_GO_LEFT_2, 155, 154, 170, 181, texMario);
+	sprites->Add(MARIO_GO_LEFT_3, 125, 154, 140, 181, texMario);
+
+	Animations* animations = Animations::GetInstance();
+	LPANIMATION ani;
+
+	ani = new Animation(100);
+	ani->Add(MARIO_GO_RIGHT_1);
+	ani->Add(MARIO_GO_RIGHT_2);
+	ani->Add(MARIO_GO_RIGHT_3);
+	
+	a = ani == NULL;
+
+	animations->Add(MARIO_GO_RIGHT, ani);
+
+	ani = new Animation(100);
+	ani->Add(MARIO_GO_LEFT_1);
+	ani->Add(MARIO_GO_LEFT_2);
+	ani->Add(MARIO_GO_LEFT_3);
+
+	a = ani == NULL;
+
+	animations->Add(MARIO_GO_LEFT, ani);
+
+	if (animations == NULL)
+	{
+		DebugOut(L"[INFO] can not get mario_texture");
+	}
+
+	mario = new Mario();
+	mario->SetPosition(10.0f, 10.0f);
+
+}
+
 
 HWND CreateGameWindow(HINSTANCE hInstance, int nCmdShow, int ScreenWidth, int ScreenHeight)
 {
@@ -95,7 +164,7 @@ HWND CreateGameWindow(HINSTANCE hInstance, int nCmdShow, int ScreenWidth, int Sc
 
 void Update(DWORD dt)
 {
-
+	mario->Update(dt);
 }
 
 void Render()
@@ -108,6 +177,8 @@ void Render()
 	{
 		d3ddv->ColorFill(backBuffer, NULL, D3DCOLOR_XRGB(0, 0, 0));
 		spriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
+
+		mario->Render();
 
 		spriteHandler->End();
 		d3ddv->EndScene();
@@ -154,6 +225,8 @@ int Run()
 	return 1;
 }
 
+
+
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
 	game = Game::GetInstance();
@@ -161,6 +234,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 	HWND hWnd = CreateGameWindow(hInstance, nCmdShow, SCREEN_WIDTH, SCREEN_HEIGHT);
 
 	game->Init(hWnd);
+
+	LoadResources();
 	Run();
 
 	return 0;

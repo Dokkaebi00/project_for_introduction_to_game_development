@@ -2,7 +2,7 @@
 
 AnimationFrame::AnimationFrame(LPSPRITE sprite, int time)
 {
-	this->sprite;
+	this->sprite = sprite;
 	this->time = time;
 }
 

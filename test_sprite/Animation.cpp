@@ -33,10 +33,14 @@ void Animation::Render(float x, float y)
 	else
 	{
 		DWORD t = frames[currentFrame]->GetTime();
-		lastFrameTime = now;
-		if (currentFrame == frames.size())
+		if (now - lastFrameTime > t)
 		{
-			currentFrame = 0;
+			currentFrame++;
+			lastFrameTime = now;
+			if (currentFrame == frames.size())
+			{
+				currentFrame = 0;
+			}
 		}
 	}
 

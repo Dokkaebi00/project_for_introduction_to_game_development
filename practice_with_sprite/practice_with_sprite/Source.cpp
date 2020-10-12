@@ -111,11 +111,32 @@ void LoadResources()
 	sprites->Add(MARIO_GO_RIGHT_1, 186, 154, 199, 181, texMario);
 	sprites->Add(MARIO_GO_RIGHT_2, 155, 154, 170, 181, texMario);
 	sprites->Add(MARIO_GO_RIGHT_3, 125, 154, 140, 181, texMario);
+	
+	Animations* animations = Animations::GetInstance();
+
+	LPANIMATION ani;
+
+	ani = new Animation(100);
+	ani->Add(MARIO_GO_LEFT_1);
+	ani->Add(MARIO_GO_LEFT_2);
+	ani->Add(MARIO_GO_LEFT_3);
+
+	animations->Add(MARIO_GO_LEFT, ani);
+	ani = new Animation(100);
+	ani->Add(MARIO_GO_RIGHT_1);
+	ani->Add(MARIO_GO_RIGHT_2);
+	ani->Add(MARIO_GO_RIGHT_3);
+
+	animations->Add(MARIO_GO_RIGHT, ani);
+	
+	mario = new Mario();
+	mario->SetPosition(10.0f, 100.0f);
 
 }
 
 void Update(DWORD dt)
 {
+	mario->Update(dt);
 
 }
 
@@ -130,6 +151,8 @@ void Render()
 		d3ddv->ColorFill(backBuffer, NULL, D3DCOLOR_XRGB(0, 0, 0));
 
 		spriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
+
+		mario->Render();
 
 		spriteHandler->End();
 		d3ddv->EndScene();
@@ -182,6 +205,8 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	game = Game::GetInstance();
 	game->Init(hWnd);
+
+	LoadResources();
 
 	Run();
 

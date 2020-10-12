@@ -17,7 +17,7 @@ public:
 	Animation(int defaultTime = 100);
 	void Add(int spriteId, DWORD time = 0);
 
-	void Render(float x, float y, int alpha = 255);
+	void Render(float x, float y);
 };
 
 typedef Animation* LPANIMATION;

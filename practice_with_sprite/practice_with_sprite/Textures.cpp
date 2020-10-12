@@ -11,6 +11,11 @@ void Textures::Add(int id, LPCWSTR filePath, D3DCOLOR transparentColor)
 	textures[id] = Game::GetInstance()->LoadTexture(filePath);
 }
 
+LPDIRECT3DTEXTURE9 Textures::Get(int i)
+{
+	return textures[i];
+}
+
 Textures* Textures::GetInstance()
 {
 	if (__instance == NULL)

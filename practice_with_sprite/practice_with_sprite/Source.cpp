@@ -3,6 +3,12 @@
 #include<d3dx9.h>
 
 #include"Game.h"
+#include"Sprites.h"
+#include"GameObject.h"
+#include"Mario.h"
+#include"Animations.h"
+#include"Animation.h"
+#include"AnimationFrame.h"
 
 #define MAX_FRAME_RATE 60
 #define SCREEN_WIDTH 640
@@ -11,7 +17,18 @@
 #define WINDOW_CLASS_NAME L"Sprite_practice"
 #define WINDOW_MAIN_TITLE L"main_window_title"
 
+#define MARIO_GO_LEFT_1 1
+#define MARIO_GO_LEFT_2 2
+#define MARIO_GO_LEFT_3 3
+
+#define MARIO_GO_RIGHT_1 4
+#define MARIO_GO_RIGHT_2 5
+#define MARIO_GO_RIGHT_3 6
+
+#define MARIO_TEXTURE 10
+
 Game* game;
+Mario* mario;
 
 LRESULT CALLBACK WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -79,6 +96,21 @@ HWND CreateGameWindow(HINSTANCE hInstance, int nCmdShow, int ScreenWidth, int Sc
 
 void LoadResources()
 {
+	Textures* textures = Textures::GetInstance();
+
+	textures->Add(MARIO_TEXTURE, L"textures\\mario.png", D3DCOLOR_XRGB(176, 224, 248));
+
+	Sprites* sprites = Sprites::GetInstance();
+
+	LPDIRECT3DTEXTURE9 texMario = textures->Get(MARIO_TEXTURE);
+
+	sprites->Add(MARIO_GO_LEFT_1, 246, 154, 259, 181, texMario);
+	sprites->Add(MARIO_GO_LEFT_2, 275, 154, 290, 181, texMario);
+	sprites->Add(MARIO_GO_LEFT_3, 304, 154, 321, 181, texMario);
+
+	sprites->Add(MARIO_GO_RIGHT_1, 186, 154, 199, 181, texMario);
+	sprites->Add(MARIO_GO_RIGHT_2, 155, 154, 170, 181, texMario);
+	sprites->Add(MARIO_GO_RIGHT_3, 125, 154, 140, 181, texMario);
 
 }
 

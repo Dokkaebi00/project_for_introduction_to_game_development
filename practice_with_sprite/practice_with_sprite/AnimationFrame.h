@@ -14,3 +14,4 @@ public:
 	LPSPRITE GetSprite();
 };
 
+typedef AnimationFrame* LPANIMATION_FRAME;

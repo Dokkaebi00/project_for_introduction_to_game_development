@@ -35,7 +35,7 @@ public:
 	LPDIRECT3DSURFACE9 GetBackBuffer();
 	LPD3DXSPRITE GetSpriteHandler();
 
-	void DebugOut(wchar_t* fmt, ...);
+	void DebugOut(const wchar_t* fmt, ...);
 
 	static Game* GetInstance();
 	~Game();

@@ -144,7 +144,9 @@
   <ItemGroup>
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationFrame.cpp" />
+    <ClCompile Include="Animations.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="Keyboard.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -154,7 +156,9 @@
   <ItemGroup>
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationFrame.h" />
+    <ClInclude Include="Animations.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="Keyboard.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Sprites.h" />

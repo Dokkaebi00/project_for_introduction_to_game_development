@@ -1,8 +1,11 @@
 #pragma once
 
+#include<vector>
+
 #include"AnimationFrame.h"
 #include"Sprites.h"
 
+using namespace std;
 
 class Animation
 {
@@ -17,3 +20,4 @@ public:
 	void Render(float x, float y);
 };
 
+typedef Animation* LPANIMATION;

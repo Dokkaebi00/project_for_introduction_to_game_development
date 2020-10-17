@@ -20,3 +20,4 @@ public:
 	static Animations* GetInstance();
 };
 
+typedef vector<LPANIMATION>

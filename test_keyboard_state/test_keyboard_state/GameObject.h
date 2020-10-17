@@ -24,6 +24,16 @@ protected:
 
 	int state;
 
-	static vector<LPANIMATION> animations;
+	LPANIMATION_SET animation_set;
+
+public:
+	void SetPosition(float x, float y);
+	void SetSpeed(float vx, float vy);
+	void GetPosition(float& x, float& y);
+	void GetSpeed(float& vx, float& vy);
+
+	int GetState();
+
+
 };
 

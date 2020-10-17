@@ -21,3 +21,7 @@ public:
 };
 
 typedef Animation* LPANIMATION;
+
+typedef vector<LPANIMATION> AnimationSet;
+
+typedef AnimationSet* LPANIMATION_SET;

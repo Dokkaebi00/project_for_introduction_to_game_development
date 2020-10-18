@@ -33,6 +33,55 @@
 #define ID_TEX_ENEMY 10
 #define ID_TEX_MISC 20
 
+#define MARIO_SMALL_IDLE_LEFT 10000
+#define MARIO_SMALL_IDLE_RIGHT 10001
+#define MARIO_SMALL_WALK_LEFT 10002
+#define MARIO_SMALL_WALK_RIGHT 10003
+#define MARIO_SMALL_JUMP_LEFT 10004
+#define MARIO_SMALL_JUMP_RIGHT 10005
+
+#define MARIO_BIG_IDLE_LEFT 11000
+#define MARIO_BIG_IDLE_RIGHT 11001
+#define MARIO_BIG_WALK_LEFT 11002
+#define MARIO_BIG_WALK_LEFT_1 11003
+#define MARIO_BIG_WALK_RIGHT 11004
+#define MARIO_BIG_WALK_RIGHT_1 11005
+#define MARIO_BIG_JUMP_LEFT 11006
+#define MARIO_BIG_JUMP_RIGHT 11007
+#define MARIO_BIG_SIT_LEFT 11008
+#define MARIO_BIG_SIT_RIGHT 11009
+
+#define MARIO_RACOON_IDLE_LEFT 12000
+#define MARIO_RACOON_IDLE_RIGHT 12001
+#define MARIO_RACOON_WALK_LEFT 12002
+#define MARIO_RACOON_WALK_LEFT_1 12003
+#define MARIO_RACOON_WALK_LEFT_2 12004
+#define MARIO_RACOON_WALK_RIGHT 12005
+#define MARIO_RACOON_WALK_RIGHT_1 12006
+#define MARIO_RACOON_WALK_RIGHT_2 12007
+#define MARIO_RACOON_JUMP_LEFT 12008
+#define MARIO_RACOON_JUMP_RIGHT 12009
+#define MARIO_RACOON_SIT_LEFT 12010
+#define MARIO_RACOON_SIT_RIGHT 12011
+#define MARIO_RACOON_HIT_LEFT 12012
+#define MARIO_RACOON_HIT_RIGHT 12013
+
+#define MARIO_FIRE_IDLE_LEFT 13000
+#define MARIO_FIRE_IDLE_RIGHT 13001
+#define MARIO_FIRE_WALK_LEFT 13002
+#define MARIO_FIRE_WALK_LEFT_1 13003
+#define MARIO_FIRE_WALK_RIGHT 13004
+#define MARIO_FIRE_WALK_RIGHT_1 13005
+#define MARIO_FIRE_JUMP_LEFT 13006
+#define MARIO_FIRE_JUMP_RIGHT 13007
+#define MARIO_FIRE_SIT_LEFT 13008
+#define MARIO_FIRE_SIT_RIGHT 13009
+#define MARIO_FIRE_SHOOT_LEFT 13010
+#define MARIO_FIRE_SHOOT_LEFT_1 13011
+#define MARIO_FIRE_SHOOT_RIGHT 13012
+#define MARIO_FIRE_SHOOT_RIGHT_1 13013
+
+
 CGame *game;
 CMario *mario;
 
@@ -53,6 +102,18 @@ void CSampleKeyHander::OnKeyDown(int KeyCode)
 	case DIK_SPACE:
 		mario->SetState(MARIO_STATE_JUMP);
 		break;
+	case DIK_1:
+		mario->SetLevel(MARIO_LEVEL_BIG);
+		break;
+	case DIK_0:
+		mario->SetLevel(MARIO_LEVEL_SMALL);
+		break;
+	case DIK_2:
+		mario->SetLevel(MARIO_LEVEL_RACOON);
+		break;
+	case DIK_3:
+		mario->SetLevel(MARIO_LEVEL_FIRE);
+		break;
 	}
 }
 
@@ -68,6 +129,23 @@ void CSampleKeyHander::KeyState(BYTE *states)
 	else if (game->IsKeyDown(DIK_LEFT))
 		mario->SetState(MARIO_STATE_WALKING_LEFT);
 	else mario->SetState(MARIO_STATE_IDLE);
+
+	if (game->IsKeyDown(DIK_DOWN))
+		mario->SetState(MARIO_STATE_SIT);
+
+	if (game->IsKeyDown(DIK_A))
+	{
+		if (mario->GetLevel() == MARIO_LEVEL_RACOON)
+		{
+			mario->SetState(MARIO_STATE_HIT_TAIL);
+		}
+		else if (mario->GetLevel() == MARIO_LEVEL_FIRE)
+		{
+			mario->SetState(MARIO_STATE_SHOOT_FIRE);
+		}
+	}
+
+	
 }
 
 LRESULT CALLBACK WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -91,53 +169,312 @@ void LoadResources()
 {
 	CTextures * textures = CTextures::GetInstance();
 
-	textures->Add(ID_TEX_MARIO, L"textures\\mario.png",D3DCOLOR_XRGB(176, 224, 248));
+	textures->Add(ID_TEX_MARIO, L"textures\\mario.png",D3DCOLOR_XRGB(255, 255, 255));
 
 	CSprites * sprites = CSprites::GetInstance();
 	CAnimations * animations = CAnimations::GetInstance();
 	
 	LPDIRECT3DTEXTURE9 texMario = textures->Get(ID_TEX_MARIO);
 
+	//sprite mario nho dung yen
+	sprites->Add(MARIO_SMALL_IDLE_LEFT, 174, 87, 193, 107, texMario);
+	//sprite mario nho dung yen nhung quay qua ben phai
+	sprites->Add(MARIO_SMALL_IDLE_RIGHT, 214, 88, 234, 109, texMario);
+	//sprite mario di qua trai
+	sprites->Add(MARIO_SMALL_WALK_LEFT, 133, 88, 153, 108, texMario);
+	//sprite mario di qua phai
+	sprites->Add(MARIO_SMALL_WALK_RIGHT, 253, 88, 275, 110, texMario);
+	//sprite mario nhay qua ben trai
+	sprites->Add(MARIO_SMALL_JUMP_LEFT, 53, 86, 78, 107, texMario);
+	//sprite mario nhay qua ben phai
+	sprites->Add(MARIO_SMALL_JUMP_RIGHT, 333, 87, 354, 107, texMario);
 
-	sprites->Add(10001, 246, 154, 260, 181, texMario);
 
-	sprites->Add(10002, 275, 154, 290, 181, texMario);
-	sprites->Add(10003, 304, 154, 321, 181, texMario);
+	sprites->Add(MARIO_BIG_IDLE_LEFT, 173, 240, 194, 273, texMario);
 
-	sprites->Add(10011, 186, 154, 200, 181, texMario);
+	sprites->Add(MARIO_BIG_IDLE_RIGHT, 210, 241, 236, 274, texMario);
 
-	sprites->Add(10012, 155, 154, 170, 181, texMario);
-	sprites->Add(10013, 125, 154, 140, 181, texMario);
+	sprites->Add(MARIO_BIG_WALK_LEFT, 132, 241, 154, 273, texMario);
+	sprites->Add(MARIO_BIG_WALK_LEFT_1, 92, 242, 115, 273, texMario);
 
+	sprites->Add(MARIO_BIG_WALK_RIGHT, 252, 241, 275, 273, texMario);
+	sprites->Add(MARIO_BIG_WALK_RIGHT_1, 292, 242, 314, 272, texMario);
+
+	sprites->Add(MARIO_BIG_JUMP_LEFT, 51, 241, 75, 274, texMario);
+
+	sprites->Add(MARIO_BIG_JUMP_RIGHT, 331, 241, 354, 274, texMario);
+
+	sprites->Add(MARIO_BIG_SIT_LEFT, 12, 245, 34, 269, texMario);
+
+	sprites->Add(MARIO_BIG_SIT_RIGHT, 372, 243, 394, 272, texMario);
+
+	sprites->Add(MARIO_RACOON_IDLE_LEFT, 171, 441, 197, 476, texMario);
+
+	sprites->Add(MARIO_RACOON_IDLE_RIGHT, 207, 441, 235, 474, texMario);
+
+	sprites->Add(MARIO_RACOON_WALK_LEFT, 145, 441, 172, 474, texMario);
+	sprites->Add(MARIO_RACOON_WALK_LEFT_1, 119, 441, 146, 475, texMario);
+	sprites->Add(MARIO_RACOON_WALK_LEFT_2, 86, 440, 119, 474, texMario);
+
+	sprites->Add(MARIO_RACOON_WALK_RIGHT, 234, 440, 261, 474, texMario);
+	sprites->Add(MARIO_RACOON_WALK_RIGHT_1, 260, 440, 288, 474, texMario);
+	sprites->Add(MARIO_RACOON_WALK_RIGHT_2, 289, 440, 320, 474, texMario);
+
+	sprites->Add(MARIO_RACOON_JUMP_LEFT, 46, 440, 78, 474, texMario);
+	sprites->Add(MARIO_RACOON_JUMP_RIGHT, 320, 440, 365, 474, texMario);
+
+	sprites->Add(MARIO_RACOON_SIT_LEFT, 10, 440, 37, 474, texMario);
+	sprites->Add(MARIO_RACOON_SIT_RIGHT, 367, 443, 398, 474, texMario);
+
+	sprites->Add(MARIO_RACOON_HIT_RIGHT, 353, 480, 373, 513, texMario);
+	sprites->Add(MARIO_RACOON_HIT_LEFT, 33, 481, 21, 32, texMario);
+
+	sprites->Add(MARIO_FIRE_IDLE_LEFT, 172, 680, 193, 714, texMario);
+	sprites->Add(MARIO_FIRE_IDLE_RIGHT, 211, 681, 236, 713, texMario);
+
+	sprites->Add(MARIO_FIRE_WALK_RIGHT, 249, 680, 280, 714, texMario);
+	sprites->Add(MARIO_FIRE_WALK_RIGHT_1, 290, 680, 316, 714, texMario);
+
+	sprites->Add(MARIO_FIRE_WALK_LEFT, 131, 680, 155, 714, texMario);
+	sprites->Add(MARIO_FIRE_WALK_LEFT_1, 92, 680, 115, 714, texMario);
+
+	sprites->Add(MARIO_FIRE_JUMP_LEFT, 51, 680, 77, 714, texMario);
+	sprites->Add(MARIO_FIRE_JUMP_RIGHT, 328, 680, 357, 714, texMario);
+
+	sprites->Add(MARIO_FIRE_SIT_LEFT, 10, 680, 35, 714, texMario);
+	sprites->Add(MARIO_FIRE_SIT_RIGHT, 370, 680, 398, 714, texMario);
+
+	sprites->Add(MARIO_FIRE_SHOOT_LEFT, 23, 801, 45, 834, texMario);
+	sprites->Add(MARIO_FIRE_SHOOT_LEFT_1, 2, 801, 23, 834, texMario);
+
+	sprites->Add(MARIO_FIRE_SHOOT_RIGHT, 362, 801, 383, 834, texMario);
+	sprites->Add(MARIO_FIRE_SHOOT_RIGHT_1, 384, 801, 403, 834, texMario);
 
 	LPANIMATION ani;
+	//animation dung yen cua mario nho
+	ani = new CAnimation(100);
+	ani->Add(MARIO_SMALL_IDLE_LEFT);
+	animations->Add(MARIO_ANI_IDLE_LEFT, ani);
 
-	ani = new CAnimation(100);	
-	ani->Add(10001);
-	animations->Add(400, ani);
+	//animation dung yen nhung nhin ben phai cua mario nho
+	ani = new CAnimation(100);
+	ani->Add(MARIO_SMALL_IDLE_RIGHT);
+	animations->Add(MARIO_ANI_IDLE_RIGHT, ani);
+
+	//animation di sang trai cua mario nho
+	ani = new CAnimation(100);
+	ani->Add(MARIO_SMALL_IDLE_LEFT);
+	ani->Add(MARIO_SMALL_WALK_LEFT);
+	animations->Add(MARIO_ANI_WALKING_LEFT, ani);
+
+	//animation di sang phai cua mario nho
+	ani = new CAnimation(100);
+	ani->Add(MARIO_SMALL_IDLE_RIGHT);
+	ani->Add(MARIO_SMALL_WALK_RIGHT);
+	animations->Add(MARIO_ANI_WALKING_RIGHT, ani);
+
+	//animation nhay sang trai cua mario nho
+	ani = new CAnimation(100);
+	ani->Add(MARIO_SMALL_JUMP_LEFT);
+	animations->Add(MARIO_ANI_JUMP_LEFT, ani);
+
+	//animation nhay sang phai cua mario nho
+	ani = new CAnimation(100);
+	ani->Add(MARIO_SMALL_JUMP_RIGHT);
+	animations->Add(MARIO_ANI_JUMP_RIGHT, ani);
+
+	//animation dung nhin ben trai cua mario lon
+	ani = new CAnimation(100);
+	ani->Add(MARIO_BIG_IDLE_LEFT);
+	animations->Add(MARIO_BIG_ANI_IDLE_LEFT, ani);
+
+	//animation cua mario lon dung nhin ben phai
+	ani = new CAnimation(100);
+	ani->Add(MARIO_BIG_IDLE_RIGHT);
+	animations->Add(MARIO_BIG_ANI_IDLE_RIGHT, ani);
+
+	//mario lon di ben phai
+	ani = new CAnimation(100);
+	ani->Add(MARIO_BIG_IDLE_RIGHT);
+	ani->Add(MARIO_BIG_WALK_RIGHT);
+	ani->Add(MARIO_BIG_WALK_RIGHT_1);
+	ani->Add(MARIO_BIG_WALK_RIGHT);
+	animations->Add(MARIO_BIG_ANI_WALKING_RIGHT, ani);
+
+	//mario lon di ben trai
+	ani = new CAnimation(100);
+	ani->Add(MARIO_BIG_IDLE_LEFT);
+	ani->Add(MARIO_BIG_WALK_LEFT);
+	ani->Add(MARIO_BIG_WALK_LEFT_1);
+	ani->Add(MARIO_BIG_WALK_LEFT);
+	animations->Add(MARIO_BIG_ANI_WALKING_LEFT, ani);
+
+	//mariio lon nhay ben phai
+	ani = new CAnimation(100);
+	ani->Add(MARIO_BIG_JUMP_RIGHT);
+	animations->Add(MARIO_BIG_ANI_JUMP_RIGHT, ani);
+
+	//mario lon nhay ben trai
+	ani = new CAnimation(100);
+	ani->Add(MARIO_BIG_JUMP_LEFT);
+	animations->Add(MARIO_BIG_ANI_JUMP_LEFT, ani);
+
+	//mario lon ngoi ben trai
+	ani = new CAnimation(100);
+	ani->Add(MARIO_BIG_SIT_LEFT);
+	animations->Add(MARIO_BIG_ANI_SIT_LEFT, ani);
+
+	//mario lon ngoi ben phai
+	ani = new CAnimation(100);
+	ani->Add(MARIO_BIG_SIT_RIGHT);
+	animations->Add(MARIO_BIG_ANI_SIT_RIGHT, ani);
+
+	//mario racoon dung ben trai
+	ani = new CAnimation(100);
+	ani->Add(MARIO_RACOON_IDLE_LEFT);
+	animations->Add(MARIO_RACOON_ANI_IDLE_LEFT, ani);
+
+	//mario racoon 
+	ani = new CAnimation(100);
+	ani->Add(MARIO_RACOON_IDLE_RIGHT);
+	animations->Add(MARIO_RACOON_ANI_IDLE_RIGHT, ani);
 
 	ani = new CAnimation(100);
-	ani->Add(10011);
-	animations->Add(401, ani);
+	ani->Add(MARIO_RACOON_WALK_RIGHT);
+	ani->Add(MARIO_RACOON_WALK_RIGHT_1);
+	ani->Add(MARIO_RACOON_WALK_RIGHT_2);
+	ani->Add(MARIO_RACOON_WALK_RIGHT_1);
+	animations->Add(MARIO_RACOON_ANI_WALKING_RIGHT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_RACOON_WALK_LEFT);
+	ani->Add(MARIO_RACOON_WALK_LEFT_1);
+	ani->Add(MARIO_RACOON_WALK_LEFT_2);
+	ani->Add(MARIO_RACOON_WALK_LEFT_1);
+	animations->Add(MARIO_RACOON_ANI_WALKING_LEFT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_RACOON_JUMP_RIGHT);
+	animations->Add(MARIO_RACOON_ANI_JUMP_RIGHT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_RACOON_JUMP_LEFT);
+	animations->Add(MARIO_RACOON_ANI_JUMP_LEFT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_RACOON_SIT_RIGHT);
+	animations->Add(MARIO_RACOON_ANI_SIT_RIGHT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_RACOON_SIT_LEFT);
+	animations->Add(MARIO_RACOON_ANI_SIT_LEFT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_RACOON_WALK_LEFT);
+	ani->Add(MARIO_RACOON_HIT_RIGHT);
+	ani->Add(MARIO_RACOON_WALK_RIGHT);
+	ani->Add(MARIO_RACOON_WALK_LEFT);
+	animations->Add(MARIO_RACOON_ANI_HIT_TAIL_LEFT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_RACOON_WALK_RIGHT);
+	ani->Add(MARIO_RACOON_HIT_RIGHT);
+	ani->Add(MARIO_RACOON_WALK_LEFT);
+	ani->Add(MARIO_RACOON_WALK_RIGHT);
+	animations->Add(MARIO_RACOON_ANI_HIT_TAIL_RIGHT, ani);
 
 
 	ani = new CAnimation(100);
-	ani->Add(10001);
-	ani->Add(10002);
-	ani->Add(10003);
-	animations->Add(500, ani);
+	ani->Add(MARIO_FIRE_IDLE_LEFT);
+	animations->Add(MARIO_FIRE_ANI_IDLE_LEFT, ani);
 
 	ani = new CAnimation(100);
-	ani->Add(10011);
-	ani->Add(10012);
-	ani->Add(10013);
-	animations->Add(501, ani);
+	ani->Add(MARIO_FIRE_IDLE_RIGHT);
+	animations->Add(MARIO_FIRE_ANI_IDLE_RIGHT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_FIRE_IDLE_RIGHT);
+	ani->Add(MARIO_FIRE_WALK_RIGHT);
+	ani->Add(MARIO_FIRE_WALK_RIGHT_1);
+	ani->Add(MARIO_FIRE_WALK_RIGHT);
+	animations->Add(MARIO_FIRE_ANI_WALKING_RIGHT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_FIRE_IDLE_LEFT);
+	ani->Add(MARIO_FIRE_WALK_LEFT);
+	ani->Add(MARIO_FIRE_WALK_LEFT_1);
+	ani->Add(MARIO_FIRE_WALK_LEFT);
+	animations->Add(MARIO_FIRE_ANI_WALKING_LEFT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_FIRE_JUMP_RIGHT);
+	animations->Add(MARIO_FIRE_ANI_JUMP_RIGHT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_FIRE_JUMP_LEFT);
+	animations->Add(MARIO_FIRE_ANI_JUMP_LEFT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_FIRE_SIT_LEFT);
+	animations->Add(MARIO_FIRE_ANI_SIT_LEFT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_FIRE_SIT_RIGHT);
+	animations->Add(MARIO_FIRE_ANI_SIT_RIGHT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_FIRE_SHOOT_RIGHT);
+	ani->Add(MARIO_FIRE_SHOOT_RIGHT_1);
+	animations->Add(MARIO_FIRE_ANI_SHOOT_RIGHT, ani);
+
+	ani = new CAnimation(100);
+	ani->Add(MARIO_FIRE_SHOOT_LEFT);
+	ani->Add(MARIO_FIRE_SHOOT_LEFT_1);
+	animations->Add(MARIO_FIRE_ANI_SHOOT_LEFT, ani);
 
 	mario = new CMario();
-	CMario::AddAnimation(400);		// idle right
-	CMario::AddAnimation(401);		// idle left
-	CMario::AddAnimation(500);		// walk right
-	CMario::AddAnimation(501);		// walk left
+
+	//animation cua mario nho
+	CMario::AddAnimation(MARIO_ANI_IDLE_RIGHT);		
+	CMario::AddAnimation(MARIO_ANI_IDLE_LEFT);		
+	CMario::AddAnimation(MARIO_ANI_WALKING_RIGHT);		
+	CMario::AddAnimation(MARIO_ANI_WALKING_LEFT);		
+	CMario::AddAnimation(MARIO_ANI_JUMP_RIGHT);
+	CMario::AddAnimation(MARIO_ANI_JUMP_LEFT);
+
+	//animation cua mario big
+	CMario::AddAnimation(MARIO_BIG_ANI_IDLE_RIGHT);
+	CMario::AddAnimation(MARIO_BIG_ANI_IDLE_LEFT);
+	CMario::AddAnimation(MARIO_BIG_ANI_WALKING_RIGHT);
+	CMario::AddAnimation(MARIO_BIG_ANI_WALKING_LEFT);
+	CMario::AddAnimation(MARIO_BIG_ANI_JUMP_RIGHT);
+	CMario::AddAnimation(MARIO_BIG_ANI_JUMP_LEFT);
+	CMario::AddAnimation(MARIO_BIG_ANI_SIT_RIGHT);
+	CMario::AddAnimation(MARIO_BIG_ANI_SIT_LEFT);
+
+	//animation cua mario racoon
+	CMario::AddAnimation(MARIO_RACOON_ANI_IDLE_RIGHT);
+	CMario::AddAnimation(MARIO_RACOON_ANI_IDLE_LEFT);
+	CMario::AddAnimation(MARIO_RACOON_ANI_WALKING_RIGHT);
+	CMario::AddAnimation(MARIO_RACOON_ANI_WALKING_LEFT);
+	CMario::AddAnimation(MARIO_RACOON_ANI_JUMP_RIGHT);
+	CMario::AddAnimation(MARIO_RACOON_ANI_JUMP_LEFT);
+	CMario::AddAnimation(MARIO_RACOON_ANI_SIT_RIGHT);
+	CMario::AddAnimation(MARIO_RACOON_ANI_SIT_LEFT);
+	CMario::AddAnimation(MARIO_RACOON_ANI_HIT_TAIL_RIGHT);
+	CMario::AddAnimation(MARIO_RACOON_ANI_HIT_TAIL_LEFT);
+
+	//animation cua mario fire
+	CMario::AddAnimation(MARIO_FIRE_ANI_IDLE_RIGHT);
+	CMario::AddAnimation(MARIO_FIRE_ANI_IDLE_LEFT);
+	CMario::AddAnimation(MARIO_FIRE_ANI_WALKING_RIGHT);
+	CMario::AddAnimation(MARIO_FIRE_ANI_WALKING_LEFT);
+	CMario::AddAnimation(MARIO_FIRE_ANI_JUMP_RIGHT);
+	CMario::AddAnimation(MARIO_FIRE_ANI_JUMP_LEFT);
+	CMario::AddAnimation(MARIO_FIRE_ANI_SIT_RIGHT);
+	CMario::AddAnimation(MARIO_FIRE_ANI_SIT_LEFT);
+	CMario::AddAnimation(MARIO_FIRE_ANI_SHOOT_RIGHT);
+	CMario::AddAnimation(MARIO_FIRE_ANI_SHOOT_LEFT);
 
 	mario->SetPosition(0.0f, 100.0f);
 }

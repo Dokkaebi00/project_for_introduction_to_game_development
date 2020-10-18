@@ -41,12 +41,18 @@ CMario *mario;
 
 CGameObject *brick;
 #define BRICK_X 10.0f
-#define BRICK_Y 100.0f
+#define BRICK_Y 10.0f
+#define BRICK_WIDTH 16.0f
+
+
 
 LPDIRECT3DTEXTURE9 texMario = NULL;
 LPDIRECT3DTEXTURE9 texBrick = NULL;
 
-//vector<LPGAMEOBJECT> objects;  
+vector<LPGAMEOBJECT> brickFloor;
+int numberOfBricks = (int)SCREEN_WIDTH / BRICK_WIDTH;
+#define BRICK_FLOOR_X 0.0f
+#define BRICK_FLOOR_Y 158.0f
 
 LRESULT CALLBACK WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
@@ -66,9 +72,16 @@ LRESULT CALLBACK WinProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 */
 void LoadResources()
 {
-	CGame * game = CGame::GetInstance();
+	CGame* game = CGame::GetInstance();
 	texBrick = game->LoadTexture(BRICK_TEXTURE_PATH);
 	texMario = game->LoadTexture(MARIO_TEXTURE_PATH);
+
+	for (int i = 0; i < numberOfBricks; i++)
+	{
+		float updateX_Coordinate = BRICK_FLOOR_X + i * BRICK_WIDTH;
+		CGameObject* tempbrick = new CGameObject(updateX_Coordinate, BRICK_FLOOR_Y, texBrick);
+		brickFloor.push_back(tempbrick);
+	}
 
 	mario = new CMario(MARIO_START_X, MARIO_START_Y, MARIO_START_VX, texMario);
 	brick = new CGameObject(BRICK_X, BRICK_Y, texBrick);
@@ -81,12 +94,16 @@ void LoadResources()
 void Update(DWORD dt)
 {
 	/*
+	n 
 	for (int i=0;i<n;i++)
 		objects[i]->Update(dt);
 	*/
-
+	for (int i = 0; i < numberOfBricks; i++)
+	{
+		brickFloor[i]->Update(dt);
+	}
 	mario->Update(dt);
-	brick->Update(dt);
+	//brick->Update(dt);
 
 	DebugOutTitle(L"01 - Skeleton %0.1f, %0.1f", mario->GetX(), mario->GetY());
 }
@@ -110,8 +127,11 @@ void Render()
 
 
 		mario->Render();
-		brick->Render();
-
+		//brick->Render();
+		for (int i = 0; i < numberOfBricks; i++)
+		{
+			brickFloor[i]->Render();
+		}
 
 		spriteHandler->End();
 		d3ddv->EndScene();

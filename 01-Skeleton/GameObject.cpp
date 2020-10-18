@@ -26,6 +26,8 @@ CGameObject::~CGameObject()
 
 #define MARIO_VX 0.1f
 #define MARIO_WIDTH 14
+#define BRICK_WIDTH 16.0f
+
 
 void CMario::Update(DWORD dt)
 {

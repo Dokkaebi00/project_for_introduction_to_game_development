@@ -21,7 +21,7 @@ protected:
 
 	int nx;	 
 
-	int state;									
+	int state;				
 
 	static vector<LPANIMATION> animations;
 
@@ -36,7 +36,6 @@ public:
 	static void AddAnimation(int aniId);
 
 	CGameObject();
-
 	void Update(DWORD dt);
 	void Render();
 	~CGameObject();

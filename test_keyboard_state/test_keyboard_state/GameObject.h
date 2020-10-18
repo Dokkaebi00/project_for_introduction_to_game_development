@@ -24,16 +24,24 @@ protected:
 
 	int state;
 
-	LPANIMATION_SET animation_set;
+	static vector<LPANIMATION> animations;
 
 public:
 	void SetPosition(float x, float y);
-	void SetSpeed(float vx, float vy);
 	void GetPosition(float& x, float& y);
+	
+	void SetSpeed(float vx, float vy);
 	void GetSpeed(float& vx, float& vy);
 
+	void SetState(int state);
 	int GetState();
 
+	static void AddAnimation(int aniId);
 
+	GameObject();
+
+	void Update(DWORD dt);
+	void Render();
+	~GameObject();
 };
 

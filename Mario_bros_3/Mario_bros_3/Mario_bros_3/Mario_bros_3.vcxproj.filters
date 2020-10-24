@@ -5,41 +5,38 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
     <Filter Include="Resource Files">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="Source Files\Game">
-      <UniqueIdentifier>{6796d8c5-763c-475d-b844-d36f38fda211}</UniqueIdentifier>
+    <Filter Include="GameComponent">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Header Files\Game.h">
+    <Filter Include="GameComponent\Game.h">
       <UniqueIdentifier>{634233a7-9f90-49bb-ab33-5567a4a76e75}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Debug">
-      <UniqueIdentifier>{418405c1-d206-4d0c-9945-5ed4cc86d565}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Header Files\Debug.h">
+    <Filter Include="GameComponent\Debug.h">
       <UniqueIdentifier>{31f40cb2-680e-4595-98a3-c07a430a3755}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Game.h">
-      <Filter>Header Files\Game.h</Filter>
-    </ClInclude>
     <ClInclude Include="Debug.h">
-      <Filter>Header Files\Debug.h</Filter>
+      <Filter>GameComponent\Debug.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>GameComponent\Game.h</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Game.cpp">
-      <Filter>Source Files\Game</Filter>
-    </ClCompile>
     <ClCompile Include="Debug.cpp">
-      <Filter>Source Files\Debug</Filter>
+      <Filter>GameComponent\Debug.h</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>GameComponent\Game.h</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

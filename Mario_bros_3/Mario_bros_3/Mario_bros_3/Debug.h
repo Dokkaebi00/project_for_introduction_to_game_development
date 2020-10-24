@@ -11,5 +11,5 @@
 
 using namespace std;
 
-void DebugOut(wchar_t* fmt, ...);
+void DebugOut(const wchar_t* fmt, ...);
 

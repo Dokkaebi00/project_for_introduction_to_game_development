@@ -2,12 +2,11 @@
 #include "Game.h"
 
 //#include "SceneManager.h"
+//#include "SceneGame.h"
+//#include "Scene_Intro.h"
 
 #define WINDOW_CLASS_NAME L"SE102_PROJECT"
 #define MAIN_WINDOW_TITLE L"SUPER_MARIO_BROS_3"
-
-//#include "SceneGame.h"
-//#include "Scene_Intro.h"
 
 Game* game;
 //SceneManager* _sceneManager;
@@ -151,7 +150,7 @@ int Run()
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	HWND hWnd = CreateGameWindow(hInstance, nCmdShow, 640, 480);
+	HWND hWnd = CreateGameWindow(hInstance, nCmdShow, 1920, 1080);
 
 	game = Game::GetInstance();
 	game->Init(hWnd);

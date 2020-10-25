@@ -19,6 +19,9 @@
     <Filter Include="GameComponent\Debug.h">
       <UniqueIdentifier>{31f40cb2-680e-4595-98a3-c07a430a3755}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameComponent\Scene">
+      <UniqueIdentifier>{dafdf1c9-0aca-4cc4-ad3d-a82b712ce507}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Debug.h">
@@ -26,6 +29,9 @@
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>GameComponent\Game.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>GameComponent\Scene</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -37,6 +43,9 @@
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>GameComponent\Game.h</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>GameComponent\Scene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,7 +1,3 @@
-#ifndef __GAME_H__
-#define __GAME_H__
-
-#define DIRECTINPUT_VERSION 0x0800
 #include <dinput.h> 
 #include <d3d9.h>
 #include<d3dx9.h>
@@ -10,7 +6,7 @@
 //#include "define.h"
 //#include "SceneManager.h"
 
-
+#define DIRECTINPUT_VERSION 0x0800
 #define KEYBOARD_BUFFER_SIZE 1024
 
 class Game
@@ -72,5 +68,5 @@ public:
 
 
 
-#endif
+
 

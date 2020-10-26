@@ -13,17 +13,8 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="GameComponent\Game.h">
-      <UniqueIdentifier>{634233a7-9f90-49bb-ab33-5567a4a76e75}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameComponent\Debug.h">
-      <UniqueIdentifier>{31f40cb2-680e-4595-98a3-c07a430a3755}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameComponent\Scene">
       <UniqueIdentifier>{dafdf1c9-0aca-4cc4-ad3d-a82b712ce507}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameComponent\Scene\GameScene">
-      <UniqueIdentifier>{4529e0ce-01ee-4c16-9d52-e49b3714b356}</UniqueIdentifier>
     </Filter>
     <Filter Include="GameComponent\Scene\WorlScene">
       <UniqueIdentifier>{073e9ea1-1cb3-45c2-b38d-46047e7c3c91}</UniqueIdentifier>
@@ -43,13 +34,49 @@
     <Filter Include="GameComponent\Scene\SceneManager">
       <UniqueIdentifier>{1845092d-b263-483b-b428-8e2ab960c1a7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameComponent\Scene\PlayScene">
+      <UniqueIdentifier>{4529e0ce-01ee-4c16-9d52-e49b3714b356}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\GameObject">
+      <UniqueIdentifier>{82900813-eacb-4c43-af44-572c352ea063}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\GameObject\Mario">
+      <UniqueIdentifier>{2a696352-359e-4900-9f01-0e7e097260c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\GameObject\Item">
+      <UniqueIdentifier>{b0cb08fa-7224-416d-bccb-7d5f220d06e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\GameObject\Item\Mushroom">
+      <UniqueIdentifier>{b89374d5-26ea-4a6e-9078-5e513e2e00d2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\GameObject\Item\Flower">
+      <UniqueIdentifier>{0ae132b9-d16a-48a7-85c3-75a59cd2dac5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\GameObject\Item\Leaf">
+      <UniqueIdentifier>{3d304acf-06cf-488c-87bb-50ef34551f64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\GameObject\Enemy">
+      <UniqueIdentifier>{4bc471df-7981-4602-a83e-3c895fd83a86}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\GameObject\Object">
+      <UniqueIdentifier>{4eef904b-ef83-43b4-998f-2191eab2c9d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\GameObject\Enemy\NewFilter1">
+      <UniqueIdentifier>{3797dca0-75e9-4531-9131-04a9cd86de5c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\Debug">
+      <UniqueIdentifier>{31f40cb2-680e-4595-98a3-c07a430a3755}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\Game">
+      <UniqueIdentifier>{634233a7-9f90-49bb-ab33-5567a4a76e75}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Debug.h">
-      <Filter>GameComponent\Debug.h</Filter>
+      <Filter>GameComponent\Debug</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>GameComponent\Game.h</Filter>
+      <Filter>GameComponent\Game</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>GameComponent\Scene</Filter>
@@ -57,22 +84,28 @@
     <ClInclude Include="Texture.h">
       <Filter>GameComponent\Texture</Filter>
     </ClInclude>
+    <ClInclude Include="PlayScene.h">
+      <Filter>GameComponent\Scene\PlayScene</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Debug.cpp">
-      <Filter>GameComponent\Debug.h</Filter>
+      <Filter>GameComponent\Debug</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>GameComponent\Game.h</Filter>
+      <Filter>GameComponent\Game</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>GameComponent\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Texture.cpp">
       <Filter>GameComponent\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayScene.cpp">
+      <Filter>GameComponent\Scene\PlayScene</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

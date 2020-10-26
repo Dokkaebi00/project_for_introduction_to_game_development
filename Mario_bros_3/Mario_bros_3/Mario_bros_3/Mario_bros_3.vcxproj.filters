@@ -22,6 +22,27 @@
     <Filter Include="GameComponent\Scene">
       <UniqueIdentifier>{dafdf1c9-0aca-4cc4-ad3d-a82b712ce507}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameComponent\Scene\GameScene">
+      <UniqueIdentifier>{4529e0ce-01ee-4c16-9d52-e49b3714b356}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\Scene\WorlScene">
+      <UniqueIdentifier>{073e9ea1-1cb3-45c2-b38d-46047e7c3c91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\Scene\IntroScene">
+      <UniqueIdentifier>{2d97066f-d7e1-45f0-82b9-2e4dfa47ef14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\Texture">
+      <UniqueIdentifier>{8ad0aee8-ee6c-477e-93e5-d024801591dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\Texture\Textures">
+      <UniqueIdentifier>{9c015bcc-8427-40d1-b37e-5718d7ef59aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\Texture\Sprite">
+      <UniqueIdentifier>{6df4395c-971e-4b74-8a7f-c4442a030c6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\Scene\SceneManager">
+      <UniqueIdentifier>{1845092d-b263-483b-b428-8e2ab960c1a7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Debug.h">
@@ -32,6 +53,9 @@
     </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>GameComponent\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Texture.h">
+      <Filter>GameComponent\Texture</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +70,9 @@
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>GameComponent\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Texture.cpp">
+      <Filter>GameComponent\Texture</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

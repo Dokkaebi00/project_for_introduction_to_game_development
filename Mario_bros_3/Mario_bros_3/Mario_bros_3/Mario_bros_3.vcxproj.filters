@@ -70,6 +70,15 @@
     <Filter Include="GameComponent\Game">
       <UniqueIdentifier>{634233a7-9f90-49bb-ab33-5567a4a76e75}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameComponent\Grid">
+      <UniqueIdentifier>{580ea73a-b651-4470-bea1-70d9bd00e4ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\Map">
+      <UniqueIdentifier>{d3ba9a27-b658-4331-9b9e-e5169f208c55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\Camera">
+      <UniqueIdentifier>{83b98b6c-f6a3-48f6-853b-205779759cd7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Debug.h">
@@ -86,6 +95,15 @@
     </ClInclude>
     <ClInclude Include="PlayScene.h">
       <Filter>GameComponent\Scene\PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Grid.h">
+      <Filter>GameComponent\Grid</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>GameComponent\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>GameComponent\Camera</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -106,6 +124,15 @@
     </ClCompile>
     <ClCompile Include="PlayScene.cpp">
       <Filter>GameComponent\Scene\PlayScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Grid.cpp">
+      <Filter>GameComponent\Grid</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>GameComponent\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>GameComponent\Camera</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

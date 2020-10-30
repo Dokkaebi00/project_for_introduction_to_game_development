@@ -28,9 +28,6 @@
     <Filter Include="GameComponent\Texture\Textures">
       <UniqueIdentifier>{9c015bcc-8427-40d1-b37e-5718d7ef59aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameComponent\Texture\Sprite">
-      <UniqueIdentifier>{6df4395c-971e-4b74-8a7f-c4442a030c6c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameComponent\Scene\SceneManager">
       <UniqueIdentifier>{1845092d-b263-483b-b428-8e2ab960c1a7}</UniqueIdentifier>
     </Filter>
@@ -79,6 +76,15 @@
     <Filter Include="GameComponent\Camera">
       <UniqueIdentifier>{83b98b6c-f6a3-48f6-853b-205779759cd7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="GameComponent\define">
+      <UniqueIdentifier>{528c76b0-97b3-4d2b-b899-e2943679ae49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\Texture\Sprites">
+      <UniqueIdentifier>{6df4395c-971e-4b74-8a7f-c4442a030c6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\Texture\Sprites\Sprite">
+      <UniqueIdentifier>{c7fc762a-6721-400c-ade3-0d48436aecb5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Debug.h">
@@ -89,9 +95,6 @@
     </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>GameComponent\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>GameComponent\Texture</Filter>
     </ClInclude>
     <ClInclude Include="PlayScene.h">
       <Filter>GameComponent\Scene\PlayScene</Filter>
@@ -104,6 +107,18 @@
     </ClInclude>
     <ClInclude Include="Camera.h">
       <Filter>GameComponent\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="define.h">
+      <Filter>GameComponent\define</Filter>
+    </ClInclude>
+    <ClInclude Include="Textures.h">
+      <Filter>GameComponent\Texture\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>GameComponent\Texture\Sprites\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprites.h">
+      <Filter>GameComponent\Texture\Sprites</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -119,9 +134,6 @@
     <ClCompile Include="Scene.cpp">
       <Filter>GameComponent\Scene</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>GameComponent\Texture</Filter>
-    </ClCompile>
     <ClCompile Include="PlayScene.cpp">
       <Filter>GameComponent\Scene\PlayScene</Filter>
     </ClCompile>
@@ -133,6 +145,18 @@
     </ClCompile>
     <ClCompile Include="Camera.cpp">
       <Filter>GameComponent\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="define.cpp">
+      <Filter>GameComponent\define</Filter>
+    </ClCompile>
+    <ClCompile Include="Textures.cpp">
+      <Filter>GameComponent\Texture\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>GameComponent\Texture\Sprites\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprites.cpp">
+      <Filter>GameComponent\Texture\Sprites</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

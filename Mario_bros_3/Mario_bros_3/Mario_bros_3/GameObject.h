@@ -26,5 +26,16 @@ typedef CollisionEvent* LPCOLLISIONEVENT;
 
 class GameObject
 {
+	float x;
+	float y;
+
+	float dx;
+	float dy;
+
+	float vx;
+	float vy;
+
+	DWORD dt;
+
 };
 typedef GameObject* LPGAMEOBJECT;

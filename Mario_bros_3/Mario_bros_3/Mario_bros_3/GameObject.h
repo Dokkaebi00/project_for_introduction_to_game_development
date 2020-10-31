@@ -3,6 +3,13 @@
 
 using namespace std;
 
+class GameObject;
+typedef GameObject* LPGAMEOBJECT;
+
+struct CollisionEvent;
+typedef CollisionEvent* LPCOLLISIONEVENT;
+
+
 struct CollisionEvent
 {
 	LPGAMEOBJECT obj;
@@ -38,4 +45,4 @@ class GameObject
 	DWORD dt;
 
 };
-typedef GameObject* LPGAMEOBJECT;
+

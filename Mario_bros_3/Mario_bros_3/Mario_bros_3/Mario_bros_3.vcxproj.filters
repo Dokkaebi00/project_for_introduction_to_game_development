@@ -22,12 +22,6 @@
     <Filter Include="GameComponent\Scene\IntroScene">
       <UniqueIdentifier>{2d97066f-d7e1-45f0-82b9-2e4dfa47ef14}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameComponent\Texture">
-      <UniqueIdentifier>{8ad0aee8-ee6c-477e-93e5-d024801591dc}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="GameComponent\Texture\Textures">
-      <UniqueIdentifier>{9c015bcc-8427-40d1-b37e-5718d7ef59aa}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GameComponent\Scene\SceneManager">
       <UniqueIdentifier>{1845092d-b263-483b-b428-8e2ab960c1a7}</UniqueIdentifier>
     </Filter>
@@ -79,11 +73,26 @@
     <Filter Include="GameComponent\define">
       <UniqueIdentifier>{528c76b0-97b3-4d2b-b899-e2943679ae49}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameComponent\Texture\Sprites">
+    <Filter Include="GameComponent\TextureManager">
+      <UniqueIdentifier>{8ad0aee8-ee6c-477e-93e5-d024801591dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\TextureManager\Textures">
+      <UniqueIdentifier>{9c015bcc-8427-40d1-b37e-5718d7ef59aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\TextureManager\Sprites">
       <UniqueIdentifier>{6df4395c-971e-4b74-8a7f-c4442a030c6c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="GameComponent\Texture\Sprites\Sprite">
+    <Filter Include="GameComponent\TextureManager\Sprites\Sprite">
       <UniqueIdentifier>{c7fc762a-6721-400c-ade3-0d48436aecb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\TextureManager\Animations">
+      <UniqueIdentifier>{5912f2bf-f545-4d60-ac54-087f743c3f8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\TextureManager\Animations\Animation">
+      <UniqueIdentifier>{d7737751-88e6-4c2b-b07c-408e0b949113}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameComponent\TextureManager\Animations\AnimationFrame">
+      <UniqueIdentifier>{28e88c1c-307d-4b7e-9159-399982ae9dd2}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -112,13 +121,22 @@
       <Filter>GameComponent\define</Filter>
     </ClInclude>
     <ClInclude Include="Textures.h">
-      <Filter>GameComponent\Texture\Textures</Filter>
+      <Filter>GameComponent\TextureManager\Textures</Filter>
     </ClInclude>
     <ClInclude Include="Sprite.h">
-      <Filter>GameComponent\Texture\Sprites\Sprite</Filter>
+      <Filter>GameComponent\TextureManager\Sprites\Sprite</Filter>
     </ClInclude>
     <ClInclude Include="Sprites.h">
-      <Filter>GameComponent\Texture\Sprites</Filter>
+      <Filter>GameComponent\TextureManager\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>GameComponent\TextureManager\Animations\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationFrame.h">
+      <Filter>GameComponent\TextureManager\Animations\AnimationFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="Animations.h">
+      <Filter>GameComponent\TextureManager\Animations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -150,13 +168,22 @@
       <Filter>GameComponent\define</Filter>
     </ClCompile>
     <ClCompile Include="Textures.cpp">
-      <Filter>GameComponent\Texture\Textures</Filter>
+      <Filter>GameComponent\TextureManager\Textures</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
-      <Filter>GameComponent\Texture\Sprites\Sprite</Filter>
+      <Filter>GameComponent\TextureManager\Sprites\Sprite</Filter>
     </ClCompile>
     <ClCompile Include="Sprites.cpp">
-      <Filter>GameComponent\Texture\Sprites</Filter>
+      <Filter>GameComponent\TextureManager\Sprites</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>GameComponent\TextureManager\Animations\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationFrame.cpp">
+      <Filter>GameComponent\TextureManager\Animations\AnimationFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="Animations.cpp">
+      <Filter>GameComponent\TextureManager\Animations</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

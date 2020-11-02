@@ -1,6 +1,12 @@
 #pragma once
-#include "Debug.h"
+#include"Debug.h"
 #include"Textures.h"
+#include"Animations.h"
+#include"Camera.h"
+#include"define.h"
+#include"Game.h"
+
+#include<vector>
 
 using namespace std;
 
@@ -30,13 +36,15 @@ struct CollisionEvent
 		return a->t < b->t;
 	}
 };
-typedef CollisionEvent* LPCOLLISIONEVENT;
-
+ 
 class GameObject
 {
 protected:
-	float x;
-	float y;
+
+	int direction;
+
+	float posX;
+	float posY;
 
 	float dx;
 	float dy;
@@ -44,18 +52,52 @@ protected:
 	float vx;
 	float vy;
 
+	int state;
+
+	int status;
+
 	DWORD dt;
 
 	Textures* texture;
 	
-	
+	vector<LPANIMATION> animations;
 
 public:
 	GameObject();
 	virtual ~GameObject();
 
-	virtual void GetBoundingBox(float& left, float& top, float& right, float& bottom);;
+	virtual void GetBoundingBox(float& left, float& top, float& right, float& bottom) = 0;
 	virtual void Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects = NULL);
-	virtual void Render();
+	virtual void Render(Camera* camera) = 0;
+
+	void SetDirection(int d);
+	int GetDirection();
+
+	void SetPosition(float x, float y);
+	void GetPosition(float& x, float& y);
+	void GetSpeed(float& vx, float& vy);
+
+	float GetX();
+	float GetY();
+	float GetVx();
+	float GetVy();
+	void SetX(float x);
+	void SetY(float y);
+	void SetVx(float VX);
+	void SetVy(float VY);
+
+	void RenderingBoudingBox(Camera* camera);
+	LPCOLLISIONEVENT SweptAABBEx(GameObject* coO);
+	void CalcPotentialCollisions(vector<GameObject*>* coObjects, vector<LPCOLLISIONEVENT>& coEvents);
+	void FilterCollision
+	(
+		vector<LPCOLLISIONEVENT>& coEvents,
+		vector<LPCOLLISIONEVENT>& coEventsResult,
+		float& min_tx,
+		float& min_ty,
+		float& nx,
+		float& ny
+	);
+
 };
 

@@ -69,8 +69,7 @@ void Game::Draw(float x, float y, LPDIRECT3DTEXTURE9 texture, int left, int top,
 void Game::Draw(float x, float y, LPDIRECT3DTEXTURE9 texture, RECT r, int alpha)
 {
 	D3DXVECTOR3 p(x, y, 0);
-	spriteHandler->Draw
-	(
+	spriteHandler->Draw(
 		texture,
 		&r,
 		NULL,
@@ -96,7 +95,7 @@ void Game::InitKeyboard()
 
 	if (hr != DI_OK)
 	{
-		OutputDebugString(L"[ERROR] DirectInput8Create failed!\n");
+		DebugOut(L"[ERROR] DirectInput8Create failed!\n");
 		return;
 	}
 
@@ -105,7 +104,7 @@ void Game::InitKeyboard()
 	// TO-DO: put in exception handling
 	if (hr != DI_OK)
 	{
-		OutputDebugString(L"[ERROR] CreateDevice failed!\n");
+		DebugOut(L"[ERROR] CreateDevice failed!\n");
 		return;
 	}
 
@@ -145,12 +144,12 @@ void Game::InitKeyboard()
 	hr = didv->Acquire();
 	if (hr != DI_OK)
 	{
-		OutputDebugString(L"[ERROR] DINPUT8::Acquire failed!\n");
+		DebugOut(L"[ERROR] DINPUT8::Acquire failed!\n");
 		return;
 	}
 
 
-	OutputDebugString(L"[INFO] Keyboard has been initialized successfully\n");
+	DebugOut(L"[INFO] Keyboard has been initialized successfully\n");
 }
 
 /*void Game::ProcessKeyboard()

@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="FrameWork">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="FrameWork\Game">
+      <UniqueIdentifier>{866cf987-dff4-4050-8df1-b179968d5ead}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\KeyEvent">
+      <UniqueIdentifier>{604ad0de-d8fc-4de2-91df-abf35fc4913a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Scene">
+      <UniqueIdentifier>{1c3fdd1c-a378-42ec-aa0b-970c2f135cff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Debug">
+      <UniqueIdentifier>{ce1aacdb-a218-49d8-975f-9ccacdac8904}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Textures_and_Animations">
+      <UniqueIdentifier>{fbecf162-57bf-4c49-9019-2d04aaafb6d3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Textures_and_Animations\Animations">
+      <UniqueIdentifier>{d87803f1-5b9a-4a3e-acce-ab3bab63964c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Textures_and_Animations\Textures">
+      <UniqueIdentifier>{7807101c-bba9-41de-85d4-9ab87abb78a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Textures_and_Animations\Sprites">
+      <UniqueIdentifier>{f78872b7-9c76-44b9-9af5-aed319bc1d9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Scene\PlayScene">
+      <UniqueIdentifier>{5a7c72c2-3e9a-4059-ab70-04ecfc9a185e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\GameObject">
+      <UniqueIdentifier>{6f9f4632-61a3-415c-baf8-bd3be121aaa9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\GameObject\Goomba">
+      <UniqueIdentifier>{123280b6-9101-470d-b05e-475922e7654d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\GameObject\Koopas">
+      <UniqueIdentifier>{7b9e5e16-1467-480f-9781-edfee7681af4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\GameObject\Mario">
+      <UniqueIdentifier>{bf83210f-46b9-4419-a93c-c3874aa45e29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\GameObject\Portal">
+      <UniqueIdentifier>{b4de9c9c-96c0-459f-b03b-bdadd4345c1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\GameObject\Brick">
+      <UniqueIdentifier>{38523f94-b3fe-4ade-9584-717fb9e184e8}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Game.h">
+      <Filter>FrameWork\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyEventHandler.h">
+      <Filter>FrameWork\KeyEvent</Filter>
+    </ClInclude>
+    <ClInclude Include="Scence.h">
+      <Filter>FrameWork\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Utils.h">
+      <Filter>FrameWork\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Animations.h">
+      <Filter>FrameWork\Textures_and_Animations\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="Textures.h">
+      <Filter>FrameWork\Textures_and_Animations\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprites.h">
+      <Filter>FrameWork\Textures_and_Animations\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayScence.h">
+      <Filter>FrameWork\Scene\PlayScene</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>FrameWork\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Goomba.h">
+      <Filter>FrameWork\GameObject\Goomba</Filter>
+    </ClInclude>
+    <ClInclude Include="Koopas.h">
+      <Filter>FrameWork\GameObject\Koopas</Filter>
+    </ClInclude>
+    <ClInclude Include="Mario.h">
+      <Filter>FrameWork\GameObject\Mario</Filter>
+    </ClInclude>
+    <ClInclude Include="Portal.h">
+      <Filter>FrameWork\GameObject\Portal</Filter>
+    </ClInclude>
+    <ClInclude Include="Brick.h">
+      <Filter>FrameWork\GameObject\Brick</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Game.cpp">
+      <Filter>FrameWork\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyEventHandler.cpp">
+      <Filter>FrameWork\KeyEvent</Filter>
+    </ClCompile>
+    <ClCompile Include="Scence.cpp">
+      <Filter>FrameWork\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Utils.cpp">
+      <Filter>FrameWork\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Animations.cpp">
+      <Filter>FrameWork\Textures_and_Animations\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="Textures.cpp">
+      <Filter>FrameWork\Textures_and_Animations\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprites.cpp">
+      <Filter>FrameWork\Textures_and_Animations\Sprites</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayScence.cpp">
+      <Filter>FrameWork\Scene\PlayScene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>FrameWork\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Goomba.cpp">
+      <Filter>FrameWork\GameObject\Goomba</Filter>
+    </ClCompile>
+    <ClCompile Include="Koopas.cpp">
+      <Filter>FrameWork\GameObject\Koopas</Filter>
+    </ClCompile>
+    <ClCompile Include="Mario.cpp">
+      <Filter>FrameWork\GameObject\Mario</Filter>
+    </ClCompile>
+    <ClCompile Include="Portal.cpp">
+      <Filter>FrameWork\GameObject\Portal</Filter>
+    </ClCompile>
+    <ClCompile Include="Brick.cpp">
+      <Filter>FrameWork\GameObject\Brick</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

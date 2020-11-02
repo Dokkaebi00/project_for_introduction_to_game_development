@@ -7,6 +7,7 @@
 
 #include "Goomba.h"
 #include "Portal.h"
+#include "Koopas.h"
 
 Mario::Mario(float x, float y) : GameObject()
 {
@@ -16,6 +17,7 @@ Mario::Mario(float x, float y) : GameObject()
 
 	start_x = x;
 	start_y = y;
+	accelaration = 0.1f;
 	this->x = x;
 	this->y = y;
 }
@@ -108,6 +110,38 @@ void Mario::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 					}
 				}
 			} // if Goomba
+
+			else if (dynamic_cast<Koopas*>(e->obj))
+			{
+				Koopas* koopas = dynamic_cast<Koopas*>(e->obj);
+
+				// jump on top >> kill Koopas and deflect a bit 
+				if (e->ny < 0)
+				{
+					if (koopas->GetState() != KOOPAS_STATE_DIE)
+					{
+						koopas->SetState(KOOPAS_STATE_DIE);
+						vy = -MARIO_JUMP_DEFLECT_SPEED;
+					}
+				}
+				else if (e->nx != 0)
+				{
+					if (untouchable == 0)
+					{
+						if (koopas->GetState() != KOOPAS_STATE_DIE)
+						{
+							if (level > MARIO_LEVEL_SMALL)
+							{
+								level = MARIO_LEVEL_SMALL;
+								StartUntouchable();
+							}
+							else
+								SetState(MARIO_STATE_DIE);
+						}
+					}
+				}
+			}
+
 			else if (dynamic_cast<Portal*>(e->obj))
 			{
 				Portal* p = dynamic_cast<Portal*>(e->obj);

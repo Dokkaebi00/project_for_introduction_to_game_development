@@ -40,6 +40,7 @@
 
 class Mario : public GameObject
 {
+	float accelaration = 0.1f;
 	int level;
 	int untouchable;
 	DWORD untouchable_start;

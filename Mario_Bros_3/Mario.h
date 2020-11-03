@@ -3,6 +3,9 @@
 
 #define MARIO_WALKING_SPEED		0.15f 
 //0.1f
+
+#define MARIO_ACCELERATION 0.005f
+
 #define MARIO_JUMP_SPEED_Y		0.5f
 #define MARIO_JUMP_DEFLECT_SPEED 0.2f
 #define MARIO_GRAVITY			0.002f
@@ -47,7 +50,10 @@ class Mario : public GameObject
 
 	float start_x;			// initial position of Mario at scene
 	float start_y;
+
+	float vx0;
 public:
+	
 	Mario(float x = 0.0f, float y = 0.0f);
 	virtual void Update(DWORD dt, vector<LPGAMEOBJECT>* colliable_objects = NULL);
 	virtual void Render();
@@ -55,6 +61,8 @@ public:
 	void SetState(int state);
 	void SetLevel(int l) { level = l; }
 	void StartUntouchable() { untouchable = 1; untouchable_start = GetTickCount(); }
+
+	float GetAcceleration();
 
 	void Reset();
 

@@ -301,11 +301,38 @@ void CPlayScenceKeyHandler::KeyState(BYTE* states)
 	Mario* mario = ((PlayScene*)scence)->GetPlayer();
 
 	// disable control key when Mario die 
+	/*if (mario->GetState() == MARIO_STATE_DIE) return;
+	if (game->IsKeyDown(DIK_RIGHT))
+	{
+		mario->SetState(MARIO_STATE_WALKING_RIGHT);
+	}
+	else if (game->IsKeyDown(DIK_LEFT))
+		mario->SetState(MARIO_STATE_WALKING_LEFT);
+	else
+		mario->SetState(MARIO_STATE_IDLE);*/
 	if (mario->GetState() == MARIO_STATE_DIE) return;
 	if (game->IsKeyDown(DIK_RIGHT))
+	{
 		mario->SetState(MARIO_STATE_WALKING_RIGHT);
+		float vx = 0;
+		float vy = 0;
+		mario->GetSpeed(vx, vy);
+		vx = vx + mario->GetAcceleration() * mario->dt;
+		
+		if (vx >= 0.5)
+		{
+			vx = 0.5;
+		}
+		mario->SetSpeed(vx, vy);
+		
+	}
 	else if (game->IsKeyDown(DIK_LEFT))
 		mario->SetState(MARIO_STATE_WALKING_LEFT);
 	else
 		mario->SetState(MARIO_STATE_IDLE);
+	
+	float vx = 0.f;
+	float vy = 0.f;
+	mario->GetSpeed(vx, vy);
+	DebugOut(L"[INFO] Mario velocity: %d\n", vx);
 }

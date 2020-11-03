@@ -17,7 +17,8 @@ Mario::Mario(float x, float y) : GameObject()
 
 	start_x = x;
 	start_y = y;
-	accelaration = 0.1f;
+	accelaration = 0.05f;
+	vx0 = MARIO_WALKING_SPEED;
 	this->x = x;
 	this->y = y;
 }
@@ -29,6 +30,8 @@ void Mario::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 
 	// Simple fall down
 	vy += MARIO_GRAVITY * dt;
+
+	//vx = vx + accelaration * dt;
 
 	vector<LPCOLLISIONEVENT> coEvents;
 	vector<LPCOLLISIONEVENT> coEventsResult;
@@ -79,7 +82,7 @@ void Mario::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 		for (UINT i = 0; i < coEventsResult.size(); i++)
 		{
 			LPCOLLISIONEVENT e = coEventsResult[i];
-
+	
 			if (dynamic_cast<Goomba*>(e->obj)) // if e->obj is Goomba 
 			{
 				Goomba* goomba = dynamic_cast<Goomba*>(e->obj);
@@ -149,6 +152,7 @@ void Mario::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 			}
 		}
 	}
+
 
 	// clean up collision events
 	for (UINT i = 0; i < coEvents.size(); i++) delete coEvents[i];
@@ -233,6 +237,11 @@ void Mario::GetBoundingBox(float& left, float& top, float& right, float& bottom)
 		right = x + MARIO_SMALL_BBOX_WIDTH;
 		bottom = y + MARIO_SMALL_BBOX_HEIGHT;
 	}
+}
+
+float Mario::GetAcceleration()
+{
+	return this->accelaration;
 }
 
 /*

@@ -79,6 +79,11 @@ int Game::IsKeyDown(int KeyCode)
 	return (keyStates[KeyCode] & 0x80) > 0;
 }
 
+int Game::IsKeyUp(int KeyCode)
+{
+	return 0;
+}
+
 void Game::InitKeyboard()
 {
 	HRESULT

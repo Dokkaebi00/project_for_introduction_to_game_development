@@ -114,6 +114,7 @@ void Mario::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 				}
 			} // if Goomba
 
+			//logic for Koopas
 			else if (dynamic_cast<Koopas*>(e->obj))
 			{
 				Koopas* koopas = dynamic_cast<Koopas*>(e->obj);
@@ -121,12 +122,19 @@ void Mario::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 				// jump on top >> kill Koopas and deflect a bit 
 				if (e->ny < 0)
 				{
-					if (koopas->GetState() != KOOPAS_STATE_DIE)
+					if (koopas->GetState() == KOOPAS_STATE_WALKING)
 					{
 						koopas->SetState(KOOPAS_STATE_DIE);
 						vy = -MARIO_JUMP_DEFLECT_SPEED;
 					}
+
+					else if (koopas->GetState() == KOOPAS_STATE_DIE)
+					{
+						koopas->SetState(KOOPAS_STATE_DIE_MOVING_RIGHT);
+						vy = -MARIO_JUMP_DEFLECT_SPEED;
+					}
 				}
+				//simple kick koopas
 				else if (e->nx != 0)
 				{
 					if (untouchable == 0)
@@ -140,6 +148,20 @@ void Mario::Update(DWORD dt, vector<LPGAMEOBJECT>* coObjects)
 							}
 							else
 								SetState(MARIO_STATE_DIE);
+						}
+					}
+					if (e->nx < 0)
+					{
+						if (koopas->GetState() == KOOPAS_STATE_DIE)
+						{
+							koopas->SetState(KOOPAS_STATE_DIE_MOVING_RIGHT);
+						}
+					}
+					else if (e->nx >= 0)
+					{
+						if (koopas->GetState() == KOOPAS_STATE_DIE)
+						{
+							koopas->SetState(KOOPAS_STATE_DIE_MOVING_LEFT);
 						}
 					}
 				}
@@ -202,7 +224,7 @@ void Mario::SetState(int state)
 	switch (state)
 	{
 	case MARIO_STATE_WALKING_RIGHT:
-		vx = 0.2f;
+		vx = MARIO_WALKING_SPEED;
 		nx = 1;
 		break;
 	case MARIO_STATE_WALKING_LEFT:

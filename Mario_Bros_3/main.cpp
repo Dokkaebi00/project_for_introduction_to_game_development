@@ -13,8 +13,8 @@
 
 #include "PlayScence.h"
 
-#define WINDOW_CLASS_NAME L"SampleWindow"
-#define MAIN_WINDOW_TITLE L"SAMPLE 05 - SCENCE MANAGER"
+#define WINDOW_CLASS_NAME L"Mario_Bros_3"
+#define MAIN_WINDOW_TITLE L"Mario_Bros_3"
 
 #define BACKGROUND_COLOR D3DCOLOR_XRGB(255, 255, 200)
 #define SCREEN_WIDTH 320

@@ -202,7 +202,7 @@ void Mario::SetState(int state)
 	switch (state)
 	{
 	case MARIO_STATE_WALKING_RIGHT:
-		vx = MARIO_WALKING_SPEED;
+		vx = 0.2f;
 		nx = 1;
 		break;
 	case MARIO_STATE_WALKING_LEFT:

@@ -55,6 +55,15 @@
     <Filter Include="Frame_Work\Scene">
       <UniqueIdentifier>{fe946776-9144-434b-94df-2dce75625b4b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Frame_Work\GameComponent">
+      <UniqueIdentifier>{ba2b8fe6-c916-48ab-ac95-6f92bec7ca26}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\GameComponent\GameComponent">
+      <UniqueIdentifier>{1fe30733-e9fa-419a-8eb3-21cddc8a675d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\GameComponent\GameComponentHandling">
+      <UniqueIdentifier>{e7a9504a-8e2b-4c85-9f04-650c193a8e99}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -69,6 +78,12 @@
     <ClInclude Include="Scene.h">
       <Filter>Frame_Work\Scene</Filter>
     </ClInclude>
+    <ClInclude Include="GameComponent.h">
+      <Filter>Frame_Work\GameComponent\GameComponent</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponentHandling.h">
+      <Filter>Frame_Work\GameComponent\GameComponentHandling</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Utils.cpp">
@@ -82,6 +97,12 @@
     </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>Frame_Work\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponent.cpp">
+      <Filter>Frame_Work\GameComponent\GameComponent</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponentHandling.cpp">
+      <Filter>Frame_Work\GameComponent\GameComponentHandling</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

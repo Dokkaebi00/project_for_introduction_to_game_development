@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Frame_Work">
+      <UniqueIdentifier>{e32199e3-828e-4e9b-b7e5-e69ab76db560}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\Debug">
+      <UniqueIdentifier>{e05fa4c3-78ac-4238-b93f-2898756bf589}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\Transfromation">
+      <UniqueIdentifier>{535c7aa8-b016-441f-a594-6b20ad9de7f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\PhysicsClass">
+      <UniqueIdentifier>{5b35e1aa-af52-4688-a454-c4e03467b80f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\Textures">
+      <UniqueIdentifier>{2ba0756e-93db-4961-8185-85ef63b92a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\Textures\TextureManager">
+      <UniqueIdentifier>{f5337371-e423-4e22-9009-f7da56e49ce5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\Textures\Sprite">
+      <UniqueIdentifier>{a24f9455-e333-42f9-bd10-792c4072f7d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\Textures\Animation">
+      <UniqueIdentifier>{885a7761-6ae8-47d3-9dd3-e18542f5e083}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\GameObject">
+      <UniqueIdentifier>{089558bc-a03a-48ba-b735-66644cfd1fbd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\Camera">
+      <UniqueIdentifier>{008c56ec-a720-4882-b9f4-84824f1b7cf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\Game">
+      <UniqueIdentifier>{388c796a-7a98-464a-ad6f-d02e2fc6eaa6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\Keyboard">
+      <UniqueIdentifier>{188e8248-7850-4f11-926c-8911cb129134}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\Keyboard\KeyEventHandler">
+      <UniqueIdentifier>{b0c2dc44-898e-46fc-ae37-d57f9bc1b8f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\Scene">
+      <UniqueIdentifier>{fe946776-9144-434b-94df-2dce75625b4b}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Utils.h">
+      <Filter>Frame_Work\Debug</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>Frame_Work\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyEventHandler.h">
+      <Filter>Frame_Work\Keyboard\KeyEventHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Frame_Work\Scene</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Utils.cpp">
+      <Filter>Frame_Work\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>Frame_Work\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyEventHandler.cpp">
+      <Filter>Frame_Work\Keyboard\KeyEventHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Frame_Work\Scene</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

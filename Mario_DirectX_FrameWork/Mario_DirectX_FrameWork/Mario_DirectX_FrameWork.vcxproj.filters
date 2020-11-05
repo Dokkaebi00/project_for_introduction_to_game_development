@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="FrameWork">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="FrameWork\Utils">
+      <UniqueIdentifier>{2beb3bcd-f923-4a32-9771-a401bab7f212}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\SingletonManager">
+      <UniqueIdentifier>{3d545940-9f6a-469d-a9fe-558f82378026}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\SingletonManager\Singleton">
+      <UniqueIdentifier>{24e72ad2-73d1-40d2-81f4-303da8f92b00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Game">
+      <UniqueIdentifier>{36d633c3-6685-4f1d-ba0b-7145de028a02}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Utils.h">
+      <Filter>FrameWork\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="instance.h">
+      <Filter>FrameWork\SingletonManager\Singleton</Filter>
+    </ClInclude>
+    <ClInclude Include="instanceManager.h">
+      <Filter>FrameWork\SingletonManager</Filter>
+    </ClInclude>
+    <ClInclude Include="Game.h">
+      <Filter>FrameWork\Game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Utils.cpp">
+      <Filter>FrameWork\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="instance.cpp">
+      <Filter>FrameWork\SingletonManager\Singleton</Filter>
+    </ClCompile>
+    <ClCompile Include="instanceManager.cpp">
+      <Filter>FrameWork\SingletonManager</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Game.cpp">
+      <Filter>FrameWork\Game</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

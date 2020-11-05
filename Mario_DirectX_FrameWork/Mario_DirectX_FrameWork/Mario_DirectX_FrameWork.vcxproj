@@ -145,8 +145,10 @@
     <ClInclude Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinystr.h" />
     <ClInclude Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinyxml.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameObject.h" />
     <ClInclude Include="instance.h" />
     <ClInclude Include="instanceManager.h" />
+    <ClInclude Include="Textures.h" />
     <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
@@ -155,9 +157,11 @@
     <ClCompile Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinyxmlerror.cpp" />
     <ClCompile Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinyxmlparser.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="instance.cpp" />
     <ClCompile Include="instanceManager.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="Textures.cpp" />
     <ClCompile Include="Utils.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

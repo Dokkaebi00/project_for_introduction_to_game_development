@@ -64,6 +64,15 @@
     <Filter Include="Frame_Work\GameComponent\GameComponentHandling">
       <UniqueIdentifier>{e7a9504a-8e2b-4c85-9f04-650c193a8e99}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Frame_Work\PhysicsClass\Collision">
+      <UniqueIdentifier>{4e9c5256-6ae0-4bef-8169-efff4095a680}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\PhysicsClass\PhysicCollision">
+      <UniqueIdentifier>{94b171c3-5bfc-4239-a4aa-8fcbc57ed963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Frame_Work\Define">
+      <UniqueIdentifier>{e04a673f-faa3-489f-871d-f9e4cbbcfc2f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -84,6 +93,18 @@
     <ClInclude Include="GameComponentHandling.h">
       <Filter>Frame_Work\GameComponent\GameComponentHandling</Filter>
     </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Frame_Work\PhysicsClass\Collision</Filter>
+    </ClInclude>
+    <ClInclude Include="PhysicCollision.h">
+      <Filter>Frame_Work\PhysicsClass\PhysicCollision</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>Frame_Work\Define</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Utils.cpp">
@@ -103,6 +124,18 @@
     </ClCompile>
     <ClCompile Include="GameComponentHandling.cpp">
       <Filter>Frame_Work\GameComponent\GameComponentHandling</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Frame_Work\PhysicsClass\Collision</Filter>
+    </ClCompile>
+    <ClCompile Include="PhysicCollision.cpp">
+      <Filter>Frame_Work\PhysicsClass\PhysicCollision</Filter>
+    </ClCompile>
+    <ClCompile Include="Define.cpp">
+      <Filter>Frame_Work\Define</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -30,6 +30,8 @@ class Game
 	LPDIRECT3DSURFACE9 backBuffer = NULL;
 	LPD3DXSPRITE spriteHandler = NULL;
 
+	unordered_map<string, unordered_map<string, string>> gameSource;
+
 public:
 	void InitDirect3DX(HWND hWnd);
 
@@ -50,7 +52,7 @@ public:
 	LPD3DXSPRITE GetSpriteHandler();
 
 	static float GetTimeScale();
-	static void SetTimeScale();
+	static void SetTimeScale(float time);
 
 	float GetDeltatTime();
 

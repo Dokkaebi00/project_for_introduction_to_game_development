@@ -164,16 +164,17 @@ LPD3DXSPRITE Game::GetSpriteHandler()
 
 float Game::GetTimeScale()
 {
-	return 0.0f;
+	return timeScale;
 }
 
-void Game::SetTimeScale()
+void Game::SetTimeScale(float time)
 {
+	timeScale = time;
 }
 
 float Game::GetDeltatTime()
 {
-	return 0.0f;
+	return dt;
 }
 
 Game* Game::GetInstance()

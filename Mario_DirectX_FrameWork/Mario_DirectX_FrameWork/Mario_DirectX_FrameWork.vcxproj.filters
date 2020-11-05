@@ -25,6 +25,15 @@
     <Filter Include="FrameWork\Game">
       <UniqueIdentifier>{36d633c3-6685-4f1d-ba0b-7145de028a02}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\GameObject">
+      <UniqueIdentifier>{b36dda36-4669-4ad6-899d-1dfbe3ccae74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\TextureManager">
+      <UniqueIdentifier>{13bfa535-18c2-42d2-9b1b-c998fbccf93d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\TinyXML">
+      <UniqueIdentifier>{1a765e74-8bbb-490f-b8a9-b6542453d830}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -38,6 +47,12 @@
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>FrameWork\Game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinystr.h">
+      <Filter>FrameWork\TinyXML</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinyxml.h">
+      <Filter>FrameWork\TinyXML</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -55,6 +70,18 @@
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>FrameWork\Game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinystr.cpp">
+      <Filter>FrameWork\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinyxml.cpp">
+      <Filter>FrameWork\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinyxmlerror.cpp">
+      <Filter>FrameWork\TinyXML</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinyxmlparser.cpp">
+      <Filter>FrameWork\TinyXML</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

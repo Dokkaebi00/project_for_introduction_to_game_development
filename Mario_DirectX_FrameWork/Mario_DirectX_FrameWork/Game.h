@@ -51,7 +51,7 @@ class Game
 	//each resource have alot of sub resource and we need to use in a map
 	//for example, at class Textures we need a map to store all the texture
 	//for easy to process and handle, we use and map which stores map to handle the resource
-	unordered_map<string, unordered_map<string, string>> resource;
+	unordered_map<string, unordered_map<string, string>> resources;
 
 public:
 	void InitDirect3DX(HWND hWnd);
@@ -62,7 +62,6 @@ public:
 
 	void Draw(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, int left, int top, int right, int bottom, int alpha = 255);
 	void Draw(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, RECT r, int alpha = 255);
-
 
 
 	void GameInit();
@@ -83,6 +82,9 @@ public:
 	static void SetTimeScale(float time);
 
 	float GetDeltatTime();
+
+	void ReadRootXMLFile();
+	string GetPath(string name, string id);
 
 	static Game* GetInstance();
 	~Game();

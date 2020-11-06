@@ -21,5 +21,7 @@ public:
 	
 	void Add(string id, LPCWSTR texturePath, D3DCOLOR transparentColor);
 	LPDIRECT3DTEXTURE9 GetTexture(string id);
+
+	void LoadTexutres();
 };
 

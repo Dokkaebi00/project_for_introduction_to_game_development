@@ -62,6 +62,8 @@ void Textures::Add(string id, LPCWSTR texturePath, D3DCOLOR transparentColor)
 		return;
 	}
 
+
+	//textures.insert(make_pair(id, texture));
 	textures[id] = texture;
 
 	DebugOut(L"[INFO] Texture loaded Ok: id=%d, %s\n", id, texturePath);
@@ -70,4 +72,10 @@ void Textures::Add(string id, LPCWSTR texturePath, D3DCOLOR transparentColor)
 LPDIRECT3DTEXTURE9 Textures::GetTexture(string id)
 {
 	return textures.at(id);
+}
+
+void Textures::LoadTexutres()
+{
+	Game* game = Game::GetInstance();
+
 }

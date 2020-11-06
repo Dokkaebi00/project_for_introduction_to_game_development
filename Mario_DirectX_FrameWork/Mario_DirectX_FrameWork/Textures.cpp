@@ -66,7 +66,11 @@ void Textures::Add(string id, LPCWSTR texturePath, D3DCOLOR transparentColor)
 	//textures.insert(make_pair(id, texture));
 	textures[id] = texture;
 
-	DebugOut(L"[INFO] Texture loaded Ok: id=%d, %s\n", id, texturePath);
+	//DebugOut(L"[INFO] Texture loaded Ok: id=%s\n", id);
+	OutputDebugStringW(ToLPCWSTR("[INFO] Texture ID: " + id + "\n"));
+	
+	DebugOut(texturePath);
+	DebugOut(L"\n");
 }
 
 LPDIRECT3DTEXTURE9 Textures::GetTexture(string id)
@@ -74,8 +78,14 @@ LPDIRECT3DTEXTURE9 Textures::GetTexture(string id)
 	return textures.at(id);
 }
 
-void Textures::LoadTexutres()
+void Textures::LoadTextures()
 {
-	Game* game = Game::GetInstance();
+	Add(MARIO_TEXTURE, L"resources\\Textures\\mario.png", D3DCOLOR_XRGB(255, 255, 255));
+	Add(BBOX_TEXTURE, L"resources\\Textures\\bbox.png", D3DCOLOR_XRGB(255, 255, 255));
+	Add(ENEMY_TEXTURE, L"resources\\Textures\\enemy.png", D3DCOLOR_XRGB(255, 255, 255));
+	Add(MISC_TEXTURE, L"resources\\Textures\\misc.png", D3DCOLOR_XRGB(255, 255, 255));
+	Add(FIREBALL_TEXTURE, L"resources\\Textures\\fireball.png", D3DCOLOR_XRGB(255, 255, 255));
+	Add(UI_TEXTURE, L"resources\\Textures\\UI.png", D3DCOLOR_XRGB(255, 255, 255));
+	Add(INTRO_TEXTURE, L"resources\\Textures\\intro.png", D3DCOLOR_XRGB(255, 255, 255));
 
 }

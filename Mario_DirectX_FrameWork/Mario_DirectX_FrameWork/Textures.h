@@ -6,6 +6,7 @@
 
 #include "Game.h"
 #include "Utils.h"
+#include "Define.h"
 
 using namespace std;
 
@@ -22,6 +23,6 @@ public:
 	void Add(string id, LPCWSTR texturePath, D3DCOLOR transparentColor);
 	LPDIRECT3DTEXTURE9 GetTexture(string id);
 
-	void LoadTexutres();
+	void LoadTextures();
 };
 

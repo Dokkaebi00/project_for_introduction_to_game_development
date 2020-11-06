@@ -46,6 +46,9 @@
     <Filter Include="FrameWork\KeyEventHandler\KeyBoardProcessing">
       <UniqueIdentifier>{bc89ffd4-ad02-4124-b906-aa2c7a30e63b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\Define">
+      <UniqueIdentifier>{b0b5b93a-d717-4333-949d-c5ec8d199959}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -72,9 +75,6 @@
     <ClInclude Include="GameObject.h">
       <Filter>FrameWork\GameObject</Filter>
     </ClInclude>
-    <ClInclude Include="Define.h">
-      <Filter>FrameWork</Filter>
-    </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>FrameWork\TextureManager\Sprite</Filter>
     </ClInclude>
@@ -83,6 +83,9 @@
     </ClInclude>
     <ClInclude Include="KeyboardProcessing.h">
       <Filter>FrameWork\KeyEventHandler\KeyBoardProcessing</Filter>
+    </ClInclude>
+    <ClInclude Include="Define.h">
+      <Filter>Source Files\Define</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -119,9 +122,6 @@
     <ClCompile Include="GameObject.cpp">
       <Filter>FrameWork\GameObject</Filter>
     </ClCompile>
-    <ClCompile Include="Define.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Sprite.cpp">
       <Filter>FrameWork\TextureManager\Sprite</Filter>
     </ClCompile>
@@ -130,6 +130,9 @@
     </ClCompile>
     <ClCompile Include="KeyboardProcessing.cpp">
       <Filter>FrameWork\KeyEventHandler\KeyBoardProcessing</Filter>
+    </ClCompile>
+    <ClCompile Include="Define.cpp">
+      <Filter>Source Files\Define</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

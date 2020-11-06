@@ -85,23 +85,6 @@ LPDIRECT3DTEXTURE9 Game::LoadTexture(LPCWSTR texturePath)
 	return texture;
 }
 
-void Game::Draw(float x, float y, LPDIRECT3DTEXTURE9 texture, int left, int top, int right, int bottom, int alpha)
-{
-	D3DXVECTOR3 p(x, y, 0);
-	RECT rect;
-	rect.left = left;
-	rect.top = top;
-	rect.right = right;
-	rect.bottom = bottom;
-	spriteHandler->Draw(texture, &rect, NULL, &p, D3DCOLOR_ARGB(alpha, 255, 255, 255));
-}
-
-void Game::Draw(float x, float y, LPDIRECT3DTEXTURE9 texture, RECT r, int alpha)
-{
-	D3DXVECTOR3 p(x, y, 0);
-	spriteHandler->Draw(texture, &r, NULL, &p, D3DCOLOR_ARGB(alpha, 255, 255, 255));
-}
-
 void Game::Draw(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, int left, int top, int right, int bottom, int alpha)
 {
 	RECT r;
@@ -124,8 +107,154 @@ void Game::Draw(float x, float y, float anchorPointX, float anchorPointY, LPDIRE
 	spriteHandler->Draw(texture, &r, &anchorPoint, &p, D3DCOLOR_ARGB(alpha, 255, 255, 255));
 }
 
+void Game::FlipDrawX(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, int left, int top, int right, int bottom, int alpha)
+{
+	D3DXVECTOR3 anchorPoint(anchorPointX, anchorPointY, 0);
+
+	D3DXVECTOR2 flipVector(-1, 1);
+
+	D3DXVECTOR3 p(x, y, 0);
+
+	D3DXVECTOR2 position = D3DXVECTOR2(x, y);
+
+	D3DXMATRIX beforeTransform;
+
+	D3DXMATRIX transFormMatrix;
+
+	RECT r;
+	r.left = left;
+	r.top = top;
+	r.right = right;
+	r.bottom = bottom;
+
+	spriteHandler->GetTransform(&beforeTransform);
+
+	D3DXMatrixTransformation2D(
+		&transFormMatrix,
+		&position,
+		0.0f,
+		&flipVector,
+		NULL,
+		0.0f,
+		NULL
+	);
+
+	spriteHandler->SetTransform(&transFormMatrix);
+
+	spriteHandler->Draw(texture, &r, &anchorPoint, &p, D3DCOLOR_ARGB(alpha, 255, 255, 255));
+
+	spriteHandler->SetTransform(&beforeTransform);
+}
+
+void Game::FlipDrawX(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, RECT r, int alpha)
+{
+	D3DXVECTOR3 anchorPoint(anchorPointX, anchorPointY, 0);
+
+	D3DXVECTOR2 flipVector(-1, 1);
+
+	D3DXVECTOR3 p(x, y, 0);
+
+	D3DXVECTOR2 position = D3DXVECTOR2(x, y);
+
+	D3DXMATRIX beforeTransform;
+
+	D3DXMATRIX transFormMatrix;
+
+	spriteHandler->GetTransform(&beforeTransform);
+
+	D3DXMatrixTransformation2D(
+		&transFormMatrix,
+		&position,
+		0.0f,
+		&flipVector,
+		NULL,
+		0.0f,
+		NULL
+	);
+
+	spriteHandler->SetTransform(&transFormMatrix);
+
+	spriteHandler->Draw(texture, &r, &anchorPoint, &p, D3DCOLOR_ARGB(alpha, 255, 255, 255));
+
+	spriteHandler->SetTransform(&beforeTransform);
+}
+
+void Game::FlipDrawY(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, int left, int top, int right, int bottom, int alpha)
+{
+	D3DXVECTOR3 anchorPoint(anchorPointX, anchorPointY, 0);
+
+	D3DXVECTOR2 flipVector(1, -1);
+
+	D3DXVECTOR3 p(x, y, 0);
+
+	D3DXVECTOR2 position = D3DXVECTOR2(x, y);
+
+	D3DXMATRIX beforeTransform;
+
+	D3DXMATRIX transFormMatrix;
+
+	RECT r;
+	r.left = left;
+	r.top = top;
+	r.right = right;
+	r.bottom = bottom;
+
+	spriteHandler->GetTransform(&beforeTransform);
+
+	D3DXMatrixTransformation2D(
+		&transFormMatrix,
+		&position,
+		0.0f,
+		&flipVector,
+		NULL,
+		0.0f,
+		NULL
+	);
+
+	spriteHandler->SetTransform(&transFormMatrix);
+
+	spriteHandler->Draw(texture, &r, &anchorPoint, &p, D3DCOLOR_ARGB(alpha, 255, 255, 255));
+
+	spriteHandler->SetTransform(&beforeTransform);
+}
+
+void Game::FlipDrawY(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, RECT r, int alpha)
+{
+	D3DXVECTOR3 anchorPoint(anchorPointX, anchorPointY, 0);
+
+	D3DXVECTOR2 flipVector(1, -1);
+
+	D3DXVECTOR3 p(x, y, 0);
+
+	D3DXVECTOR2 position = D3DXVECTOR2(x, y);
+
+	D3DXMATRIX beforeTransform;
+
+	D3DXMATRIX transFormMatrix;
+
+	spriteHandler->GetTransform(&beforeTransform);
+
+	D3DXMatrixTransformation2D(
+		&transFormMatrix,
+		&position,
+		0.0f,
+		&flipVector,
+		NULL,
+		0.0f,
+		NULL
+	);
+
+	spriteHandler->SetTransform(&transFormMatrix);
+
+	spriteHandler->Draw(texture, &r, &anchorPoint, &p, D3DCOLOR_ARGB(alpha, 255, 255, 255));
+
+	spriteHandler->SetTransform(&beforeTransform);
+}
+
 void Game::GameInit()
 {
+	OutputDebugString(L"[INFO] Load Resource");
+	Textures::GetInstance()->LoadTextures();
 }
 
 void Game::GameLoadResources()
@@ -196,6 +325,7 @@ void Game::GameLoop()
 
 void Game::GameEnd()
 {
+	Textures::GetInstance()->~Textures();
 }
 
 LPDIRECT3DDEVICE9 Game::GetDirect3DDevice()

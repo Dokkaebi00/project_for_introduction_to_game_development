@@ -28,6 +28,12 @@ struct Transformation
 	}
 };
 
+class AnimationFrame;
+typedef AnimationFrame* LPANIMATION_FRAME;
+
+class GameObject;
+typedef GameObject* LPGAMEOBJECT;
+
 class Animation
 {
 	string id;
@@ -84,4 +90,4 @@ public:
 	LPGAMEOBJECT GetGameObject();
 
 };
-
+typedef Animation* LPANIMATION;

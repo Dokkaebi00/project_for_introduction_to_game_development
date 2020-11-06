@@ -58,6 +58,9 @@
     <Filter Include="FrameWork\TextureManager\Animation">
       <UniqueIdentifier>{d3ab8036-603c-4a7a-a829-225c57ba46b6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\TextureManager\Animations">
+      <UniqueIdentifier>{60028141-e56d-4b2d-becb-fba2cc211c9a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -103,7 +106,10 @@
       <Filter>FrameWork\TextureManager\AnimationFrame</Filter>
     </ClInclude>
     <ClInclude Include="Animation.h">
-      <Filter>FrameWork</Filter>
+      <Filter>FrameWork\TextureManager\Animation</Filter>
+    </ClInclude>
+    <ClInclude Include="Animations.h">
+      <Filter>FrameWork\TextureManager\Animations</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -159,7 +165,10 @@
       <Filter>FrameWork\TextureManager\AnimationFrame</Filter>
     </ClCompile>
     <ClCompile Include="Animation.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>FrameWork\TextureManager\Animation</Filter>
+    </ClCompile>
+    <ClCompile Include="Animations.cpp">
+      <Filter>FrameWork\TextureManager\Animations</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

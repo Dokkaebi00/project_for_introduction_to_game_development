@@ -10,6 +10,7 @@
 #include "Utils.h"
 #include "Textures.h"
 #include "Sprites.h"
+#include "Animations.h"
 #include "tinyxml.h"
 
 #define MAX_FRAME_RATE 120

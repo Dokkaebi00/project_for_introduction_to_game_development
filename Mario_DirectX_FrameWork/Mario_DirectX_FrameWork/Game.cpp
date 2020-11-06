@@ -256,6 +256,8 @@ void Game::GameInit()
 	OutputDebugString(L"[INFO] Load Resource");
 	Textures::GetInstance()->LoadTextures();
 	Sprites::GetInstance()->LoadSprites();
+	Animations::GetInstance()->LoadAnimations();
+	
 }
 
 void Game::GameLoadResources()
@@ -331,6 +333,8 @@ void Game::GameEnd()
 {
 	Textures::GetInstance()->~Textures();
 	Sprites::GetInstance()->~Sprites();
+	Animations::GetInstance()->~Animations();
+
 }
 
 LPDIRECT3DDEVICE9 Game::GetDirect3DDevice()

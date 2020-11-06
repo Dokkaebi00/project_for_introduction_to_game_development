@@ -3,7 +3,8 @@
 #include<Windows.h>
 #include"Sprite.h"
 
-
+class Sprite;
+typedef Sprite* LPSPRITE;
 
 class AnimationFrame
 {

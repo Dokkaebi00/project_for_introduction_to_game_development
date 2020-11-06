@@ -95,7 +95,8 @@ int Sprites::CreateSprite(string textureName, string filePath)
 
 LPSPRITE Sprites::Get(string id)
 {
-	return sprites.at(id);
+	//return sprites.at(id);
+	return sprites[id];
 }
 
 Sprites* Sprites::GetInstance()

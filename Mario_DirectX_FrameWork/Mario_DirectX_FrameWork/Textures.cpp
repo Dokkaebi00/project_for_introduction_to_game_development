@@ -16,7 +16,10 @@ Textures::~Textures()
 	for (auto t : textures)
 	{
 		LPDIRECT3DTEXTURE9 tex = t.second;
-		if (tex != NULL) tex->Release();
+		if (tex != NULL)
+		{
+			tex->Release();
+		}
 	}
 	textures.clear();
 }

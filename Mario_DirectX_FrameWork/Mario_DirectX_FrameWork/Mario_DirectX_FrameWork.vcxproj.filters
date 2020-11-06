@@ -37,6 +37,9 @@
     <Filter Include="FrameWork\TextureManager\Textures">
       <UniqueIdentifier>{291a10b5-9442-4e81-9bbb-15453f94950c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\TextureManager\Sprite">
+      <UniqueIdentifier>{63544388-7f76-4d88-b4fa-37571f3a5471}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -57,11 +60,11 @@
     <ClInclude Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinyxml.h">
       <Filter>FrameWork\TinyXML</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>FrameWork</Filter>
-    </ClInclude>
     <ClInclude Include="Textures.h">
-      <Filter>FrameWork</Filter>
+      <Filter>FrameWork\TextureManager\Textures</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>FrameWork\GameObject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -92,11 +95,11 @@
     <ClCompile Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinyxmlparser.cpp">
       <Filter>FrameWork\TinyXML</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Textures.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>FrameWork\TextureManager\Textures</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>FrameWork\GameObject</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

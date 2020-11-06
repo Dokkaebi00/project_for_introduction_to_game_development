@@ -46,18 +46,43 @@ void Game::InitDirect3DX(HWND hWnd)
 
 	D3DXCreateSprite(d3ddv, &spriteHandler);
 
-	if (!spriteHandler)
-	{
-		MessageBox(hWnd, L"Creating sprite handler failed!", L"Error", MB_OK | MB_ICONERROR);
-		return;
-	}
-
 	OutputDebugString(L"[INFO] Init Direct3DX Done \n");
 }
 
 LPDIRECT3DTEXTURE9 Game::LoadTexture(LPCWSTR texturePath)
 {
-	return LPDIRECT3DTEXTURE9();
+	D3DXIMAGE_INFO info;
+	LPDIRECT3DTEXTURE9 texture;
+
+	HRESULT result = D3DXGetImageInfoFromFile(texturePath, &info);
+
+	if (result != D3D_OK)
+	{
+		return NULL;
+	}
+
+	result = D3DXCreateTextureFromFileEx(
+		d3ddv, 
+		texturePath, 
+		info.Width, 
+		info.Height,
+		1, 
+		D3DUSAGE_DYNAMIC, 
+		D3DFMT_UNKNOWN, 
+		D3DPOOL_DEFAULT,
+		D3DX_DEFAULT, 
+		D3DX_DEFAULT, 
+		D3DCOLOR_XRGB(255, 0, 255),
+		&info, 
+		NULL, 
+		&texture
+	);
+
+	if (result != D3D_OK)
+	{
+		return NULL;
+	}
+	return texture;
 }
 
 void Game::Draw(float x, float y, LPDIRECT3DTEXTURE9 texture, int left, int top, int right, int bottom, int alpha)
@@ -77,7 +102,33 @@ void Game::Draw(float x, float y, LPDIRECT3DTEXTURE9 texture, RECT r, int alpha)
 	spriteHandler->Draw(texture, &r, NULL, &p, D3DCOLOR_ARGB(alpha, 255, 255, 255));
 }
 
+void Game::Draw(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, int left, int top, int right, int bottom, int alpha)
+{
+	RECT r;
+	r.left = left;
+	r.top = top;
+	r.right = right;
+	r.bottom = bottom;
+
+	D3DXVECTOR3 p(x, y, 0);
+	D3DXVECTOR3 anchorPoint(anchorPointX, anchorPointY, 0);
+
+	spriteHandler->Draw(texture, &r, &anchorPoint, &p, D3DCOLOR_ARGB(alpha, 255, 255, 255));
+}
+
+void Game::Draw(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, RECT r, int alpha)
+{
+	D3DXVECTOR3 p(x, y, 0);
+	D3DXVECTOR3 anchorPoint(anchorPointX, anchorPointY, 0);
+
+	spriteHandler->Draw(texture, &r, &anchorPoint, &p, D3DCOLOR_ARGB(alpha, 255, 255, 255));
+}
+
 void Game::GameInit()
+{
+}
+
+void Game::GameLoadResources()
 {
 }
 
@@ -188,6 +239,8 @@ Game* Game::GetInstance()
 
 Game::~Game()
 {
+	Textures::GetInstance()->~Textures();
+
 	if (spriteHandler != NULL) spriteHandler->Release();
 	if (backBuffer != NULL) backBuffer->Release();
 	if (d3ddv != NULL) d3ddv->Release();

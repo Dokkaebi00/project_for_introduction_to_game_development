@@ -366,7 +366,7 @@ void Game::ReadRootXMLFile()
 
 	if (file.LoadFile() == false)
 	{
-		OutputDebugString(L"[Error] can not read root file!!");
+		OutputDebugString(L"[Error] can not read root file");
 	}
 
 	TiXmlElement* root = file.RootElement();

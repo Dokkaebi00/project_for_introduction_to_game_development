@@ -49,6 +49,9 @@
     <Filter Include="Source Files\Define">
       <UniqueIdentifier>{b0b5b93a-d717-4333-949d-c5ec8d199959}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\TextureManager\Sprites">
+      <UniqueIdentifier>{95749b8a-9b6e-4156-9bfc-6d2c4df5a503}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -86,6 +89,9 @@
     </ClInclude>
     <ClInclude Include="Define.h">
       <Filter>Source Files\Define</Filter>
+    </ClInclude>
+    <ClInclude Include="Sprites.h">
+      <Filter>FrameWork\TextureManager\Sprites</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +139,9 @@
     </ClCompile>
     <ClCompile Include="Define.cpp">
       <Filter>Source Files\Define</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprites.cpp">
+      <Filter>FrameWork\TextureManager\Sprites</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -37,9 +37,6 @@
     <Filter Include="FrameWork\TextureManager\Textures">
       <UniqueIdentifier>{291a10b5-9442-4e81-9bbb-15453f94950c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\TextureManager\Sprite">
-      <UniqueIdentifier>{63544388-7f76-4d88-b4fa-37571f3a5471}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FrameWork\KeyEventHandler">
       <UniqueIdentifier>{43f8c65a-dfea-4f49-b610-9d828cbf37b5}</UniqueIdentifier>
     </Filter>
@@ -51,6 +48,15 @@
     </Filter>
     <Filter Include="FrameWork\TextureManager\Sprites">
       <UniqueIdentifier>{95749b8a-9b6e-4156-9bfc-6d2c4df5a503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\TextureManager\Sprites\Sprite">
+      <UniqueIdentifier>{63544388-7f76-4d88-b4fa-37571f3a5471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\TextureManager\AnimationFrame">
+      <UniqueIdentifier>{ada22b60-2b33-42b8-9c5a-e0ba357cbd2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\TextureManager\Animation">
+      <UniqueIdentifier>{d3ab8036-603c-4a7a-a829-225c57ba46b6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -79,7 +85,7 @@
       <Filter>FrameWork\GameObject</Filter>
     </ClInclude>
     <ClInclude Include="Sprite.h">
-      <Filter>FrameWork\TextureManager\Sprite</Filter>
+      <Filter>FrameWork\TextureManager\Sprites\Sprite</Filter>
     </ClInclude>
     <ClInclude Include="KeyEventHandler.h">
       <Filter>FrameWork\KeyEventHandler</Filter>
@@ -92,6 +98,12 @@
     </ClInclude>
     <ClInclude Include="Sprites.h">
       <Filter>FrameWork\TextureManager\Sprites</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationFrame.h">
+      <Filter>FrameWork\TextureManager\AnimationFrame</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
+      <Filter>FrameWork</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -129,7 +141,7 @@
       <Filter>FrameWork\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
-      <Filter>FrameWork\TextureManager\Sprite</Filter>
+      <Filter>FrameWork\TextureManager\Sprites\Sprite</Filter>
     </ClCompile>
     <ClCompile Include="KeyEventHandler.cpp">
       <Filter>FrameWork\KeyEventHandler</Filter>
@@ -142,6 +154,12 @@
     </ClCompile>
     <ClCompile Include="Sprites.cpp">
       <Filter>FrameWork\TextureManager\Sprites</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationFrame.cpp">
+      <Filter>FrameWork\TextureManager\AnimationFrame</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

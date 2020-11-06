@@ -9,5 +9,16 @@
 
 class GameObject
 {
-};
+protected:
+	int id;
+	DWORD dt;
 
+public:
+	GameObject();
+
+	virtual void Init();
+	
+	virtual void Update();
+	virtual void Render();
+};
+typedef GameObject* LPGAMEOBJECT;

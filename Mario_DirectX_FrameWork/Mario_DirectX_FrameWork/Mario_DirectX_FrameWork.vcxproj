@@ -144,6 +144,8 @@
   <ItemGroup>
     <ClInclude Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinystr.h" />
     <ClInclude Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinyxml.h" />
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="AnimationFrame.h" />
     <ClInclude Include="Define.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameObject.h" />
@@ -161,6 +163,8 @@
     <ClCompile Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinyxml.cpp" />
     <ClCompile Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinyxmlerror.cpp" />
     <ClCompile Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinyxmlparser.cpp" />
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="AnimationFrame.cpp" />
     <ClCompile Include="Define.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameObject.cpp" />

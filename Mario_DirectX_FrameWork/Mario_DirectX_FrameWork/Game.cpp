@@ -254,10 +254,15 @@ void Game::FlipDrawY(float x, float y, float anchorPointX, float anchorPointY, L
 void Game::GameInit()
 {
 	OutputDebugString(L"[INFO] Load Resource");
+
 	Textures::GetInstance()->LoadTextures();
 	Sprites::GetInstance()->LoadSprites();
 	Animations::GetInstance()->LoadAnimations();
-	
+
+	GameKeyEventHandler* keyEventHandler = new GameKeyEventHandler();
+	KeyboardProcessing* keyboardProcessing = KeyboardProcessing::GetInstance();
+	keyboardProcessing->SetHWND(hWnd);
+	keyboardProcessing->InitKeyboard(keyEventHandler);
 }
 
 void Game::GameLoadResources()
@@ -334,7 +339,7 @@ void Game::GameEnd()
 	Textures::GetInstance()->~Textures();
 	Sprites::GetInstance()->~Sprites();
 	Animations::GetInstance()->~Animations();
-
+	KeyboardProcessing::GetInstance()->~KeyboardProcessing();
 }
 
 LPDIRECT3DDEVICE9 Game::GetDirect3DDevice()

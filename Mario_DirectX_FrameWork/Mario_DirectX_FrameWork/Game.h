@@ -12,6 +12,9 @@
 #include "Sprites.h"
 #include "Animations.h"
 #include "tinyxml.h"
+#include "KeyboardProcessing.h"
+#include "GameKeyEventHandler.h"
+#include "KeyEventHandler.h"
 
 #define MAX_FRAME_RATE 120
 #define WINDOW_WIDTH 640

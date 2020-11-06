@@ -61,6 +61,9 @@
     <Filter Include="FrameWork\TextureManager\Animations">
       <UniqueIdentifier>{60028141-e56d-4b2d-becb-fba2cc211c9a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\KeyEventHandler\GameKeyEventHandler">
+      <UniqueIdentifier>{a59d1e29-2616-4aa7-8e7d-6d37e32006f5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -110,6 +113,9 @@
     </ClInclude>
     <ClInclude Include="Animations.h">
       <Filter>FrameWork\TextureManager\Animations</Filter>
+    </ClInclude>
+    <ClInclude Include="GameKeyEventHandler.h">
+      <Filter>FrameWork\KeyEventHandler\GameKeyEventHandler</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -169,6 +175,9 @@
     </ClCompile>
     <ClCompile Include="Animations.cpp">
       <Filter>FrameWork\TextureManager\Animations</Filter>
+    </ClCompile>
+    <ClCompile Include="GameKeyEventHandler.cpp">
+      <Filter>FrameWork\KeyEventHandler\GameKeyEventHandler</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

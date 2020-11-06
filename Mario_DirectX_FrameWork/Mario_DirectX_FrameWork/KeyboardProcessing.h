@@ -27,6 +27,16 @@ private:
 	LPKEYEVENTHANDLER keyHandler;
 public:
 	static KeyboardProcessing* GetInstance();
+
+	void InitKeyboard(LPKEYEVENTHANDLER handler);
+	
+	void ProcessKeyboard();
+
+	void SetHWND(HWND hWnd);
+
+	int GetKeyDown(int keycode);
+	int GetKeyUp(int keycode);
+
 	~KeyboardProcessing();
 	
 };

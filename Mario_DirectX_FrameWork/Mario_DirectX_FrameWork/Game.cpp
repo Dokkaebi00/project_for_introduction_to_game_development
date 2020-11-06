@@ -276,6 +276,9 @@ void Game::Render()
 		/*if (activeScene != nullptr)
 			activeScene->Render();
 		*/
+		//LPDIRECT3DTEXTURE9 ex = Textures::GetInstance()->GetTexture("tex-fire-ball");
+		LPSPRITE ex = Sprites::GetInstance()->Get("spr-small-mario-walk-1");
+		ex->Draw(50.0f, 50.0f, D3DXVECTOR2(1, 1), 1);
 		spriteHandler->End();
 
 		d3ddv->EndScene();

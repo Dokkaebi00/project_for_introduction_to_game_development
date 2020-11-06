@@ -45,13 +45,17 @@ int Sprites::CreateSprite(string textureName, string filePath)
 		)
 	{
 		string textureID = texture->Attribute("id");
+		if (textureID != textureName)
+		{
+			continue;
+		}
 		OutputDebugString(ToLPCWSTR(textureID));
 		OutputDebugString(L"\n");
 		LPDIRECT3DTEXTURE9 tex = Textures::GetInstance()->GetTexture(textureID);
 
 		if (tex != NULL)
 		{
-			OutputDebugString(L"Create Sprite for Texture file: \n");
+			OutputDebugString(L"Create Sprite from Texture file: \n");
 			OutputDebugString(ToLPCWSTR(filePath));
 			OutputDebugString(L"\n");
 		}

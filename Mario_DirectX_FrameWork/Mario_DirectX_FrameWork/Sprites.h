@@ -5,6 +5,15 @@
 #include<unordered_map>
 
 #include"Sprite.h"
+#include "tinyxml.h"
+
+using namespace std;
+
+class Sprites;
+typedef Sprites* LPSprites;
+
+class Sprite;
+typedef Sprite* LPSPRITE;
 
 class Sprites
 {
@@ -16,13 +25,13 @@ public:
 	
 	Sprites();
 	
-	void LoadResources();
+	void LoadSprites();
 	
 	void Add(string id, int left, int top, int width, int height, LPDIRECT3DTEXTURE9 texture, int xPivot);
 	
-	int LoadSprite(string textureName, LPCWSTR filePath);
+	int CreateSprite(string textureName, string filePath);
 	
-	LPSPRITE GetSprite(string id);
+	LPSPRITE Get(string id);
 
 	static Sprites* GetInstance();
 	

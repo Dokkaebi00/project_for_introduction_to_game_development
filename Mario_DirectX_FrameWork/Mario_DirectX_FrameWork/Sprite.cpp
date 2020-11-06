@@ -5,12 +5,14 @@
 Sprite::Sprite(string id, int xPivot, int left, int top, int width, int height, LPDIRECT3DTEXTURE9 texture)
 {
 	this->id = id;
+
 	this->left = left;
 	this->top = top;
 	this->width = width;
 	this->height = height;
 	this->right = this->left + this->width;
 	this->bottom = this->top + this->height;
+
 	this->texture = texture;
 
 	if (xPivot == -3)

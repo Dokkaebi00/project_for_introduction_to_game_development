@@ -67,6 +67,12 @@
     <Filter Include="FrameWork\Scene">
       <UniqueIdentifier>{8c19313e-28e5-48c3-854f-e43c8a27cb78}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\Camera">
+      <UniqueIdentifier>{2c8654be-9bf8-4361-bf53-7c431de6bdf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\FloatRect">
+      <UniqueIdentifier>{2d0266d6-494a-4b4b-a182-ecf58c55b61c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -119,6 +125,15 @@
     </ClInclude>
     <ClInclude Include="GameKeyEventHandler.h">
       <Filter>FrameWork\KeyEventHandler\GameKeyEventHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>FrameWork\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="Camera.h">
+      <Filter>FrameWork\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="FloatRect.h">
+      <Filter>FrameWork\FloatRect</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -181,6 +196,15 @@
     </ClCompile>
     <ClCompile Include="GameKeyEventHandler.cpp">
       <Filter>FrameWork\KeyEventHandler\GameKeyEventHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>FrameWork\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="Camera.cpp">
+      <Filter>FrameWork\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="FloatRect.cpp">
+      <Filter>FrameWork\FloatRect</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

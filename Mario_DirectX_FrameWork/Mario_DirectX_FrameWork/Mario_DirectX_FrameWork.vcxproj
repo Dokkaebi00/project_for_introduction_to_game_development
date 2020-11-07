@@ -147,7 +147,9 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="AnimationFrame.h" />
     <ClInclude Include="Animations.h" />
+    <ClInclude Include="Camera.h" />
     <ClInclude Include="Define.h" />
+    <ClInclude Include="FloatRect.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameKeyEventHandler.h" />
     <ClInclude Include="GameObject.h" />
@@ -155,6 +157,7 @@
     <ClInclude Include="instanceManager.h" />
     <ClInclude Include="KeyboardProcessing.h" />
     <ClInclude Include="KeyEventHandler.h" />
+    <ClInclude Include="Scene.h" />
     <ClInclude Include="Sprite.h" />
     <ClInclude Include="Sprites.h" />
     <ClInclude Include="Textures.h" />
@@ -168,7 +171,9 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="AnimationFrame.cpp" />
     <ClCompile Include="Animations.cpp" />
+    <ClCompile Include="Camera.cpp" />
     <ClCompile Include="Define.cpp" />
+    <ClCompile Include="FloatRect.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameKeyEventHandler.cpp" />
     <ClCompile Include="GameObject.cpp" />
@@ -176,6 +181,7 @@
     <ClCompile Include="instanceManager.cpp" />
     <ClCompile Include="KeyboardProcessing.cpp" />
     <ClCompile Include="KeyEventHandler.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Sprites.cpp" />

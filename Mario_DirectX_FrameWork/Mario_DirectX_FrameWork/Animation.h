@@ -90,5 +90,7 @@ public:
 	LPGAMEOBJECT GetGameObject();
 
 	int GetNumberOfFrames();
+
+	int GetCurrentFrame();
 };
 typedef Animation* LPANIMATION;

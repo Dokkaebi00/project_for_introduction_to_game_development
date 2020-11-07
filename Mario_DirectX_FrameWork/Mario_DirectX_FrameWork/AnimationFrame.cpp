@@ -9,7 +9,7 @@ AnimationFrame::AnimationFrame(LPSPRITE sprite, DWORD time, D3DXVECTOR2 position
 
 LPSPRITE AnimationFrame::GetSprite()
 {
-	return sprite;
+	return this->sprite;
 }
 
 DWORD AnimationFrame::GetTime()

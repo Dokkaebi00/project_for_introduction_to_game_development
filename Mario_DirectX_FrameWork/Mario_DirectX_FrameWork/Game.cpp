@@ -287,14 +287,15 @@ void Game::Render()
 		//LPSPRITE ex = Sprites::GetInstance()->Get("spr-small-mario-walk-1");
 		//ex->Draw(50.0f, 50.0f, D3DXVECTOR2(1, 1), 1);
 
-		/*LPANIMATION ex = Animations::GetInstance()->Get("ani-big-mario-walk");
+		LPANIMATION ex = Animations::GetInstance()->Get("ani-big-mario-walk");
 
 		ex->Render(D3DXVECTOR2(20.f, 20.0f));
 		
 		int n = ex->GetNumberOfFrames();
+		int i = ex->GetCurrentFrame();
 
-		DebugOut(L"[--DEBUG-INFO--] Number of frame %d \n", n);*/
-
+		DebugOut(L"[--DEBUG-INFO--] Number of frame: %d \n", n);
+		DebugOut(L"[--DEBUG-INFO--] current frame: %d \n", i);
 		spriteHandler->End();
 
 		d3ddv->EndScene();
@@ -381,7 +382,7 @@ float Game::GetDeltatTime()
 	return dt;
 }
 
-void Game::ReadRootXMLFile()
+/*void Game::ReadRootXMLFile()
 {
 	auto filePath = "";
 
@@ -421,9 +422,9 @@ void Game::ReadRootXMLFile()
 		//resources[name] = resource;
 		resources.insert(make_pair(name, resource));
 	}
-}
+}*/
 
-string Game::GetPath(string name, string id)
+/*string Game::GetPath(string name, string id)
 {
 	if (resources.find(name) != resources.end())
 	{
@@ -434,7 +435,7 @@ string Game::GetPath(string name, string id)
 			return resource.at(id);
 		}
 	}
-}
+}*/
 
 Game* Game::GetInstance()
 {

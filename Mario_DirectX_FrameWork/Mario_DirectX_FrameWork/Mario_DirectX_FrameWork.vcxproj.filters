@@ -64,6 +64,9 @@
     <Filter Include="FrameWork\KeyEventHandler\GameKeyEventHandler">
       <UniqueIdentifier>{a59d1e29-2616-4aa7-8e7d-6d37e32006f5}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\Scene">
+      <UniqueIdentifier>{8c19313e-28e5-48c3-854f-e43c8a27cb78}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">

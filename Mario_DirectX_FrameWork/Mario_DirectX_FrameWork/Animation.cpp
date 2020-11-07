@@ -6,9 +6,9 @@ Animation::Animation(string id, DWORD defaultTime)
 	this->currentFrame = -1;
 	this->defaultTime = defaultTime;
 	
-	this->isLooping = false;
+	this->isLooping = true;
 
-	this->isEnabled = false;
+	this->isEnabled = true;
 
 	this->transform.position = D3DXVECTOR2(0.0f, 0.0f);
 }
@@ -147,6 +147,11 @@ LPGAMEOBJECT Animation::GetGameObject()
 int Animation::GetNumberOfFrames()
 {
 	return frames.size();
+}
+
+int Animation::GetCurrentFrame()
+{
+	return this->currentFrame;
 }
 
 

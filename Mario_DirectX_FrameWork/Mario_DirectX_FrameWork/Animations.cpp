@@ -48,7 +48,16 @@ int Animations::LoadResource(string textureName, string filePath)
         )
     {
         string gameObjectID = info->Attribute("gameObjectId");
+        OutputDebugString(L"\n");
+        OutputDebugString(L"[INFO] Create Animation for gameObject: ");
+        OutputDebugString(ToLPCWSTR(gameObjectID));
+        OutputDebugString(L"\n");
+
         string textureID = info->Attribute("textureId");
+        OutputDebugString(L"[INFO] Create Animation from texture: ");
+        OutputDebugString(ToLPCWSTR(textureID));
+        OutputDebugString(L"\n");
+
         if (textureID != textureName)
         {
             continue;
@@ -58,13 +67,14 @@ int Animations::LoadResource(string textureName, string filePath)
 
         if (tex != NULL)
         {
-            OutputDebugString(L"Create Animation from Texture file: \n");
+            OutputDebugString(L"[INFO] Create Animation fromfile: ");
             OutputDebugString(ToLPCWSTR(filePath));
             OutputDebugString(L"\n");
         }
         else
         {
-            OutputDebugString(L"[ERROR] Can not create Animation from Texture file: \n");
+            OutputDebugString(L"\n");
+            OutputDebugString(L"[ERROR] Can not create Animation from file: \n");
             OutputDebugString(ToLPCWSTR(filePath));
             OutputDebugString(L"\n");
             return 0;
@@ -77,9 +87,18 @@ int Animations::LoadResource(string textureName, string filePath)
             )
         {
             string aniId = node->Attribute("aniId");
+            OutputDebugString(L"[INFO] Animation ID: ");
+            OutputDebugString(ToLPCWSTR(aniId));
+            OutputDebugString(L"\n");
+
             int frameTime;
             node->QueryIntAttribute("frameTime", &frameTime);
             string name = node->Attribute("name");
+           
+            OutputDebugString(L"[INFO] Animation type: ");
+            OutputDebugString(ToLPCWSTR(name));
+            OutputDebugString(L"\n");
+
             LPANIMATION animation = new Animation(aniId, frameTime);
 
             for (
@@ -89,6 +108,9 @@ int Animations::LoadResource(string textureName, string filePath)
                 )
             {
                 string id = sprNode->Attribute("id");
+                OutputDebugString(ToLPCWSTR(id));
+                OutputDebugString(L"\n");
+
                 LPSPRITE sprite = Sprites::GetInstance()->Get(id);
                 animation->Add(sprite, D3DXVECTOR2(0.0f, 0.0f), frameTime);
             }

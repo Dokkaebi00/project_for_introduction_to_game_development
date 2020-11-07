@@ -286,6 +286,15 @@ void Game::Render()
 		//LPDIRECT3DTEXTURE9 ex = Textures::GetInstance()->GetTexture("tex-fire-ball");
 		//LPSPRITE ex = Sprites::GetInstance()->Get("spr-small-mario-walk-1");
 		//ex->Draw(50.0f, 50.0f, D3DXVECTOR2(1, 1), 1);
+
+		/*LPANIMATION ex = Animations::GetInstance()->Get("ani-big-mario-walk");
+
+		ex->Render(D3DXVECTOR2(20.f, 20.0f));
+		
+		int n = ex->GetNumberOfFrames();
+
+		DebugOut(L"[--DEBUG-INFO--] Number of frame %d \n", n);*/
+
 		spriteHandler->End();
 
 		d3ddv->EndScene();

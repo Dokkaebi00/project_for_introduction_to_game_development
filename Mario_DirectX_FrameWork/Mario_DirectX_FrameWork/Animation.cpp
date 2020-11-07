@@ -144,5 +144,10 @@ LPGAMEOBJECT Animation::GetGameObject()
 	return this->gameobj;
 }
 
+int Animation::GetNumberOfFrames()
+{
+	return frames.size();
+}
+
 
 

@@ -45,17 +45,21 @@ int Sprites::CreateSprite(string textureName, string filePath)
 		)
 	{
 		string textureID = texture->Attribute("id");
+		OutputDebugString(L"\n");
+		OutputDebugString(L"[INFO] Create sprite from Texture ID: ");
+		OutputDebugString(ToLPCWSTR(textureID));
+		OutputDebugString(L"\n");
+
 		if (textureID != textureName)
 		{
 			continue;
 		}
-		OutputDebugString(ToLPCWSTR(textureID));
-		OutputDebugString(L"\n");
+		
 		LPDIRECT3DTEXTURE9 tex = Textures::GetInstance()->GetTexture(textureID);
 
 		if (tex != NULL)
 		{
-			OutputDebugString(L"Create Sprite from Texture file: \n");
+			OutputDebugString(L"[INFO] Create Sprite from XML file: ");
 			OutputDebugString(ToLPCWSTR(filePath));
 			OutputDebugString(L"\n");
 		}
@@ -70,6 +74,11 @@ int Sprites::CreateSprite(string textureName, string filePath)
 		for (TiXmlElement* node = texture->FirstChildElement(); node != nullptr; node = node->NextSiblingElement())
 		{
 			string spriteID = node->Attribute("id");
+
+			OutputDebugString(L"[INFO] Create sprite with ID: ");
+			OutputDebugString(ToLPCWSTR(spriteID));
+			OutputDebugString(L"\n");
+
 			int left;
 			int top;
 			int width;

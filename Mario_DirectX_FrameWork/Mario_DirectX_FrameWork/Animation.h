@@ -33,7 +33,7 @@ class Animation
 
 	Transformation transform; //set the position, scale or rotation of the anmation (ex: the leaf item)
 
-	D3DXVECTOR2 relativePosition; //position of the animation with the relative object (for example when we draw attack animation of the racoon,...)
+	D3DXVECTOR2 localPosition; //position of the animation with the relative object (for example when we draw attack animation of the racoon,...)
 
 
 	vector<LPANIMATION_FRAME> frames;
@@ -54,7 +54,8 @@ public:
 
 	void SetLoop(bool isLoop);
 
-	void SetRelativePosition(D3DXVECTOR2 relativeposition);
+	void SetLocalPosition(D3DXVECTOR2 relativeposition);
+	D3DXVECTOR2 GetLocalPosition();
 
 	void SetEnabled(bool enable);
 
@@ -68,7 +69,7 @@ public:
 
 	LPANIMATION_FRAME GetAnimFrame();
 
-	D3DXVECTOR2 GetRelativePosition();
+	
 
 	void SetGameObject(LPGAMEOBJECT obj);
 

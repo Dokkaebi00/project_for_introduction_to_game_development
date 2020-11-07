@@ -10,7 +10,7 @@ Animation::Animation(string id, DWORD defaultTime)
 
 	this->isEnabled = true;
 
-	this->transform.position = D3DXVECTOR2(0.0f, 0.0f);
+	this->transform.SetPosition(D3DXVECTOR2(0.0f, 0.0f));
 }
 
 void Animation::Add(LPSPRITE sprite, D3DXVECTOR2 position, DWORD frameTime)
@@ -63,22 +63,22 @@ void Animation::Render(D3DXVECTOR2 position, int alpha)
 		}
 	}
 
-	frames[currentFrame]->GetSprite()->Draw(position.x, position.y, transform.scale, transform.rotation);
+	frames[currentFrame]->GetSprite()->Draw(position.x, position.y, transform.GetScale(), transform.GetRotation());
 }
 
 void Animation::SetPosition(D3DXVECTOR2 position)
 {
-	this->transform.position = position;
+	this->transform.SetPosition(position);
 }
 
 void Animation::SetScale(D3DXVECTOR2 scale)
 {
-	this->transform.scale = scale;
+	this->transform.SetScale(scale);
 }
 
 void Animation::SetRotation(float rotation)
 {
-	this->transform.rotation = rotation;
+	this->transform.SetRotation(rotation);
 }
 
 void Animation::SetLoop(bool isLoop)
@@ -86,9 +86,9 @@ void Animation::SetLoop(bool isLoop)
 	this->isLooping = isLoop;
 }
 
-void Animation::SetRelativePosition(D3DXVECTOR2 relativeposition)
+void Animation::SetLocalPosition(D3DXVECTOR2 relativeposition)
 {
-	this->relativePosition = relativeposition;
+	this->localPosition = relativeposition;
 }
 
 void Animation::SetEnabled(bool enable)
@@ -102,17 +102,17 @@ void Animation::SetEnabled(bool enable)
 
 D3DXVECTOR2 Animation::GetPosition()
 {
-	return this->transform.position;
+	return this->transform.GetPosition();
 }
 
 D3DXVECTOR2 Animation::GetScale()
 {
-	return this->transform.scale;
+	return this->transform.GetPosition();
 }
 
 float Animation::GetRotation()
 {
-	return this->transform.rotation;
+	return this->transform.GetRotation();
 }
 
 bool Animation::GetIsLooping()
@@ -129,9 +129,9 @@ LPANIMATION_FRAME Animation::GetAnimFrame()
 	return NULL;
 }
 
-D3DXVECTOR2 Animation::GetRelativePosition()
+D3DXVECTOR2 Animation::GetLocalPosition()
 {
-	return this->relativePosition;
+	return this->localPosition;
 }
 
 void Animation::SetGameObject(LPGAMEOBJECT obj)

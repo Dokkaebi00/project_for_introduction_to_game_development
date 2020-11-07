@@ -73,6 +73,12 @@
     <Filter Include="FrameWork\FloatRect">
       <UniqueIdentifier>{2d0266d6-494a-4b4b-a182-ecf58c55b61c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\Map">
+      <UniqueIdentifier>{42be604c-f19d-40d1-a884-3e66e6aef106}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Transformation">
+      <UniqueIdentifier>{3d201f2e-de2a-40ae-b1c3-38374e5777ab}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -134,6 +140,12 @@
     </ClInclude>
     <ClInclude Include="FloatRect.h">
       <Filter>FrameWork\FloatRect</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="Transformation.h">
+      <Filter>FrameWork</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -205,6 +217,9 @@
     </ClCompile>
     <ClCompile Include="FloatRect.cpp">
       <Filter>FrameWork\FloatRect</Filter>
+    </ClCompile>
+    <ClCompile Include="Transformation.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -382,61 +382,6 @@ float Game::GetDeltatTime()
 	return dt;
 }
 
-/*void Game::ReadRootXMLFile()
-{
-	auto filePath = "";
-
-	TiXmlDocument file(filePath);
-
-	if (file.LoadFile() == false)
-	{
-		OutputDebugString(L"[Error] can not read root file");
-	}
-
-	TiXmlElement* root = file.RootElement();
-
-	for (TiXmlElement* element = root->FirstChildElement();
-		element != nullptr;
-		element = element->NextSiblingElement()
-		)
-	{
-		string name = element->Attribute("name");
-		
-		unordered_map<string, string> resource;
-
-		DebugOut(L"[INFO] Add resource name ", name);
-
-		for (auto item = element->FirstChildElement();
-			item != nullptr;
-			item = item->NextSiblingElement()
-			)
-		{
-			string id = item->Attribute("id");
-			string source = item->Attribute("source");
-			//resource[id] = source;
-			resource.insert(make_pair(id, source));
-
-			DebugOut(L"add source", id, " ", source);
-		}
-
-		//resources[name] = resource;
-		resources.insert(make_pair(name, resource));
-	}
-}*/
-
-/*string Game::GetPath(string name, string id)
-{
-	if (resources.find(name) != resources.end())
-	{
-		auto resource = resources.at(name);
-
-		if (resource.find(id) != resource.end())
-		{
-			return resource.at(id);
-		}
-	}
-}*/
-
 Game* Game::GetInstance()
 {
 	if (__instance == NULL)

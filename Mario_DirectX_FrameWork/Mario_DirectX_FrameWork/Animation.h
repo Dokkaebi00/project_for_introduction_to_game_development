@@ -8,25 +8,10 @@
 #include"Sprite.h"
 #include"GameObject.h"
 #include"AnimationFrame.h"
-
+#include "Transformation.h"
 using namespace std;
 
-struct Transformation
-{
-	D3DXVECTOR2 position;
-	D3DXVECTOR2 scale;
-	float rotation;
 
-	Transformation Transform(D3DXVECTOR2 position, D3DXVECTOR2 scale, float rotation)
-	{
-		Transformation a;
-		a.position = position;
-		a.scale = scale;
-		a.rotation = rotation;
-
-		return a;
-	}
-};
 
 class AnimationFrame;
 typedef AnimationFrame* LPANIMATION_FRAME;

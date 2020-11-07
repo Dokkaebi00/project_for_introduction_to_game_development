@@ -55,9 +55,112 @@ bool Camera::CheckObjectInCameraByRect(RECT r)
 
 void Camera::Update()
 {
+	this->dt = Game::GetInstance()->GetTimeScale();
+
+	float x;
+
+	float y;
+
+	if (isAuto)
+	{
+		float dx = vx * this->dt;
+		camPos.x += dx;
+	}
+	else
+	{
+		x = gameobj->GetX();
+		y = gameobj->GetY();
+
+		camPos.x = x - camWidth * 0.5f;
+
+		camPos.y = y - camHeight * 0.5f;
+
+		if (camPos.x < boundary.left)
+		{
+			camPos.x = boundary.left;
+		}
+		if (camPos.x > boundary.right - camWidth)
+		{
+			camPos.x = boundary.right - camWidth;
+		}
+		if (camPos.y < boundary.top)
+		{
+			camPos.y = boundary.top;
+		}
+		if (camPos.y > boundary.bottom - camHeight)
+		{
+			camPos.y = boundary.bottom - camHeight;
+		}
+	}
+
+	gameobj->SetPosition(D3DXVECTOR2(x, y));
 }
 
 void Camera::Render()
+{
+}
+
+float Camera::GetCamSpeed()
+{
+	return this->vx;
+}
+
+void Camera::SetCamSpeed(float vx)
+{
+	this->vx = vx;
+}
+
+D3DXVECTOR2 Camera::GetCamPosition()
+{
+	return this->camPos;
+}
+
+void Camera::SetCamPosition(D3DXVECTOR2 pos)
+{
+	this->camPos = pos;
+}
+
+float Camera::GetCamWidth()
+{
+	return this->camWidth;
+}
+
+void Camera::SetCamWidth(float camWidth)
+{
+	this->camWidth = camWidth;
+}
+
+float Camera::GetCamHeight()
+{
+	return this->camHeight;
+}
+
+void Camera::SetCamHeight(float camHeight)
+{
+	this->camHeight = camHeight;
+}
+
+FloatRect Camera::GetBoundary()
+{
+	return this->boundary;
+}
+
+void Camera::SetBoundray(FloatRect r)
+{
+	this->boundary = r;
+}
+
+LPGAMEOBJECT Camera::GetGameObject()
+{
+	return this->gameobj;
+}
+
+void Camera::SetGameObject(LPGAMEOBJECT obj)
+{
+	this->gameobj = obj;
+}
+
+Camera::~Camera()
 {
 }
 

@@ -73,11 +73,12 @@ HWND CreatGameWindow(HINSTANCE hInstance, int nCmdShow, int ScreenWidth, int Scr
 
 int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
 {
-	HWND hWnd = CreatGameWindow(hInstance, nCmdShow, 640, 480);
+	HWND hWnd = CreatGameWindow(hInstance, nCmdShow, 800, 600);
 	game = Game::GetInstance();
 
 	game->InitDirect3DX(hWnd);
-	game->GameInit();
+
+	game->GameLoadResources();
 	game->GameLoop();
 	game->GameEnd();
 

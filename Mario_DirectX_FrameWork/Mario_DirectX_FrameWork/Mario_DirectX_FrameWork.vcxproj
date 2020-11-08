@@ -153,10 +153,9 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameKeyEventHandler.h" />
     <ClInclude Include="GameObject.h" />
-    <ClInclude Include="instance.h" />
-    <ClInclude Include="instanceManager.h" />
     <ClInclude Include="KeyboardProcessing.h" />
     <ClInclude Include="KeyEventHandler.h" />
+    <ClInclude Include="MonoBehaviour.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="Scene.h" />
     <ClInclude Include="Sprite.h" />
@@ -179,10 +178,9 @@
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="GameKeyEventHandler.cpp" />
     <ClCompile Include="GameObject.cpp" />
-    <ClCompile Include="instance.cpp" />
-    <ClCompile Include="instanceManager.cpp" />
     <ClCompile Include="KeyboardProcessing.cpp" />
     <ClCompile Include="KeyEventHandler.cpp" />
+    <ClCompile Include="MonoBehaviour.cpp" />
     <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Source.cpp" />
     <ClCompile Include="Sprite.cpp" />

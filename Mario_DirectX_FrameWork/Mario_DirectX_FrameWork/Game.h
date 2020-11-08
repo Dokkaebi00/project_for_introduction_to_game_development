@@ -5,8 +5,6 @@
 #include <d3dx9.h>
 #include <unordered_map>
 
-#include"instance.h"
-#include"instanceManager.h"
 #include "Utils.h"
 #include "Textures.h"
 #include "Sprites.h"
@@ -17,8 +15,8 @@
 #include "KeyEventHandler.h"
 
 #define MAX_FRAME_RATE 120
-#define WINDOW_WIDTH 640
-#define WINDOW_HEIGHT 480
+#define WINDOW_WIDTH 1920
+#define WINDOW_HEIGHT 1080
 
 using namespace std;
 
@@ -30,7 +28,6 @@ class Game
 	//dt (time between 2 frame, define a dt variable in Game class so that we can use this dt 
 	//for all object in game like GameObject, Scene, more easy to handle than each update have an invidual dt
 	static float dt;
-	static float timeScale;
 
 	//hWnd (handle window, where game shows on it)
 	HWND hWnd;
@@ -52,38 +49,44 @@ class Game
 
 
 public:
+	//init direct3d environment
 	void InitDirect3DX(HWND hWnd);
 
+	//load texture from the texture-path
 	LPDIRECT3DTEXTURE9 LoadTexture(LPCWSTR texturePath);
 
+	//draw a sprite from the texture
 	void Draw(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, int left, int top, int right, int bottom, int alpha = 255);
 	void Draw(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, RECT r, int alpha = 255);
 
+	//draw a sprite and flip it with x coordinate (use it with animation on the left)
 	void FlipDrawX(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, int left, int top, int right, int bottom, int alpha = 255);
 	void FlipDrawX(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, RECT r, int alpha = 255);
 
+	//draw a sprite and flip it with y coordinate (use it with die animation of the enemy)
 	void FlipDrawY(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, int left, int top, int right, int bottom, int alpha = 255);
 	void FlipDrawY(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, RECT r, int alpha = 255);
 
-	void GameInit();
-
+	//load resources for game (texture, sprite, map, ...)
 	void GameLoadResources();
 
+	//update logic for game
 	void Update();
+	//render textures for game
 	void Render();
+	//need this to run game
 	void GameLoop();
-	
+	//clear database, disable keyboard of game
 	void GameEnd();
 
 	LPDIRECT3DDEVICE9 GetDirect3DDevice();
 	LPDIRECT3DSURFACE9 GetBackBuffer();
 	LPD3DXSPRITE GetSpriteHandler();
 
-	static float GetTimeScale();
-	static void SetTimeScale(float time);
-
+	//get deltatime of game and use it for another object like GameObject,...
 	float GetDeltatTime();
 
+	//singleton
 	static Game* GetInstance();
 	~Game();
 };

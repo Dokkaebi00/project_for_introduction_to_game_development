@@ -17,8 +17,10 @@ typedef Sprite* LPSPRITE;
 
 class Sprites
 {
+	//singleton
 	static Sprites* __instance;
 
+	//sprite database
 	unordered_map<string, LPSPRITE> sprites;
 
 public:
@@ -29,6 +31,7 @@ public:
 	
 	void Add(string id, int left, int top, int width, int height, LPDIRECT3DTEXTURE9 texture, int xPivot);
 	
+
 	int CreateSprite(string textureName, string filePath);
 	
 	LPSPRITE Get(string id);

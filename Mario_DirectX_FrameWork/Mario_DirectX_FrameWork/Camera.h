@@ -33,6 +33,7 @@ public:
 	D3DXVECTOR2 TransformWorldPostoCamPos(D3DXVECTOR2 worldPos);
 	D3DXVECTOR2 TransformCamPostoWorldPos(D3DXVECTOR2 CamPos);
 	
+	//check an obj is in the camera? if true->update + render it, if false -> do nothing with it (space partioning)
 	bool CheckObjectInCameraByPosition(D3DXVECTOR2 objPos, float objWidth, float objHeight);
 	bool CheckObjectInCameraByRect(RECT r);
 

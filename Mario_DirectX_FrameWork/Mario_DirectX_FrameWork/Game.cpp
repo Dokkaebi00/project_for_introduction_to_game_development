@@ -3,7 +3,6 @@
 
 Game* Game::__instance = NULL;
 float Game::dt = 0.0f;
-float Game::timeScale = 1.0f;
 
 void Game::InitDirect3DX(HWND hWnd)
 {
@@ -251,7 +250,7 @@ void Game::FlipDrawY(float x, float y, float anchorPointX, float anchorPointY, L
 	spriteHandler->SetTransform(&beforeTransform);
 }
 
-void Game::GameInit()
+void Game::GameLoadResources()
 {
 	OutputDebugString(L"[INFO] Load Resource");
 
@@ -265,10 +264,6 @@ void Game::GameInit()
 	keyboardProcessing->InitKeyboard(keyEventHandler);
 }
 
-void Game::GameLoadResources()
-{
-}
-
 void Game::Update()
 {
 }
@@ -277,7 +272,7 @@ void Game::Render()
 {
 	if (d3ddv->BeginScene())
 	{
-		d3ddv->ColorFill(backBuffer, NULL, D3DCOLOR_XRGB(0, 0, 0));
+		d3ddv->ColorFill(backBuffer, NULL, D3DCOLOR_XRGB(153, 217, 234));
 		spriteHandler->Begin(D3DXSPRITE_ALPHABLEND);
 
 		/*if (activeScene != nullptr)
@@ -365,16 +360,6 @@ LPDIRECT3DSURFACE9 Game::GetBackBuffer()
 LPD3DXSPRITE Game::GetSpriteHandler()
 {
 	return this->spriteHandler;
-}
-
-float Game::GetTimeScale()
-{
-	return timeScale;
-}
-
-void Game::SetTimeScale(float time)
-{
-	timeScale = time;
 }
 
 float Game::GetDeltatTime()

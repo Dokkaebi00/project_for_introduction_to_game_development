@@ -27,13 +27,13 @@ class Animation
 	int defaultTime;
 	DWORD lastFrameTime;
 	
-	bool isLooping; //for looping animation, brick, Goomba,...
+	bool isLooping; //for looping animation, brick at the end of the scene game, Goomba,...
 
-	bool isEnabled; //some animation just plays when we get into an overlappedBox or triggerBox;
+	bool isEnabled; //some animation just plays when we get into an overlappedBox or triggerBox, or animation will be disbale when mario interacts with it (brick with the quesion mark);
 
 	Transformation transform; //set the position, scale or rotation of the anmation (ex: the leaf item)
 
-	D3DXVECTOR2 localPosition; //position of the animation with the relative object (for example when we draw attack animation of the racoon,...)
+	D3DXVECTOR2 localPosition; //position of the animation with the relative object (for example when we draw attack animation of the racoon, movement animation of the marion -> update animation with the gameobj...)
 
 
 	vector<LPANIMATION_FRAME> frames;

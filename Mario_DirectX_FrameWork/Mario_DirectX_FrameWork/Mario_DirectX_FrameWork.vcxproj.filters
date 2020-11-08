@@ -16,12 +16,6 @@
     <Filter Include="FrameWork\Utils">
       <UniqueIdentifier>{2beb3bcd-f923-4a32-9771-a401bab7f212}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\SingletonManager">
-      <UniqueIdentifier>{3d545940-9f6a-469d-a9fe-558f82378026}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\SingletonManager\Singleton">
-      <UniqueIdentifier>{24e72ad2-73d1-40d2-81f4-303da8f92b00}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FrameWork\Game">
       <UniqueIdentifier>{36d633c3-6685-4f1d-ba0b-7145de028a02}</UniqueIdentifier>
     </Filter>
@@ -79,16 +73,13 @@
     <Filter Include="FrameWork\Transformation">
       <UniqueIdentifier>{3d201f2e-de2a-40ae-b1c3-38374e5777ab}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\MonoBehaviour">
+      <UniqueIdentifier>{5920fb99-08f0-4daa-8094-d274c7382d95}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
       <Filter>FrameWork\Utils</Filter>
-    </ClInclude>
-    <ClInclude Include="instance.h">
-      <Filter>FrameWork\SingletonManager\Singleton</Filter>
-    </ClInclude>
-    <ClInclude Include="instanceManager.h">
-      <Filter>FrameWork\SingletonManager</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
       <Filter>FrameWork\Game</Filter>
@@ -145,18 +136,15 @@
       <Filter>FrameWork</Filter>
     </ClInclude>
     <ClInclude Include="Transformation.h">
-      <Filter>FrameWork</Filter>
+      <Filter>FrameWork\Transformation</Filter>
+    </ClInclude>
+    <ClInclude Include="MonoBehaviour.h">
+      <Filter>FrameWork\MonoBehaviour</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Utils.cpp">
       <Filter>FrameWork\Utils</Filter>
-    </ClCompile>
-    <ClCompile Include="instance.cpp">
-      <Filter>FrameWork\SingletonManager\Singleton</Filter>
-    </ClCompile>
-    <ClCompile Include="instanceManager.cpp">
-      <Filter>FrameWork\SingletonManager</Filter>
     </ClCompile>
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
@@ -219,7 +207,10 @@
       <Filter>FrameWork\FloatRect</Filter>
     </ClCompile>
     <ClCompile Include="Transformation.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>FrameWork\Transformation</Filter>
+    </ClCompile>
+    <ClCompile Include="MonoBehaviour.cpp">
+      <Filter>FrameWork\MonoBehaviour</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

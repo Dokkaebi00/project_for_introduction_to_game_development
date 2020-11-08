@@ -44,7 +44,7 @@ void Animation::Render(D3DXVECTOR2 position, int alpha)
 	else
 	{
 		DWORD t = frames[currentFrame]->GetTime();
-		if (now - lastFrameTime > t * Game::GetTimeScale())
+		if (now - lastFrameTime > t)
 		{
 			if (currentFrame == frames.size() - 1 && isLooping == false)
 			{

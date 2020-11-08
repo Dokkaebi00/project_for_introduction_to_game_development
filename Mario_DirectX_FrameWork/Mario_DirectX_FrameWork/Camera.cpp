@@ -47,15 +47,17 @@ bool Camera::CheckObjectInCameraByRect(RECT r)
 	int width = r.right - r.left;
 	int height = r.bottom - r.top;
 	
-	return r.left >= camPos.x - width && 
-		r.right <= camPos.x + camWidth + width &&
-		r.top >= camPos.y - height && 
-		r.bottom <= camPos.y + camHeight + height;
+	if (r.left >= camPos.x - width && r.right <= camPos.x + camWidth + width && r.top >= camPos.y - height && r.bottom <= camPos.y + camHeight + height)
+	{
+		return true;
+	}
+	
+	return false;
 }
 
 void Camera::Update()
 {
-	this->dt = Game::GetInstance()->GetTimeScale();
+	this->dt = Game::GetInstance()->GetDeltatTime();
 
 	float x;
 

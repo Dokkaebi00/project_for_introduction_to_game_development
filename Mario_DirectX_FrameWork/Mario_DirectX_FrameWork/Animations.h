@@ -10,8 +10,10 @@ typedef Animation* LPANIMATION;
 
 class Animations
 {
+	//singleton
 	static Animations* __instance;
 
+	//anmations database
 	unordered_map<string, LPANIMATION> animations;
 
 public:

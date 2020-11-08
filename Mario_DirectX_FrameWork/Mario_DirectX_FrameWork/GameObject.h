@@ -8,6 +8,12 @@
 #include"Textures.h"
 #include"Animation.h"
 #include"Transformation.h"
+#include"Camera.h"
+
+class Animation;
+typedef Animation* LPANIMATION;
+
+class Camera;
 
 class GameObject
 {
@@ -16,15 +22,23 @@ protected:
 	int id;
 	DWORD dt;
 
-	Transformation transform;
+	Transformation transform; //use for set up position, rotation and scale of the gameobj like unity
+	string state;
 
+	unordered_map<string, LPANIMATION> animation_set;
 public:
 	GameObject();
 
 	virtual void Init();
-	
-	virtual void Update();
-	virtual void Render();
+
+	virtual void Clear();
+
+	virtual void Update(DWORD dt, Camera* camera);
+
+	virtual void Render(Camera* camera);
+
+	void AddAnimationIntoAnimationSet(string state, LPANIMATION animation, bool isLooping);
+	void LoadAnimationSet();
 
 	int GetId();
 	void SetId(int id);

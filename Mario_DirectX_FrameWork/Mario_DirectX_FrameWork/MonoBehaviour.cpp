@@ -1,11 +1,25 @@
 #include "MonoBehaviour.h"
 
-float MonoBehaviour::GetDeltaTime()
+void MonoBehaviour::Awake()
+{
+}
+
+void MonoBehaviour::Update()
+{
+}
+
+void MonoBehaviour::Render()
+{
+}
+
+Time MonoBehaviour::GetDt()
 {
     return this->dt;
 }
 
-void MonoBehaviour::SetDeltaTime(float dt)
+void MonoBehaviour::SetDt(float dt)
 {
-    this->dt = dt;
+    this->dt.SetDt(dt);
 }
+
+

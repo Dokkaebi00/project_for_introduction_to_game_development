@@ -5,6 +5,8 @@
 #include <d3dx9.h>
 #include <unordered_map>
 
+#include "Time.h"
+#include "MonoBehaviour.h"
 #include "Utils.h"
 #include "Textures.h"
 #include "Sprites.h"
@@ -20,14 +22,14 @@
 
 using namespace std;
 
-class Game
+class Game : public MonoBehaviour
 {
 	//singlton for Game
 	static Game* __instance;
 
 	//dt (time between 2 frame, define a dt variable in Game class so that we can use this dt 
 	//for all object in game like GameObject, Scene, more easy to handle than each update have an invidual dt
-	static float dt;
+	//static float dt;
 
 	//hWnd (handle window, where game shows on it)
 	HWND hWnd;
@@ -68,12 +70,12 @@ public:
 	void FlipDrawY(float x, float y, float anchorPointX, float anchorPointY, LPDIRECT3DTEXTURE9 texture, RECT r, int alpha = 255);
 
 	//load resources for game (texture, sprite, map, ...)
-	void GameLoadResources();
+	virtual void Awake() override;
 
 	//update logic for game
-	void Update();
+	virtual void Update() override;
 	//render textures for game
-	void Render();
+	virtual void Render() override;
 	//need this to run game
 	void GameLoop();
 	//clear database, disable keyboard of game

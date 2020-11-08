@@ -64,17 +64,23 @@
     <Filter Include="FrameWork\Camera">
       <UniqueIdentifier>{2c8654be-9bf8-4361-bf53-7c431de6bdf9}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\FloatRect">
-      <UniqueIdentifier>{2d0266d6-494a-4b4b-a182-ecf58c55b61c}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FrameWork\Map">
       <UniqueIdentifier>{42be604c-f19d-40d1-a884-3e66e6aef106}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\Transformation">
+    <Filter Include="FrameWork\CoreFramework">
+      <UniqueIdentifier>{7484368b-1eb6-493e-b647-c28a9117e383}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\CoreFramework\Transformation">
       <UniqueIdentifier>{3d201f2e-de2a-40ae-b1c3-38374e5777ab}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\MonoBehaviour">
+    <Filter Include="FrameWork\CoreFramework\Time">
+      <UniqueIdentifier>{88acf934-1bb8-4601-a0f4-c7c7fd37ae23}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\CoreFramework\MonoBehaviour">
       <UniqueIdentifier>{5920fb99-08f0-4daa-8094-d274c7382d95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\CoreFramework\FloatRect">
+      <UniqueIdentifier>{2d0266d6-494a-4b4b-a182-ecf58c55b61c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -130,16 +136,19 @@
       <Filter>FrameWork\Camera</Filter>
     </ClInclude>
     <ClInclude Include="FloatRect.h">
-      <Filter>FrameWork\FloatRect</Filter>
+      <Filter>FrameWork\CoreFramework\FloatRect</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>FrameWork</Filter>
     </ClInclude>
     <ClInclude Include="Transformation.h">
-      <Filter>FrameWork\Transformation</Filter>
+      <Filter>FrameWork\CoreFramework\Transformation</Filter>
     </ClInclude>
     <ClInclude Include="MonoBehaviour.h">
-      <Filter>FrameWork\MonoBehaviour</Filter>
+      <Filter>FrameWork\CoreFramework\MonoBehaviour</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>FrameWork\CoreFramework\Time</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -204,13 +213,16 @@
       <Filter>FrameWork\Camera</Filter>
     </ClCompile>
     <ClCompile Include="FloatRect.cpp">
-      <Filter>FrameWork\FloatRect</Filter>
+      <Filter>FrameWork\CoreFramework\FloatRect</Filter>
     </ClCompile>
     <ClCompile Include="Transformation.cpp">
-      <Filter>FrameWork\Transformation</Filter>
+      <Filter>FrameWork\CoreFramework\Transformation</Filter>
     </ClCompile>
     <ClCompile Include="MonoBehaviour.cpp">
-      <Filter>FrameWork\MonoBehaviour</Filter>
+      <Filter>FrameWork\CoreFramework\MonoBehaviour</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>FrameWork\CoreFramework\Time</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

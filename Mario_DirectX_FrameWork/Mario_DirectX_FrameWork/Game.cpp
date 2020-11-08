@@ -2,7 +2,6 @@
 
 
 Game* Game::__instance = NULL;
-float Game::dt = 0.0f;
 
 void Game::InitDirect3DX(HWND hWnd)
 {
@@ -250,8 +249,9 @@ void Game::FlipDrawY(float x, float y, float anchorPointX, float anchorPointY, L
 	spriteHandler->SetTransform(&beforeTransform);
 }
 
-void Game::GameLoadResources()
+void Game::Awake()
 {
+	MonoBehaviour::Awake();
 	OutputDebugString(L"[INFO] Load Resource");
 
 	Textures::GetInstance()->LoadTextures();
@@ -266,10 +266,13 @@ void Game::GameLoadResources()
 
 void Game::Update()
 {
+	MonoBehaviour::Update();
 }
 
 void Game::Render()
 {
+	MonoBehaviour::Render();
+
 	if (d3ddv->BeginScene())
 	{
 		d3ddv->ColorFill(backBuffer, NULL, D3DCOLOR_XRGB(153, 217, 234));
@@ -323,7 +326,7 @@ void Game::GameLoop()
 
 		int now = GetTickCount();
 		deltat = now - frameStart;
-		dt = deltat;
+		this->dt.SetDt(deltat);
 
 		if (deltat >= tickPerFrame)
 		{
@@ -364,8 +367,14 @@ LPD3DXSPRITE Game::GetSpriteHandler()
 
 float Game::GetDeltatTime()
 {
-	return dt;
+	MonoBehaviour::GetDt();
+	return this->dt.GetDt();
 }
+
+/*float Game::GetDeltatTime()
+{
+	return dt;
+}*/
 
 Game* Game::GetInstance()
 {

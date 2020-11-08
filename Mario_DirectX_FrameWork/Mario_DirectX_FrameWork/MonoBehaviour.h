@@ -3,17 +3,25 @@
 #include<d3d9.h>
 #include<d3dx9.h>
 
+#include "Time.h"
+
+class Time;
 
 class MonoBehaviour
 {
 protected:
-	float dt;
+	//dt (time between 2 frame, define a dt variable in Game class so that we can use this dt 
+	//for all object in game like GameObject, Scene, more easy to handle than each update have an invidual dt
+	Time dt;
 
 public:
-	virtual void Update() = 0;
-	virtual void Render() = 0;
+	
+	virtual void Awake();
 
-	float GetDeltaTime();
-	void SetDeltaTime(float dt);
+	virtual void Update();
+	virtual void Render();
+
+	Time GetDt();
+	void SetDt(float dt);
 };
 

@@ -78,7 +78,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine
 
 	game->InitDirect3DX(hWnd);
 
-	game->GameLoadResources();
+	game->Awake();
 	game->GameLoop();
 	game->GameEnd();
 

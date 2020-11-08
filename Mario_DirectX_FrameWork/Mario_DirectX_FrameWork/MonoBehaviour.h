@@ -7,6 +7,8 @@
 
 class Time;
 
+//basic class of all component class in framework (Game, GameObject, Camera, ...)
+
 class MonoBehaviour
 {
 protected:

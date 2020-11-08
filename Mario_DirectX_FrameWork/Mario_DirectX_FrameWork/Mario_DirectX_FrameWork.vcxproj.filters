@@ -16,12 +16,6 @@
     <Filter Include="FrameWork\Utils">
       <UniqueIdentifier>{2beb3bcd-f923-4a32-9771-a401bab7f212}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\Game">
-      <UniqueIdentifier>{36d633c3-6685-4f1d-ba0b-7145de028a02}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\GameObject">
-      <UniqueIdentifier>{b36dda36-4669-4ad6-899d-1dfbe3ccae74}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FrameWork\TextureManager">
       <UniqueIdentifier>{13bfa535-18c2-42d2-9b1b-c998fbccf93d}</UniqueIdentifier>
     </Filter>
@@ -58,12 +52,6 @@
     <Filter Include="FrameWork\KeyEventHandler\GameKeyEventHandler">
       <UniqueIdentifier>{a59d1e29-2616-4aa7-8e7d-6d37e32006f5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\Scene">
-      <UniqueIdentifier>{8c19313e-28e5-48c3-854f-e43c8a27cb78}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\Camera">
-      <UniqueIdentifier>{2c8654be-9bf8-4361-bf53-7c431de6bdf9}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FrameWork\Map">
       <UniqueIdentifier>{42be604c-f19d-40d1-a884-3e66e6aef106}</UniqueIdentifier>
     </Filter>
@@ -82,13 +70,28 @@
     <Filter Include="FrameWork\CoreFramework\FloatRect">
       <UniqueIdentifier>{2d0266d6-494a-4b4b-a182-ecf58c55b61c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\GameComponent">
+      <UniqueIdentifier>{6b634112-63ee-4d25-a385-eee36767802a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\GameComponent\Scene">
+      <UniqueIdentifier>{8c19313e-28e5-48c3-854f-e43c8a27cb78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\GameComponent\GameObject">
+      <UniqueIdentifier>{b36dda36-4669-4ad6-899d-1dfbe3ccae74}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\GameComponent\Game">
+      <UniqueIdentifier>{36d633c3-6685-4f1d-ba0b-7145de028a02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\GameComponent\Camera">
+      <UniqueIdentifier>{2c8654be-9bf8-4361-bf53-7c431de6bdf9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
       <Filter>FrameWork\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>FrameWork\Game</Filter>
+      <Filter>FrameWork\GameComponent\Game</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinystr.h">
       <Filter>FrameWork\TinyXML</Filter>
@@ -100,7 +103,7 @@
       <Filter>FrameWork\TextureManager\Textures</Filter>
     </ClInclude>
     <ClInclude Include="GameObject.h">
-      <Filter>FrameWork\GameObject</Filter>
+      <Filter>FrameWork\GameComponent\GameObject</Filter>
     </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>FrameWork\TextureManager\Sprites\Sprite</Filter>
@@ -130,10 +133,10 @@
       <Filter>FrameWork\KeyEventHandler\GameKeyEventHandler</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
-      <Filter>FrameWork\Scene</Filter>
+      <Filter>FrameWork\GameComponent\Scene</Filter>
     </ClInclude>
     <ClInclude Include="Camera.h">
-      <Filter>FrameWork\Camera</Filter>
+      <Filter>FrameWork\GameComponent\Camera</Filter>
     </ClInclude>
     <ClInclude Include="FloatRect.h">
       <Filter>FrameWork\CoreFramework\FloatRect</Filter>
@@ -159,7 +162,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>FrameWork\Game</Filter>
+      <Filter>FrameWork\GameComponent\Game</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinystr.cpp">
       <Filter>FrameWork\TinyXML</Filter>
@@ -177,7 +180,7 @@
       <Filter>FrameWork\TextureManager\Textures</Filter>
     </ClCompile>
     <ClCompile Include="GameObject.cpp">
-      <Filter>FrameWork\GameObject</Filter>
+      <Filter>FrameWork\GameComponent\GameObject</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
       <Filter>FrameWork\TextureManager\Sprites\Sprite</Filter>
@@ -207,10 +210,10 @@
       <Filter>FrameWork\KeyEventHandler\GameKeyEventHandler</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
-      <Filter>FrameWork\Scene</Filter>
+      <Filter>FrameWork\GameComponent\Scene</Filter>
     </ClCompile>
     <ClCompile Include="Camera.cpp">
-      <Filter>FrameWork\Camera</Filter>
+      <Filter>FrameWork\GameComponent\Camera</Filter>
     </ClCompile>
     <ClCompile Include="FloatRect.cpp">
       <Filter>FrameWork\CoreFramework\FloatRect</Filter>

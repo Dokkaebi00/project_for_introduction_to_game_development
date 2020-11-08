@@ -2,6 +2,8 @@
 #include<d3dx9.h>
 #include<d3d9.h>
 
+//use for GameObj and Animation class->update pos, scale and rotation
+
 class Transformation
 {
 	D3DXVECTOR2 position;

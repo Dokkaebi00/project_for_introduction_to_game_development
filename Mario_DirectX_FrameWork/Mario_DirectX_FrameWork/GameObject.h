@@ -4,6 +4,7 @@
 #include<d3d9.h>
 #include<d3dx9.h>
 
+#include "MonoBehaviour.h"
 #include"Game.h"
 #include"Textures.h"
 #include"Animation.h"
@@ -15,12 +16,11 @@ typedef Animation* LPANIMATION;
 
 class Camera;
 
-class GameObject
+class GameObject : public MonoBehaviour
 {
 protected:
 
 	int id;
-	DWORD dt;
 
 	Transformation transform; //use for set up position, rotation and scale of the gameobj like unity
 	string state;
@@ -33,7 +33,9 @@ public:
 
 	virtual void Clear();
 
-	virtual void Update(DWORD dt, Camera* camera);
+	virtual void Awake();
+
+	virtual void Update(Time dt, Camera* camera);
 
 	virtual void Render(Camera* camera);
 
@@ -45,6 +47,9 @@ public:
 
 	D3DXVECTOR2 GetPosition();
 	void SetPosition(D3DXVECTOR2 p);
+
+	string GetState();
+	void SetState(string state);
 
 	float GetX();
 	float GetY();

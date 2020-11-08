@@ -2,6 +2,7 @@
 
 #include <d3dx9.h>
 
+#include "MonoBehaviour.h"
 #include "GameObject.h"
 #include "FloatRect.h"
 
@@ -9,10 +10,8 @@ class GameObject;
 typedef GameObject* LPGAMEOBJECT;
 
 
-class Camera
+class Camera : public MonoBehaviour
 {
-	DWORD dt; //dt->need for update function (update camera position with time
-
 	float vx; // = Mario'vx at scen 1 2 3, = const at scene 4
 
 	bool isAuto; // use at scene 4
@@ -38,8 +37,8 @@ public:
 	bool CheckObjectInCameraByRect(RECT r);
 
 
-	virtual void Update();
-	virtual void Render();
+	virtual void Update() override;
+	virtual void Render() override;
 
 	float GetCamSpeed();
 	void SetCamSpeed(float vx);

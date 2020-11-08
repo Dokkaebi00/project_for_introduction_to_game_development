@@ -57,7 +57,9 @@ bool Camera::CheckObjectInCameraByRect(RECT r)
 
 void Camera::Update()
 {
-	this->dt = Game::GetInstance()->GetDeltatTime();
+	MonoBehaviour::Update();
+
+	this->dt = Game::GetInstance()->GetDt();
 
 	float x;
 
@@ -65,7 +67,7 @@ void Camera::Update()
 
 	if (isAuto)
 	{
-		float dx = vx * this->dt;
+		float dx = vx * this->dt.GetDt();
 		camPos.x += dx;
 	}
 	else

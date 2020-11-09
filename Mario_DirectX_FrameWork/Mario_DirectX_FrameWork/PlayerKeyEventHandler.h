@@ -1,7 +1,7 @@
 #pragma once
 #include "KeyEventHandler.h"
 
-class GameKeyEventHandler : public KeyEventHandler
+class PlayerKeyEventHandler : public KeyEventHandler
 {
 public:
 	virtual void OnKeyDown(int KeyCode);

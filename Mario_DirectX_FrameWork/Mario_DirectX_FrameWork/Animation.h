@@ -27,11 +27,17 @@ class Animation
 	int defaultTime;
 	DWORD lastFrameTime;
 	
-	bool isLooping; //for looping animation, brick at the end of the scene game, Goomba,...
+	bool isLooping; 
+	//for looping animation, brick at the end of the scene game, Goomba, Mario_walk...
 
-	bool isEnabled; //some animation just plays when we get into an overlappedBox or triggerBox, or animation will be disbale when mario interacts with it (brick with the quesion mark);
+	bool isEnabled; 
+	//some animation just plays when we get into an overlappedBox or triggerBox, or animation will be disbale when mario interacts with it (brick with the quesion mark);
+	//or for object have many animaton in the animation_set
+	//ex: Mario have a lot of states with a lot of animations for each states
+	//when an state end -> disable the state -> disable the animation of that state
 
-	Transformation transform; //set the position, scale or rotation of the anmation (ex: the leaf item)
+	Transformation transform; 
+	//set the position, scale or rotation of the anmation (ex: the leaf item, sync the animation's position with the position of gameobject)
 
 	D3DXVECTOR2 localPosition; 
 	//position of the animation with the relative object (for example when we draw attack animation of the racoon, movement animation of the marion -> update animation with the gameobj...)
@@ -40,10 +46,11 @@ class Animation
 	//for example racoon mario have a tail and it's localPosition is 0,1
 	//world postion is the position of component with the world
 
-
+	// an animation = 1 or alot of frames
 	vector<LPANIMATION_FRAME> frames;
 
-	GameObject* gameobj; //obj that contain the animation of the animation
+	GameObject* gameobj; 
+	//relative obj with the animation
 
 public:
 	Animation(string id, DWORD defaultTime = 100);
@@ -52,36 +59,29 @@ public:
 	void Render(D3DXVECTOR2 position, int alpha = 255);
 
 	void SetPosition(D3DXVECTOR2 position);
+	D3DXVECTOR2 GetPosition();
 
 	void SetScale(D3DXVECTOR2 scale);
+	D3DXVECTOR2 GetScale();
 
 	void SetRotation(float rotation);
+	float GetRotation();
 
 	void SetLoop(bool isLoop);
+	bool GetIsLooping();
 
 	void SetLocalPosition(D3DXVECTOR2 relativeposition);
 	D3DXVECTOR2 GetLocalPosition();
 
 	void SetEnabled(bool enable);
-
-	D3DXVECTOR2 GetPosition();
-
-	D3DXVECTOR2 GetScale();
-
-	float GetRotation();
-
-	bool GetIsLooping();
+	bool CheckIsEnabled();
 
 	LPANIMATION_FRAME GetAnimFrame();
 
-	
-
 	void SetGameObject(LPGAMEOBJECT obj);
-
 	LPGAMEOBJECT GetGameObject();
 
 	int GetNumberOfFrames();
-
 	int GetCurrentFrame();
 };
 typedef Animation* LPANIMATION;

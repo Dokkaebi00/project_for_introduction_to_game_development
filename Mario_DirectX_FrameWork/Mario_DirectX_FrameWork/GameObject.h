@@ -22,7 +22,7 @@ protected:
 
 	int id;
 
-	Transformation transform; //use for set up position, rotation and scale of the gameobj like unity
+	Transformation transform; //use for set up position, rotation and scale of the gameobj like unity (this is localTransformation)
 	string state;
 
 	string tag;

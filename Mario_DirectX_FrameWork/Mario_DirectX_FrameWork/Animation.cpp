@@ -100,6 +100,11 @@ void Animation::SetEnabled(bool enable)
 	isEnabled = true;
 }
 
+bool Animation::CheckIsEnabled()
+{
+	return this->isEnabled;
+}
+
 D3DXVECTOR2 Animation::GetPosition()
 {
 	return this->transform.GetPosition();

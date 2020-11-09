@@ -8,6 +8,14 @@ void MonoBehaviour::Update()
 {
 }
 
+void MonoBehaviour::FixedUpdate()
+{
+}
+
+void MonoBehaviour::LateUpdate()
+{
+}
+
 void MonoBehaviour::Render()
 {
 }

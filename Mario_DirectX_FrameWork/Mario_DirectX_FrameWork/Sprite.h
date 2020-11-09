@@ -18,7 +18,7 @@ class Sprite
 	int width;
 	int height;
 	
-	//use this for flip, rotation, ...
+	//use this for flip, rotation, localPosition, ...
 	float anchorPointX;
 	float anchorPointY;
 	

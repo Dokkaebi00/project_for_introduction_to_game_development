@@ -21,6 +21,13 @@ public:
 	virtual void Awake();
 
 	virtual void Update();
+
+	//use for physicUpdate
+	virtual void FixedUpdate();
+
+	//use for cameraUpdate
+	virtual void LateUpdate();
+
 	virtual void Render();
 
 	Time GetDt();

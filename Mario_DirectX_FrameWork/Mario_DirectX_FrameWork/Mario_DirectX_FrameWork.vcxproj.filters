@@ -85,6 +85,21 @@
     <Filter Include="FrameWork\GameComponent\Camera">
       <UniqueIdentifier>{2c8654be-9bf8-4361-bf53-7c431de6bdf9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GameComponent">
+      <UniqueIdentifier>{10f10a73-4e29-4b43-80e5-b4e5b6df945c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameComponent\GameObject">
+      <UniqueIdentifier>{e05b58e1-3648-46f2-862d-f2a71bf74f33}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameComponent\GameObject\Mario">
+      <UniqueIdentifier>{83d5e2a9-917a-4ff3-9cbd-c6770c87b4df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\CoreFramework\Collision">
+      <UniqueIdentifier>{7b3cdb39-fa1e-400b-902b-fd2b6dccf680}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\CoreFramework\Collision\Box">
+      <UniqueIdentifier>{bc970117-d6e5-4aac-a28d-3d8647fddde9}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -152,6 +167,15 @@
     </ClInclude>
     <ClInclude Include="Time.h">
       <Filter>FrameWork\CoreFramework\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="Map.h">
+      <Filter>FrameWork\Map</Filter>
+    </ClInclude>
+    <ClInclude Include="Mario.h">
+      <Filter>Source Files\GameComponent\GameObject\Mario</Filter>
+    </ClInclude>
+    <ClInclude Include="BBox.h">
+      <Filter>FrameWork\CoreFramework\Collision\Box</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -226,6 +250,15 @@
     </ClCompile>
     <ClCompile Include="Time.cpp">
       <Filter>FrameWork\CoreFramework\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="Map.cpp">
+      <Filter>FrameWork\Map</Filter>
+    </ClCompile>
+    <ClCompile Include="Mario.cpp">
+      <Filter>Source Files\GameComponent\GameObject\Mario</Filter>
+    </ClCompile>
+    <ClCompile Include="BBox.cpp">
+      <Filter>FrameWork\CoreFramework\Collision\Box</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

@@ -25,6 +25,10 @@ protected:
 	Transformation transform; //use for set up position, rotation and scale of the gameobj like unity
 	string state;
 
+	string tag;
+
+	bool isActive;
+
 	unordered_map<string, LPANIMATION> animation_set;
 public:
 	GameObject();
@@ -53,6 +57,14 @@ public:
 
 	float GetX();
 	float GetY();
+
+	string GetTag();
+	void SetTag(string tag);
+	bool CompareTag(string tag);
+
+	bool GetActive();
+	void SetActive(bool active);
+
 
 };
 typedef GameObject* LPGAMEOBJECT;

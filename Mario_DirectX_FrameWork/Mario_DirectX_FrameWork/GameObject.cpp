@@ -30,6 +30,35 @@ float GameObject::GetY()
 	return this->transform.GetPosition().y;
 }
 
+string GameObject::GetTag()
+{
+	return this->tag;
+}
+
+void GameObject::SetTag(string tag)
+{
+	this->tag = tag;
+}
+
+bool GameObject::CompareTag(string tag)
+{
+	if (this->tag == tag)
+	{
+		return true;
+	}
+	return false;
+}
+
+bool GameObject::GetActive()
+{
+	return this->isActive;
+}
+
+void GameObject::SetActive(bool active)
+{
+	this->isActive = active;
+}
+
 GameObject::GameObject()
 {
 }

@@ -33,7 +33,12 @@ class Animation
 
 	Transformation transform; //set the position, scale or rotation of the anmation (ex: the leaf item)
 
-	D3DXVECTOR2 localPosition; //position of the animation with the relative object (for example when we draw attack animation of the racoon, movement animation of the marion -> update animation with the gameobj...)
+	D3DXVECTOR2 localPosition; 
+	//position of the animation with the relative object (for example when we draw attack animation of the racoon, movement animation of the marion -> update animation with the gameobj...)
+	//what is the difference between localPostion and Postion(worldPostion)
+	//localPostion is the position which is the centerpoint of the coordinate is gameObj
+	//for example racoon mario have a tail and it's localPosition is 0,1
+	//world postion is the position of component with the world
 
 
 	vector<LPANIMATION_FRAME> frames;

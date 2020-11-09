@@ -15,12 +15,16 @@
 #include "KeyboardProcessing.h"
 #include "GameKeyEventHandler.h"
 #include "KeyEventHandler.h"
+#include "GameObject.h"
+#include "Camera.h"
 
 #define MAX_FRAME_RATE 120
 #define WINDOW_WIDTH 1920
 #define WINDOW_HEIGHT 1080
 
 using namespace std;
+
+class Camera;
 
 class Game : public MonoBehaviour
 {
@@ -43,11 +47,16 @@ class Game : public MonoBehaviour
 	//a library use to draw sprite on backBuffer
 	LPD3DXSPRITE spriteHandler = NULL;
 
+	//GameObject* go; //this is for debug
+
 	//we can understand like this
 	//d3d a picture frame
 	//d3ddv is tool box
 	//backBuffer is a drawing paper
 	//spriteHandler is a pencil
+
+	//this is for debug
+	//Camera* camera;
 
 
 public:

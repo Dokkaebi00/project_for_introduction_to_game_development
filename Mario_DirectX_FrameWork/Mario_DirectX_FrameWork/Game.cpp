@@ -262,11 +262,18 @@ void Game::Awake()
 	KeyboardProcessing* keyboardProcessing = KeyboardProcessing::GetInstance();
 	keyboardProcessing->SetHWND(hWnd);
 	keyboardProcessing->InitKeyboard(keyEventHandler);
+
+	//this is for debug
+	//go = new GameObject();
+	//camera = new Camera();
 }
 
 void Game::Update()
 {
 	MonoBehaviour::Update();
+
+	//this is for debug
+	//go->Update(dt,camera);
 }
 
 void Game::Render()
@@ -289,6 +296,8 @@ void Game::Render()
 
 		ex->Render(D3DXVECTOR2(20.f, 20.0f));
 		
+		//go->Render(camera);
+
 		int n = ex->GetNumberOfFrames();
 		int i = ex->GetCurrentFrame();
 

@@ -55,6 +55,10 @@ bool Camera::CheckObjectInCameraByRect(RECT r)
 	return false;
 }
 
+void Camera::Awake()
+{
+}
+
 void Camera::Update()
 {
 	MonoBehaviour::Update();

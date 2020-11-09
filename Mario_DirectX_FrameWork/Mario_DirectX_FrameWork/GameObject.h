@@ -29,6 +29,9 @@ protected:
 
 	bool isActive;
 
+	//this is for debug
+	//float vx;
+
 	unordered_map<string, LPANIMATION> animation_set;
 public:
 	GameObject();
@@ -65,6 +68,10 @@ public:
 	bool GetActive();
 	void SetActive(bool active);
 
-
+	//this is for debug
+	/*
+	float GetVx();
+	void SetVx(float vx);
+	*/
 };
 typedef GameObject* LPGAMEOBJECT;

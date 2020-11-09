@@ -29,6 +29,8 @@ class Camera : public MonoBehaviour
 public:
 	Camera(float width, float height);
 
+	Camera();
+
 	D3DXVECTOR2 TransformWorldPostoCamPos(D3DXVECTOR2 worldPos);
 	D3DXVECTOR2 TransformCamPostoWorldPos(D3DXVECTOR2 CamPos);
 	
@@ -36,7 +38,7 @@ public:
 	bool CheckObjectInCameraByPosition(D3DXVECTOR2 objPos, float objWidth, float objHeight);
 	bool CheckObjectInCameraByRect(RECT r);
 
-
+	virtual void Awake() override;
 	virtual void Update() override;
 	virtual void Render() override;
 

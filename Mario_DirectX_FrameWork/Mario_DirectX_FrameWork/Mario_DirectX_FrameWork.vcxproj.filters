@@ -49,9 +49,6 @@
     <Filter Include="FrameWork\TextureManager\Animations">
       <UniqueIdentifier>{60028141-e56d-4b2d-becb-fba2cc211c9a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\KeyEventHandler\GameKeyEventHandler">
-      <UniqueIdentifier>{a59d1e29-2616-4aa7-8e7d-6d37e32006f5}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FrameWork\Map">
       <UniqueIdentifier>{42be604c-f19d-40d1-a884-3e66e6aef106}</UniqueIdentifier>
     </Filter>
@@ -100,6 +97,18 @@
     <Filter Include="FrameWork\CoreFramework\Collision\Box">
       <UniqueIdentifier>{bc970117-d6e5-4aac-a28d-3d8647fddde9}</UniqueIdentifier>
     </Filter>
+    <Filter Include="FrameWork\KeyEventHandler\PlayerKeyEventHandler">
+      <UniqueIdentifier>{a59d1e29-2616-4aa7-8e7d-6d37e32006f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\KeyEventHandler\SceneKeyEventHandler">
+      <UniqueIdentifier>{cda3ed8d-85c4-46e3-b7bc-866dda2c2588}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\CoreFramework\Collision\Box\CollisionBBox">
+      <UniqueIdentifier>{7aa2ce29-553d-4831-903b-6c94413dba92}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\CoreFramework\Collision\Box\OverlapBBox">
+      <UniqueIdentifier>{a21cdccb-75e7-4b19-a277-21164e347d67}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Utils.h">
@@ -144,9 +153,6 @@
     <ClInclude Include="Animations.h">
       <Filter>FrameWork\TextureManager\Animations</Filter>
     </ClInclude>
-    <ClInclude Include="GameKeyEventHandler.h">
-      <Filter>FrameWork\KeyEventHandler\GameKeyEventHandler</Filter>
-    </ClInclude>
     <ClInclude Include="Scene.h">
       <Filter>FrameWork\GameComponent\Scene</Filter>
     </ClInclude>
@@ -174,8 +180,11 @@
     <ClInclude Include="Mario.h">
       <Filter>Source Files\GameComponent\GameObject\Mario</Filter>
     </ClInclude>
-    <ClInclude Include="BBox.h">
-      <Filter>FrameWork\CoreFramework\Collision\Box</Filter>
+    <ClInclude Include="PlayerKeyEventHandler.h">
+      <Filter>FrameWork\KeyEventHandler\PlayerKeyEventHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionBBox.h">
+      <Filter>FrameWork</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -230,9 +239,6 @@
     <ClCompile Include="Animations.cpp">
       <Filter>FrameWork\TextureManager\Animations</Filter>
     </ClCompile>
-    <ClCompile Include="GameKeyEventHandler.cpp">
-      <Filter>FrameWork\KeyEventHandler\GameKeyEventHandler</Filter>
-    </ClCompile>
     <ClCompile Include="Scene.cpp">
       <Filter>FrameWork\GameComponent\Scene</Filter>
     </ClCompile>
@@ -257,8 +263,11 @@
     <ClCompile Include="Mario.cpp">
       <Filter>Source Files\GameComponent\GameObject\Mario</Filter>
     </ClCompile>
-    <ClCompile Include="BBox.cpp">
-      <Filter>FrameWork\CoreFramework\Collision\Box</Filter>
+    <ClCompile Include="PlayerKeyEventHandler.cpp">
+      <Filter>FrameWork\KeyEventHandler\PlayerKeyEventHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionBBox.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

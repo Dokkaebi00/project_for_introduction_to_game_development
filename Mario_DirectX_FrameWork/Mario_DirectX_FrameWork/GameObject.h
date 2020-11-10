@@ -11,8 +11,13 @@
 #include"Transformation.h"
 #include"Camera.h"
 
+#include "CollisionBBox.h"
+
 class Animation;
 typedef Animation* LPANIMATION;
+
+class CollisionBBox;
+typedef CollisionBBox* LPCOLLISIONBOX;
 
 class Camera;
 
@@ -31,6 +36,8 @@ protected:
 
 	//this is for debug
 	//float vx;
+
+	LPCOLLISIONBOX collision;
 
 	unordered_map<string, LPANIMATION> animation_set;
 public:

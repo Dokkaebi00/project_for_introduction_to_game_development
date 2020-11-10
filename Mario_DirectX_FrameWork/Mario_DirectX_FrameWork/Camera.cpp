@@ -11,6 +11,10 @@ Camera::Camera(float width, float height)
 	this->vx = 0.0f;
 }
 
+Camera::Camera()
+{
+}
+
 D3DXVECTOR2 Camera::TransformWorldPostoCamPos(D3DXVECTOR2 worldPos)
 {
 	float x;

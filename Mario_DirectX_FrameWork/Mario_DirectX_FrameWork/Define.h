@@ -8,3 +8,6 @@
 #define INTRO_TEXTURE "intro_texture"
 #define MISC_TEXTURE "tex-misc"
 #define UI_TEXTURE "tex-ui"
+
+#define PLAYER_TAG "Player"
+#define ENEMY_TAG "Enemy"

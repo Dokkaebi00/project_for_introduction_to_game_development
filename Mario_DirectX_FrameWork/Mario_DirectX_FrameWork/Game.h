@@ -13,7 +13,7 @@
 #include "Animations.h"
 #include "tinyxml.h"
 #include "KeyboardProcessing.h"
-#include "GameKeyEventHandler.h"
+#include "PlayerKeyEventHandler.h"
 #include "KeyEventHandler.h"
 #include "GameObject.h"
 #include "Camera.h"

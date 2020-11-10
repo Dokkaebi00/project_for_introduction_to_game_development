@@ -258,7 +258,7 @@ void Game::Awake()
 	Sprites::GetInstance()->LoadSprites();
 	Animations::GetInstance()->LoadAnimations();
 
-	GameKeyEventHandler* keyEventHandler = new GameKeyEventHandler();
+	PlayerKeyEventHandler* keyEventHandler = new PlayerKeyEventHandler();
 	KeyboardProcessing* keyboardProcessing = KeyboardProcessing::GetInstance();
 	keyboardProcessing->SetHWND(hWnd);
 	keyboardProcessing->InitKeyboard(keyEventHandler);

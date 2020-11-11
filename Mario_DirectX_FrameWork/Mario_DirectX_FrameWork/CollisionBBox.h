@@ -189,6 +189,9 @@ public:
 	void SetTrigger(bool trigger);
 	bool GetTrigger();
 
+	void SetDirection(D3DXVECTOR2 d);
+	D3DXVECTOR2 GetDirection();
+
 	//because the position of the properties is just local, we need to get the position of the bb in world game for some calculate
 	D3DXVECTOR2 GetPositionInGame();
 };

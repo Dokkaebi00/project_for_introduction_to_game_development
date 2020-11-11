@@ -195,6 +195,16 @@ bool CollisionBBox::GetTrigger()
 	return this->isTrigger;
 }
 
+void CollisionBBox::SetDirection(D3DXVECTOR2 d)
+{
+	this->direction = d;
+}
+
+D3DXVECTOR2 CollisionBBox::GetDirection()
+{
+	return this->direction;
+}
+
 float CollisionBBox::GetDx()
 {
 	return this->dx;
@@ -329,11 +339,11 @@ void CollisionBBox::FixedUpdate(vector<LPCOLLISIONBOX>* coObject)
 		{
 			if (isTrigger == true)
 			{
-
+				//OnCollision
 			}
 			else
 			{
-
+				//OnTrigger
 			}
 			//if(gravity == 0)
 		}

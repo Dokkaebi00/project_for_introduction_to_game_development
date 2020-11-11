@@ -3,7 +3,7 @@
 Transformation::Transformation()
 {
     this->position = D3DXVECTOR2(0.0f, 0.0f);
-    this->scale = D3DXVECTOR2(0.0f, 0.0f);
+    this->scale = D3DXVECTOR2(1.0f, 1.0f);
     this->rotation = 0.0f;
 }
 

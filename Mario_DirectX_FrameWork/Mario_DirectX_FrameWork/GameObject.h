@@ -43,6 +43,8 @@ protected:
 	//float vx;
 
 	LPCOLLISIONBOX collision;
+	vector<LPCOLLISIONBOX>* collisions;
+	
 	LPSPRITE sprite;
 
 	unordered_map<string, LPANIMATION> animation_set;
@@ -54,6 +56,8 @@ public:
 	virtual void Clear();
 
 	virtual void Awake();
+
+	virtual void FixedUpdate(vector<LPGAMEOBJECT>* coObjects);
 
 	virtual void Update(Time dt, Camera* camera);
 
@@ -67,6 +71,12 @@ public:
 
 	D3DXVECTOR2 GetPosition();
 	void SetPosition(D3DXVECTOR2 p);
+
+	float GetRotation();
+	void SetRotation(float r);
+
+	D3DXVECTOR2 GetScale();
+	void SetScale(D3DXVECTOR2 s);
 
 	string GetState();
 	void SetState(string state);
@@ -85,7 +95,9 @@ public:
 	LPCOLLISIONBOX GetCollisionBox();
 	void SetCollisionBox(LPCOLLISIONBOX box);
 
+	vector<LPCOLLISIONBOX>* GetCollisions();
 
+	
 	//this is for debug
 	/*
 	float GetVx();

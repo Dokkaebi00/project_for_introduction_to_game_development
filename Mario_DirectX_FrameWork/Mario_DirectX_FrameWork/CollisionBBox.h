@@ -60,6 +60,8 @@ class CollisionBBox : public MonoBehaviour
 	//isActive (use it to process the collision of the enemy when it die)
 	bool isActive;
 
+	bool isTrigger;
+
 	// velocity of the collision (and of the gameobj too)
 	D3DXVECTOR2 v; //vx, vy
 	float vx;
@@ -183,6 +185,9 @@ public:
 
 	bool isDynamic();
 	void SetDynamic(bool dynamic);
+
+	void SetTrigger(bool trigger);
+	bool GetTrigger();
 
 	//because the position of the properties is just local, we need to get the position of the bb in world game for some calculate
 	D3DXVECTOR2 GetPositionInGame();

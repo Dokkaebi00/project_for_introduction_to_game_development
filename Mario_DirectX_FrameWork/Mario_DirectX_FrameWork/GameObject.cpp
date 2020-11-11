@@ -30,19 +30,19 @@ float GameObject::GetY()
 	return this->transform.GetPosition().y;
 }
 
-string GameObject::GetTag()
+string GameObject::GetType()
 {
-	return this->tag;
+	return this->type;
 }
 
-void GameObject::SetTag(string tag)
+void GameObject::SetType(string tag)
 {
-	this->tag = tag;
+	this->type = tag;
 }
 
-bool GameObject::CompareTag(string tag)
+bool GameObject::CompareTag(string type)
 {
-	if (this->tag == tag)
+	if (this->type == type)
 	{
 		return true;
 	}
@@ -57,6 +57,16 @@ bool GameObject::GetActive()
 void GameObject::SetActive(bool active)
 {
 	this->isActive = active;
+}
+
+LPCOLLISIONBOX GameObject::GetCollisionBox()
+{
+	return this->collision;
+}
+
+void GameObject::SetCollisionBox(LPCOLLISIONBOX box)
+{
+	this->collision = box;
 }
 
 //this is for debug

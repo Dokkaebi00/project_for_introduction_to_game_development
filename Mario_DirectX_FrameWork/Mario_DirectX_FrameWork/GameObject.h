@@ -35,7 +35,7 @@ protected:
 	
 	string state;
 
-	string tag;
+	string type;
 
 	bool isActive;
 
@@ -74,12 +74,17 @@ public:
 	float GetX();
 	float GetY();
 
-	string GetTag();
-	void SetTag(string tag);
-	bool CompareTag(string tag);
+	string GetType();
+	void SetType(string tag);
+	bool CompareTag(string type);
 
 	bool GetActive();
 	void SetActive(bool active);
+
+
+	LPCOLLISIONBOX GetCollisionBox();
+	void SetCollisionBox(LPCOLLISIONBOX box);
+
 
 	//this is for debug
 	/*

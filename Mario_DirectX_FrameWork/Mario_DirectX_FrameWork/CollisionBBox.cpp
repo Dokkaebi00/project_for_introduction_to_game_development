@@ -185,6 +185,16 @@ void CollisionBBox::SetDynamic(bool dynamic)
 	this->Dynamic = dynamic;
 }
 
+void CollisionBBox::SetTrigger(bool trigger)
+{
+	this->isTrigger = trigger;
+}
+
+bool CollisionBBox::GetTrigger()
+{
+	return this->isTrigger;
+}
+
 float CollisionBBox::GetDx()
 {
 	return this->dx;
@@ -249,8 +259,93 @@ void CollisionBBox::FixedUpdate(vector<LPCOLLISIONBOX>* coObject)
 {
 	MonoBehaviour::FixedUpdate();
 
-	//if(gameObj == NULL || )
+	Game* game = Game::GetInstance();
+
+	if (gameObj == NULL || gameObj->GetActive() == false)
+	{
+		return;
+	}
+
+	float dt = game->GetFixedDeltaTime();
+
+	LPCOLLISIONBOX collision = gameObj->GetCollisionBox();
+
+	float vy = collision->GetVy();
 	
+	vy += collision->GetGravity() * dt;
+
+	collision->SetVy(vy);
+
+	vector<CollisionEvent*> coEvents;
+	vector<CollisionEvent*> coEventsResult;
+
+	coEvents.clear();
+	coEventsResult.clear();
+
+	CalcPotentialCollisions(coObject, coEvents);
+
+	D3DXVECTOR2 position = gameObj->GetPosition();
+
+	if (coEvents.size() == 0)
+	{
+		position.x += dx;
+		position.y += dy;
+
+		gameObj->SetPosition(position);
+	}
+	else
+	{
+		float min_tx;
+		float min_ty;
+		float nx = 0;
+		float ny;
+
+		FilterCollision(coEvents, coEventsResult, min_tx, min_ty, nx, ny);
+
+		position = gameObj->GetPosition();
+
+		if (isTrigger == false)
+		{
+			position.x += min_tx * dx + nx * 0.4f;
+			position.y += min_ty * dy + ny * 0.4f;
+			gameObj->SetPosition(position);
+
+		}
+
+		if (nx != 0)
+		{
+			if (isTrigger == true)
+			{
+				//OnCollision
+			}
+			else
+			{
+				//OnTrigger
+			}
+			this->vx = 0;
+		}
+
+		if (ny != 0)
+		{
+			if (isTrigger == true)
+			{
+
+			}
+			else
+			{
+
+			}
+			//if(gravity == 0)
+		}
+	
+	}
+
+	for (unsigned i = 0; i < coEvents.size(); i++)
+	{
+		delete coEvents[i];
+	}
+
+	coEvents.clear();
 }
 
 void CollisionBBox::Render(Camera* camera)

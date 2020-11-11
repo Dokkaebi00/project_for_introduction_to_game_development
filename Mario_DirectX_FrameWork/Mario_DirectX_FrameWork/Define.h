@@ -9,5 +9,8 @@
 #define MISC_TEXTURE "tex-misc"
 #define UI_TEXTURE "tex-ui"
 
-#define PLAYER_TAG "Player"
-#define ENEMY_TAG "Enemy"
+#define PLAYER "Player"
+#define ENEMY "Enemy"
+#define GROUND "Ground"
+#define FIRE "Fire"
+

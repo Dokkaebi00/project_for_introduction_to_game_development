@@ -8,8 +8,15 @@ class Time
 {
 public:
 	static float dt;
+	static float fixedDt;
+	static float timeScale;
 
 	float GetDt();
 	void SetDt(float dt);
+
+	float GetFixedDt();
+
+	float GetTimeScale();
+	void SetTimeScale(float timeScale);
 };
 

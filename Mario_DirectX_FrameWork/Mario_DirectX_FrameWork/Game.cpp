@@ -335,7 +335,7 @@ void Game::GameLoop()
 
 		int now = GetTickCount();
 		deltat = now - frameStart;
-		this->dt.SetDt(deltat);
+		this->time.SetDt(deltat);
 
 		if (deltat >= tickPerFrame)
 		{
@@ -374,10 +374,31 @@ LPD3DXSPRITE Game::GetSpriteHandler()
 	return this->spriteHandler;
 }
 
-float Game::GetDeltatTime()
+float Game::GetDeltaTime()
 {
 	MonoBehaviour::GetDt();
-	return this->dt.GetDt();
+	return this->time.GetDt();
+}
+
+float Game::GetFixedDeltaTime()
+{
+	MonoBehaviour::GetFixedDt();
+	return this->time.GetFixedDt();
+}
+
+void Game::SetTimeScale(float ts)
+{
+	this->time.SetTimeScale(ts);
+}
+
+float Game::GetTimeScale()
+{
+	return this->time.GetTimeScale();
+}
+
+Time Game::GetTime()
+{
+	return this->time;
 }
 
 /*float Game::GetDeltatTime()

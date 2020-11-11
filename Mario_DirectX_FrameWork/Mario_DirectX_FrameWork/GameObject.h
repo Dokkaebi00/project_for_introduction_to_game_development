@@ -5,16 +5,20 @@
 #include<d3dx9.h>
 
 #include "MonoBehaviour.h"
-#include"Game.h"
-#include"Textures.h"
-#include"Animation.h"
-#include"Transformation.h"
-#include"Camera.h"
+#include "Game.h"
+#include "Textures.h"
+#include "Animation.h"
+#include "Sprites.h"
+#include "Transformation.h"
+#include "Camera.h"
 
 #include "CollisionBBox.h"
 
 class Animation;
 typedef Animation* LPANIMATION;
+
+class Sprite;
+typedef Sprite* LPSPRITE;
 
 class CollisionBBox;
 typedef CollisionBBox* LPCOLLISIONBOX;
@@ -28,6 +32,7 @@ protected:
 	int id;
 
 	Transformation transform; //use for set up position, rotation and scale of the gameobj like unity (this is localTransformation)
+	
 	string state;
 
 	string tag;
@@ -38,6 +43,7 @@ protected:
 	//float vx;
 
 	LPCOLLISIONBOX collision;
+	LPSPRITE sprite;
 
 	unordered_map<string, LPANIMATION> animation_set;
 public:

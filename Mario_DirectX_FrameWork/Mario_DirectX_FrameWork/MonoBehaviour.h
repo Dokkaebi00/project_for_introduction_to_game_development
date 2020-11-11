@@ -14,7 +14,7 @@ class MonoBehaviour
 protected:
 	//dt (time between 2 frame, define a dt variable in Game class so that we can use this dt 
 	//for all object in game like GameObject, Scene, more easy to handle than each update have an invidual dt
-	Time dt;
+	Time time;
 
 public:
 	
@@ -30,7 +30,13 @@ public:
 
 	virtual void Render();
 
-	Time GetDt();
+	float GetDt();
 	void SetDt(float dt);
+
+	float GetFixedDt();
+	//void SetFixedDt(float dt);
+
+	float GetTimeScale();
+	void SetTimeScale(float ts);
 };
 

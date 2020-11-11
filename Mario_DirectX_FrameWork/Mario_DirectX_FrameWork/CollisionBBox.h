@@ -3,6 +3,7 @@
 #include "GameObject.h"
 #include "Camera.h"
 #include "FloatRect.h"
+#include "Game.h"
 
 #include <d3d9.h>
 #include <d3dx9.h>
@@ -64,6 +65,9 @@ class CollisionBBox : public MonoBehaviour
 	float vx;
 	float vy;
 
+	float dx;
+	float dy;
+
 	float acceleration;
 
 	//graviy of the collision (use for mario, mushroom, koopas, ...)
@@ -75,8 +79,8 @@ class CollisionBBox : public MonoBehaviour
 	float drag;
 	//use for Mario
 
-	//use to define which collision is dynamic, which collision is active
-	bool Static;
+	//use to define which collision is dynamic, which collision is static
+	bool Dynamic;
 
 	D3DXVECTOR2 direction;
 	//direction.x = -1 ->left
@@ -84,8 +88,6 @@ class CollisionBBox : public MonoBehaviour
 	//direction.y = -1 -> up
 	//direction.y = 1 ->right
 
-	float dx;
-	float dy;
 	
 public:
 	CollisionBBox();
@@ -94,7 +96,9 @@ public:
 
 	virtual void Update();
 
-	virtual void Render();
+	virtual void FixedUpdate(vector<LPCOLLISIONBOX>* coObject); 
+
+	virtual void Render(Camera* camera);
 
 	bool CheckAABB(FloatRect b2);
 
@@ -113,7 +117,7 @@ public:
 		float& nx,
 		float& ny);
 
-	LPCOLLISIONEVENT SweptAABBEx(LPCOLLISIONBOX go);
+	LPCOLLISIONEVENT SweptAABBEx(LPCOLLISIONBOX other);
 	void CalcPotentialCollisions(vector<LPCOLLISIONBOX>* coObjects, vector<LPCOLLISIONEVENT>& coEvents);
 	void FilterCollision(
 		vector<LPCOLLISIONEVENT>& coEvents,
@@ -152,6 +156,33 @@ public:
 
 	bool Active();
 	void SetActive(bool active);
+
+	float GetVx();
+	void SetVx(float vx);
+
+	float GetDx();
+	void SetDx(float dx);
+
+	float GetDy();
+	void GetDy(float dy);
+
+	float GetVy();
+	void SetVy(float vy);
+
+	float GetAcceleration();
+	void SetAcceleration(float a);
+
+	float GetGravity();
+	void SetGravity(float g);
+
+	bool Gravity();
+	void UseGravity(bool gravity);
+
+	float DragForce();
+	void SetDragForce(float dragforce);
+
+	bool isDynamic();
+	void SetDynamic(bool dynamic);
 
 	//because the position of the properties is just local, we need to get the position of the bb in world game for some calculate
 	D3DXVECTOR2 GetPositionInGame();

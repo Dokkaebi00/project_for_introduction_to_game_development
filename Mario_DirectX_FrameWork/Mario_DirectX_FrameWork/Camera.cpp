@@ -67,7 +67,7 @@ void Camera::Update()
 {
 	MonoBehaviour::Update();
 
-	this->dt = Game::GetInstance()->GetDt();
+	this->time = Game::GetInstance()->GetTime();
 
 	float x;
 
@@ -75,7 +75,7 @@ void Camera::Update()
 
 	if (isAuto)
 	{
-		float dx = vx * this->dt.GetDt();
+		float dx = vx * this->time.GetDt();
 		camPos.x += dx;
 	}
 	else

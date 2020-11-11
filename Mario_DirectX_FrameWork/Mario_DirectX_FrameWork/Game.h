@@ -95,7 +95,14 @@ public:
 	LPD3DXSPRITE GetSpriteHandler();
 
 	//get deltatime of game and use it for another object like GameObject,...
-	float GetDeltatTime();
+	float GetDeltaTime();
+
+	float GetFixedDeltaTime();
+
+	void SetTimeScale(float ts);
+	float GetTimeScale();
+
+	Time GetTime();
 
 	//singleton
 	static Game* GetInstance();

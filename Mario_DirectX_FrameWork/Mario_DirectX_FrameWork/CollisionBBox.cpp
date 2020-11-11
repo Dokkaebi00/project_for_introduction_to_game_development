@@ -111,6 +111,100 @@ void CollisionBBox::SetActive(bool active)
 	this->isActive = active;
 }
 
+float CollisionBBox::GetVx()
+{
+	return this->vx;
+}
+
+void CollisionBBox::SetVx(float vx)
+{
+	this->vx = vx;
+}
+
+float CollisionBBox::GetVy()
+{
+	return this->vy;
+}
+
+void CollisionBBox::SetVy(float vy)
+{
+	this->vy = vy;
+}
+
+float CollisionBBox::GetAcceleration()
+{
+	return this->acceleration;
+}
+
+void CollisionBBox::SetAcceleration(float a)
+{
+	this->acceleration = a;
+}
+
+float CollisionBBox::GetGravity()
+{
+	return this->gravity;
+}
+
+void CollisionBBox::SetGravity(float g)
+{
+	this->gravity = g;
+}
+
+bool CollisionBBox::Gravity()
+{
+	return this->isUseGravity;
+}
+
+void CollisionBBox::UseGravity(bool gravity)
+{
+	this->isUseGravity = gravity;
+	if (this->isUseGravity == false)
+	{
+		this->gravity = 0;
+	}
+}
+
+float CollisionBBox::DragForce()
+{
+	return this->drag;
+}
+
+void CollisionBBox::SetDragForce(float dragforce)
+{
+	this->drag = dragforce;
+}
+
+bool CollisionBBox::isDynamic()
+{
+	return this->Dynamic;
+}
+
+void CollisionBBox::SetDynamic(bool dynamic)
+{
+	this->Dynamic = dynamic;
+}
+
+float CollisionBBox::GetDx()
+{
+	return this->dx;
+}
+
+void CollisionBBox::SetDx(float dx)
+{
+	this->dx = dx;
+}
+
+float CollisionBBox::GetDy()
+{
+	return this->dy;
+}
+
+void CollisionBBox::GetDy(float dy)
+{
+	this->dy = dy;
+}
+
 D3DXVECTOR2 CollisionBBox::GetPositionInGame()
 {
 	D3DXVECTOR2 p;
@@ -120,6 +214,15 @@ D3DXVECTOR2 CollisionBBox::GetPositionInGame()
 
 CollisionBBox::CollisionBBox()
 {
+	localTransformation.SetPosition(D3DXVECTOR2(0, 0));
+	localTransformation.SetScale(D3DXVECTOR2(1, 1));
+	localTransformation.SetRotation(0.0f);
+
+	width = 1.0f;
+	height = 1.0f;
+
+	this->isActive = true;
+
 }
 
 void CollisionBBox::Awake()
@@ -128,10 +231,55 @@ void CollisionBBox::Awake()
 
 void CollisionBBox::Update()
 {
+	MonoBehaviour::Update();
+
+	if (gameObj == NULL || gameObj->GetActive() == false)
+	{
+		return;
+	}
+
+	float dt = Game::GetInstance()->GetDeltaTime();
+
+	this->dx = vx * dt;
+	this->dy = dy * dt;
+
 }
 
-void CollisionBBox::Render()
+void CollisionBBox::FixedUpdate(vector<LPCOLLISIONBOX>* coObject)
 {
+	MonoBehaviour::FixedUpdate();
+
+	//if(gameObj == NULL || )
+	
+}
+
+void CollisionBBox::Render(Camera* camera)
+{
+	D3DXVECTOR2 position = GetPositionInGame();
+
+	LPDIRECT3DTEXTURE9 texture = Textures::GetInstance()->GetTexture(BBOX_TEXTURE);
+
+	FloatRect bbox;
+	bbox.left = 0;
+	bbox.top = 0;
+	bbox.right = width;
+	bbox.bottom = height;
+
+	D3DXVECTOR2 localpositioninCamera;
+	D3DXVECTOR2 positionofcamera;
+
+	positionofcamera = camera->GetCamPosition();
+
+	localpositioninCamera.x = position.x - positionofcamera.x;
+	localpositioninCamera.y = position.y - positionofcamera.y;
+
+	RECT r;
+	r.left = bbox.left;
+	r.top = bbox.top;
+	r.right = bbox.right;
+	r.bottom = bbox.bottom;
+
+	Game::GetInstance()->Draw(localpositioninCamera.x, localpositioninCamera.y, width * 0.5f, height * 0.5f, texture, r);
 }
 
 bool CollisionBBox::CheckAABB(FloatRect b2)
@@ -231,9 +379,47 @@ void CollisionBBox::SweptAABB(float ml, float mt, float mr, float mb, float dx, 
 	}
 }
 
-LPCOLLISIONEVENT CollisionBBox::SweptAABBEx(LPCOLLISIONBOX go)
+LPCOLLISIONEVENT CollisionBBox::SweptAABBEx(LPCOLLISIONBOX other)
 {
-	return LPCOLLISIONEVENT();
+	float sl, st, sr, sb;		// static object bbox
+	float ml, mt, mr, mb;		// moving object bbox
+	float t, nx, ny;
+
+	FloatRect RectOfOther = other->GetRect();
+	sl = RectOfOther.left;
+	st = RectOfOther.top;
+	sr = RectOfOther.right;
+	sb = RectOfOther.bottom;
+
+	float svx, svy;
+	svx = other->GetVx();
+	svy = other->GetVy();
+
+	float sdx;
+	float sdy;
+
+	sdx = svx * Game::GetInstance()->GetDeltaTime();
+	sdy = svy * Game::GetInstance()->GetDeltaTime();
+
+	float rdx = this->dx - sdx;
+	float rdy = this->dy - sdy;
+
+	ml = GetRect().left;
+	mt = GetRect().top;
+	mr = GetRect().right;
+	mb = GetRect().bottom;
+
+	SweptAABB(
+		ml, mt, mr, mb,
+		rdx, rdy,
+		sl, st, sr, sb,
+		t,
+		nx,
+		ny
+	);
+
+	LPCOLLISIONEVENT e = new CollisionEvent(t, nx, ny, rdx, rdy, other);
+	return e;
 }
 
 void CollisionBBox::CalcPotentialCollisions(vector<LPCOLLISIONBOX>* coObjects, vector<LPCOLLISIONEVENT>& coEvents)

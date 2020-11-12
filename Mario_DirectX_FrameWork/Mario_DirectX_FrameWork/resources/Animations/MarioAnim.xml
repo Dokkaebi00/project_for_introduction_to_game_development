@@ -117,8 +117,8 @@
 			<Sprite id="spr-big-mario-high-jump-0" left="357" top="49"  width="19" height="26" frameTime="50"/>
 		</Animation>
 		<!-- Animation CROUCH-->
-		<Animation aniId="ani-big-mario-crouch" frameTime="50" name="CROUCH">
-			<Sprite id="spr-big-mario-crouch-0" left="379" top="57"  width="14" height="18" frameTime="50"/>
+		<Animation aniId="ani-big-mario-sit" frameTime="50" name="SIT">
+			<Sprite id="spr-big-mario-sit-0" left="379" top="57"  width="14" height="18" frameTime="50"/>
 		</Animation>
 		<!-- Animation SLIDE-->
 		<Animation aniId="ani-big-mario-slide" frameTime="50" name="SLIDE">
@@ -229,8 +229,8 @@
 			<Sprite id="spr-raccoon-mario-spin-5" left="80" top="142"  width="21" height="28" frameTime="80" xPivot="14"/>
 		</Animation>
 		<!-- Animation CROUCH-->
-		<Animation aniId="ani-raccoon-mario-crouch" frameTime="50" name="CROUCH">
-			<Sprite id="spr-raccoon-mario-crouch-0" left="522" top="152"  width="22" height="18" frameTime="50"/>
+		<Animation aniId="ani-raccoon-mario-sit" frameTime="50" name="SIT">
+			<Sprite id="spr-raccoon-mario-sit-0" left="522" top="152"  width="22" height="18" frameTime="50"/>
 		</Animation>
 		<!-- Animation SLIDE-->
 		<Animation aniId="ani-raccoon-mario-slide" frameTime="50" name="SLIDE">
@@ -340,8 +340,8 @@
 			<Sprite id="spr-fire-mario-high-jump-0" left="400" top="110"  width="19" height="26" frameTime="50"/>
 		</Animation>
 		<!-- Animation CROUCH -->
-		<Animation aniId="ani-fire-mario-crouch" frameTime="50" name="CROUCH">
-			<Sprite id="spr-fire-mario-crouch-0" left="422" top="118"  width="14" height="18" frameTime="50"/>
+		<Animation aniId="ani-fire-mario-sit" frameTime="50" name="SIT">
+			<Sprite id="spr-fire-mario-sit-0" left="422" top="118"  width="14" height="18" frameTime="50"/>
 		</Animation>
 		<!-- Animation SLIDE -->
 		<Animation aniId="ani-fire-mario-slide" frameTime="50" name="SLIDE">
@@ -432,8 +432,8 @@
 			<Sprite id="spr-hammer-mario-high-jump-0" left="409" top="209"  width="19" height="27" frameTime="50"/>
 		</Animation>
 		<!-- Animation CROUCH -->
-		<Animation aniId="ani-hammer-mario-crouch" frameTime="50" name="CROUCH">
-			<Sprite id="spr-hammer-mario-crouch-0" left="431" top="220"  width="16" height="16" frameTime="50"/>
+		<Animation aniId="ani-hammer-mario-sit" frameTime="50" name="SIT">
+			<Sprite id="spr-hammer-mario-sit-0" left="431" top="220"  width="16" height="16" frameTime="50"/>
 		</Animation>
 		<!-- Animation HOLD -->
 		<Animation aniId="ani-hammer-mario-hold" frameTime="50" name="HOLD">
@@ -596,8 +596,8 @@
 			<Sprite id="spr-tanooki-mario-fly-2" left="473" top="279"  width="24" height="27" frameTime="50"/>
 		</Animation>
 		<!-- Animation CROUCH -->
-		<Animation aniId="ani-tanooki-mario-crouch" frameTime="50" name="CROUCH">
-			<Sprite id="spr-tanooki-mario-crouch-0" left="500" top="288"  width="21" height="18" frameTime="50"/>
+		<Animation aniId="ani-tanooki-mario-sit" frameTime="50" name="SIT">
+			<Sprite id="spr-tanooki-mario-sit-0" left="500" top="288"  width="21" height="18" frameTime="50"/>
 		</Animation>
 		<!-- Animation STATUE -->
 		<Animation aniId="ani-tanooki-mario-statue" frameTime="50" name="STATUE">

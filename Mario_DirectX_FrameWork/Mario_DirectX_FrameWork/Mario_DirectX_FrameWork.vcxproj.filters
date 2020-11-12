@@ -184,7 +184,7 @@
       <Filter>FrameWork\KeyEventHandler\PlayerKeyEventHandler</Filter>
     </ClInclude>
     <ClInclude Include="CollisionBBox.h">
-      <Filter>FrameWork</Filter>
+      <Filter>FrameWork\CoreFramework\Collision\Box\CollisionBBox</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -267,7 +267,7 @@
       <Filter>FrameWork\KeyEventHandler\PlayerKeyEventHandler</Filter>
     </ClCompile>
     <ClCompile Include="CollisionBBox.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>FrameWork\CoreFramework\Collision\Box\CollisionBBox</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

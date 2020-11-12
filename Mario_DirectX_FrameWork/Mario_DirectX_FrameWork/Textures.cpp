@@ -62,9 +62,8 @@ void Textures::Add(string id, LPCWSTR texturePath, D3DCOLOR transparentColor)
 		return;
 	}
 
-
-	//textures.insert(make_pair(id, texture));
-	textures[id] = texture;
+	textures.insert(make_pair(id, texture));
+	//textures[id] = texture;
 
 	//DebugOut(L"[INFO] Texture loaded Ok: id=%s\n", id);
 	OutputDebugStringW(ToLPCWSTR("[INFO] Texture ID: " + id + "\n"));

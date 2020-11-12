@@ -91,12 +91,17 @@ public:
 	bool GetActive();
 	void SetActive(bool active);
 
-
 	LPCOLLISIONBOX GetCollisionBox();
 	void SetCollisionBox(LPCOLLISIONBOX box);
 
 	vector<LPCOLLISIONBOX>* GetCollisions();
 
+	//these 2 function are in the CollisioBox class, but i dont have enough tim to design each gameobj have an invidual collision box 
+	//so that i wrote these functions in the gameobj for easy way to inherrit
+	//will redesign this later (maybe, if i have enough time)
+	virtual void OnCollisionEnter(vector<LPCOLLISIONBOX> otherCollisions);
+
+	virtual void OnTriggerEnter(vector<LPCOLLISIONBOX> otherCollisions);
 	
 	//this is for debug
 	/*

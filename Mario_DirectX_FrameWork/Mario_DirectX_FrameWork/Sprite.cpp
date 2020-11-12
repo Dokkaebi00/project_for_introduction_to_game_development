@@ -32,10 +32,10 @@ void Sprite::Draw(float x, float y, D3DXVECTOR2 flipD, float rotation, int alpha
 	Game* game = Game::GetInstance();
 
 	RECT r;
-	r.left = left;
-	r.top = top;
-	r.right = right;
-	r.bottom = bottom;
+	r.left = this->left;
+	r.top = this->top;
+	r.right = this->right;
+	r.bottom = this->bottom;
 
 	if (flipD.x < 0)
 	{

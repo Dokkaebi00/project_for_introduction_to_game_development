@@ -9,12 +9,12 @@ Sprites::Sprites()
 
 void Sprites::LoadSprites()
 {
-	Game* game = Game::GetInstance();
+	//Game* game = Game::GetInstance();
 	CreateSprite(MARIO_TEXTURE, "resources/Sprites/MarioDB.xml");
 	CreateSprite(ENEMY_TEXTURE, "resources/Sprites/EnemyDB.xml");
 	CreateSprite(MISC_TEXTURE, "resources/Sprites/MiscDB.xml");
-	//CreateSprite(FIREBALL_TEXTURE, )
-	//CreateSprite(UI_TEXTURE, "resources/Sprites/UiDB.xml");
+	CreateSprite(FIREBALL_TEXTURE, "resources/Sprites/MiscDB.xml");
+	CreateSprite(UI_TEXTURE, "resources/Sprites/UiDB.xml");
 }
 
 void Sprites::Add(string id, int left, int top, int width, int height, LPDIRECT3DTEXTURE9 texture, int xPivot)

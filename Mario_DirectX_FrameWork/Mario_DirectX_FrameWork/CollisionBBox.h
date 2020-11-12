@@ -194,5 +194,12 @@ public:
 
 	//because the position of the properties is just local, we need to get the position of the bb in world game for some calculate
 	D3DXVECTOR2 GetPositionInGame();
+
+	/*
+	virtual void OnCollisionEnter(vector<LPCOLLISIONBOX> otherCollisions);
+
+	virtual void OnTriggerEnter(vector<LPCOLLISIONBOX> otherCollisions);
+	*/
+	void SyncTransform();
 };
 

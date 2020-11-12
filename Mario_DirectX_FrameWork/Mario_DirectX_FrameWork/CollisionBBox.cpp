@@ -232,6 +232,10 @@ D3DXVECTOR2 CollisionBBox::GetPositionInGame()
 	return p;
 }
 
+void CollisionBBox::SyncTransform()
+{
+}
+
 CollisionBBox::CollisionBBox()
 {
 	localTransformation.SetPosition(D3DXVECTOR2(0, 0));

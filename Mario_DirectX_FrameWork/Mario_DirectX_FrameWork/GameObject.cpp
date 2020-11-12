@@ -94,6 +94,14 @@ vector<LPCOLLISIONBOX>* GameObject::GetCollisions()
 	return this->collisions;
 }
 
+void GameObject::OnCollisionEnter(vector<LPCOLLISIONBOX> otherCollisions)
+{
+}
+
+void GameObject::OnTriggerEnter(vector<LPCOLLISIONBOX> otherCollisions)
+{
+}
+
 //this is for debug
 /*float GameObject::GetVx()
 {
@@ -186,7 +194,19 @@ void GameObject::Render(Camera* camera)
 	animation_set.find(state)->second->SetRotation(transform.GetRotation());
 	animation_set.find(state)->second->SetScale(transform.GetScale());
 	
+	//animation_set.at(state)->SetRotation(transform.GetRotation());
+	//animation_set.at(state)->SetScale(transform.GetScale());
 
+	//render gameobj in camera
+	D3DXVECTOR2 positionofobjincam;
+	positionofobjincam = camera->TransformWorldPostoCamPos(transform.GetPosition());
+
+	if (this->type != "")
+	{
+
+	}
+
+	animation_set.at(state)->Render(positionofobjincam);
 }
 
 void GameObject::AddAnimationIntoAnimationSet(string state, LPANIMATION animation, bool isLooping)

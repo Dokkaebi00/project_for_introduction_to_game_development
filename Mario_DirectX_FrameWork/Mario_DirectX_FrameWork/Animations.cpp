@@ -26,6 +26,7 @@ void Animations::LoadAnimations()
     Game* game = Game::GetInstance();
     LoadResource(MARIO_TEXTURE,"resources/Animations/MarioAnim.xml");
     LoadResource(ENEMY_TEXTURE,"resources/Animations/EnemyAnim.xml");
+    LoadResource(MISC_TEXTURE, "resources/Animations/MiscAnim.xml");
     LoadResource(FIREBALL_TEXTURE,"resources/Animations/MiscAnim.xml" );
 }
 

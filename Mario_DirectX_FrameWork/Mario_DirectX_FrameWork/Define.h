@@ -1,6 +1,6 @@
 #pragma once
 
-
+//id of texture
 #define MARIO_TEXTURE "tex-mario"
 #define BBOX_TEXTURE "tex-bbox"
 #define ENEMY_TEXTURE "tex-enemy"
@@ -9,6 +9,7 @@
 #define MISC_TEXTURE "tex-misc"
 #define UI_TEXTURE "tex-ui"
 
+//gameobject types
 #define PLAYER "Player"
 #define ENEMY "Enemy"
 #define GROUND "Ground"

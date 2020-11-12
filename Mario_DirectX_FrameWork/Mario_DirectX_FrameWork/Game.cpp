@@ -292,7 +292,9 @@ void Game::Render()
 		//LPSPRITE ex = Sprites::GetInstance()->Get("spr-small-mario-walk-1");
 		//ex->Draw(50.0f, 50.0f, D3DXVECTOR2(1, 1), 1);
 
-		LPANIMATION ex = Animations::GetInstance()->Get("ani-big-mario-walk");
+		LPANIMATION ex = Animations::GetInstance()->Get("ani-big-mario-jump");
+
+		ex->SetScale(D3DXVECTOR2(-1, 1));
 
 		ex->Render(D3DXVECTOR2(20.f, 20.0f));
 		

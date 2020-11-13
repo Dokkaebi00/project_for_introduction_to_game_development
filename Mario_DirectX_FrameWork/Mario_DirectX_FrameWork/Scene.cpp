@@ -36,6 +36,7 @@ void Scene::SetPath(string path)
 	this->path;
 }
 
+/*
 Camera* Scene::GetCamera()
 {
 	return this->camera;
@@ -45,7 +46,7 @@ void Scene::SetCamera(Camera* camera)
 {
 	this->camera = camera;
 }
-
+*/
 void Scene::AddObjectToScene(LPGAMEOBJECT gameobj)
 {
 	if (gameobj != NULL)

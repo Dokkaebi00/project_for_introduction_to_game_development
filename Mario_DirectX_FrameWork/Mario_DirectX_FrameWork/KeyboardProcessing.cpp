@@ -123,12 +123,12 @@ void KeyboardProcessing::SetHWND(HWND hWnd)
 
 int KeyboardProcessing::GetKeyDown(int keycode)
 {
-    return keyStates[keycode] & 0x80;
+    return (keyStates[keycode] & 0x80) > 0;
 }
 
 int KeyboardProcessing::GetKeyUp(int keycode)
 {
-    return keyStates[keycode] & 0x80;
+    return (keyStates[keycode] & 0x80) <= 0;
 }
 
 KeyboardProcessing::~KeyboardProcessing()

@@ -1,5 +1,7 @@
 #pragma once
 
+
+
 #include <windows.h>
 #include <d3d9.h>
 #include <d3dx9.h>
@@ -15,16 +17,17 @@
 #include "KeyboardProcessing.h"
 #include "PlayerKeyEventHandler.h"
 #include "KeyEventHandler.h"
-#include "GameObject.h"
-#include "Camera.h"
+#include "Object.h"
+//#include "Camera.h"
 
 #define MAX_FRAME_RATE 120
 #define WINDOW_WIDTH 1920
 #define WINDOW_HEIGHT 1080
 
-using namespace std;
+class Object;
+class CMario;
 
-class Camera;
+using namespace std;
 
 class Game : public MonoBehaviour
 {
@@ -57,6 +60,8 @@ class Game : public MonoBehaviour
 
 	//this is for debug
 	//Camera* camera;
+
+	CMario* mario;
 
 
 public:
@@ -102,7 +107,7 @@ public:
 	void SetTimeScale(float ts);
 	float GetTimeScale();
 
-	Time GetTime();
+	//Time GetTime();
 
 	//singleton
 	static Game* GetInstance();

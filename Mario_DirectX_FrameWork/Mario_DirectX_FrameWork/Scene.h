@@ -1,20 +1,21 @@
 #pragma once
 #include<vector>
+#include<vector>
+#include<string>
 
-#include "GameObject.h"
 #include "MonoBehaviour.h"
-#include "Camera.h"
+//#include "Camera.h"
 #include "Time.h"
-
-using namespace std;
 
 class GameObject;
 typedef GameObject* LPGAMEOBJECT;
 
+using namespace std;
+
 class Scene : public MonoBehaviour
 {
 protected:
-	Camera* camera;
+	//Camera* camera;
 
 	string path;
 
@@ -35,8 +36,8 @@ public:
 	string GetPath();
 	void SetPath(string path);
 
-	Camera* GetCamera();
-	void SetCamera(Camera* camera);
+	//Camera* GetCamera();
+	//void SetCamera(Camera* camera);
 
 	void AddObjectToScene(LPGAMEOBJECT gameobj);
 

@@ -138,7 +138,7 @@ D3DXVECTOR2 Animation::GetLocalPosition()
 {
 	return this->localPosition;
 }
-
+/*
 void Animation::SetGameObject(LPGAMEOBJECT obj)
 {
 	this->gameobj = obj;
@@ -148,7 +148,7 @@ LPGAMEOBJECT Animation::GetGameObject()
 {
 	return this->gameobj;
 }
-
+*/
 int Animation::GetNumberOfFrames()
 {
 	return frames.size();

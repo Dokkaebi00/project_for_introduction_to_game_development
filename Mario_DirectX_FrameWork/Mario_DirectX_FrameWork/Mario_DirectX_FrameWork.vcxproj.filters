@@ -16,38 +16,11 @@
     <Filter Include="FrameWork\Utils">
       <UniqueIdentifier>{2beb3bcd-f923-4a32-9771-a401bab7f212}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\TextureManager">
-      <UniqueIdentifier>{13bfa535-18c2-42d2-9b1b-c998fbccf93d}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FrameWork\TinyXML">
       <UniqueIdentifier>{1a765e74-8bbb-490f-b8a9-b6542453d830}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\TextureManager\Textures">
-      <UniqueIdentifier>{291a10b5-9442-4e81-9bbb-15453f94950c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\KeyEventHandler">
-      <UniqueIdentifier>{43f8c65a-dfea-4f49-b610-9d828cbf37b5}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\KeyEventHandler\KeyBoardProcessing">
-      <UniqueIdentifier>{bc89ffd4-ad02-4124-b906-aa2c7a30e63b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\Define">
       <UniqueIdentifier>{b0b5b93a-d717-4333-949d-c5ec8d199959}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\TextureManager\Sprites">
-      <UniqueIdentifier>{95749b8a-9b6e-4156-9bfc-6d2c4df5a503}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\TextureManager\Sprites\Sprite">
-      <UniqueIdentifier>{63544388-7f76-4d88-b4fa-37571f3a5471}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\TextureManager\AnimationFrame">
-      <UniqueIdentifier>{ada22b60-2b33-42b8-9c5a-e0ba357cbd2d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\TextureManager\Animation">
-      <UniqueIdentifier>{d3ab8036-603c-4a7a-a829-225c57ba46b6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\TextureManager\Animations">
-      <UniqueIdentifier>{60028141-e56d-4b2d-becb-fba2cc211c9a}</UniqueIdentifier>
     </Filter>
     <Filter Include="FrameWork\Map">
       <UniqueIdentifier>{42be604c-f19d-40d1-a884-3e66e6aef106}</UniqueIdentifier>
@@ -67,47 +40,62 @@
     <Filter Include="FrameWork\CoreFramework\FloatRect">
       <UniqueIdentifier>{2d0266d6-494a-4b4b-a182-ecf58c55b61c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\GameComponent">
-      <UniqueIdentifier>{6b634112-63ee-4d25-a385-eee36767802a}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\GameComponent\Scene">
-      <UniqueIdentifier>{8c19313e-28e5-48c3-854f-e43c8a27cb78}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\GameComponent\GameObject">
-      <UniqueIdentifier>{b36dda36-4669-4ad6-899d-1dfbe3ccae74}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\GameComponent\Game">
-      <UniqueIdentifier>{36d633c3-6685-4f1d-ba0b-7145de028a02}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="FrameWork\GameComponent\Camera">
-      <UniqueIdentifier>{2c8654be-9bf8-4361-bf53-7c431de6bdf9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\GameComponent">
-      <UniqueIdentifier>{10f10a73-4e29-4b43-80e5-b4e5b6df945c}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\GameComponent\GameObject">
-      <UniqueIdentifier>{e05b58e1-3648-46f2-862d-f2a71bf74f33}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Source Files\GameComponent\GameObject\Mario">
-      <UniqueIdentifier>{83d5e2a9-917a-4ff3-9cbd-c6770c87b4df}</UniqueIdentifier>
-    </Filter>
     <Filter Include="FrameWork\CoreFramework\Collision">
       <UniqueIdentifier>{7b3cdb39-fa1e-400b-902b-fd2b6dccf680}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\CoreFramework\Collision\Box">
-      <UniqueIdentifier>{bc970117-d6e5-4aac-a28d-3d8647fddde9}</UniqueIdentifier>
+    <Filter Include="FrameWork\TextureManager">
+      <UniqueIdentifier>{13bfa535-18c2-42d2-9b1b-c998fbccf93d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\KeyEventHandler\PlayerKeyEventHandler">
+    <Filter Include="FrameWork\TextureManager\Textures">
+      <UniqueIdentifier>{291a10b5-9442-4e81-9bbb-15453f94950c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\TextureManager\Sprites">
+      <UniqueIdentifier>{95749b8a-9b6e-4156-9bfc-6d2c4df5a503}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\TextureManager\Sprites\Sprite">
+      <UniqueIdentifier>{63544388-7f76-4d88-b4fa-37571f3a5471}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\TextureManager\AnimationFrame">
+      <UniqueIdentifier>{ada22b60-2b33-42b8-9c5a-e0ba357cbd2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\TextureManager\Animation">
+      <UniqueIdentifier>{d3ab8036-603c-4a7a-a829-225c57ba46b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\TextureManager\Animations">
+      <UniqueIdentifier>{60028141-e56d-4b2d-becb-fba2cc211c9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Game">
+      <UniqueIdentifier>{36d633c3-6685-4f1d-ba0b-7145de028a02}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Camera">
+      <UniqueIdentifier>{2c8654be-9bf8-4361-bf53-7c431de6bdf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Scene">
+      <UniqueIdentifier>{8c19313e-28e5-48c3-854f-e43c8a27cb78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject">
+      <UniqueIdentifier>{0455af77-3fe3-43ac-b927-b8f0b3ef0f2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GameObject\Mario">
+      <UniqueIdentifier>{6153f96f-eee9-4e02-9901-e0c1faf2d9e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Scene\KeyEventHandler">
+      <UniqueIdentifier>{43f8c65a-dfea-4f49-b610-9d828cbf37b5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Scene\KeyEventHandler\KeyBoardProcessing">
+      <UniqueIdentifier>{bc89ffd4-ad02-4124-b906-aa2c7a30e63b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="FrameWork\Scene\KeyEventHandler\PlayerKeyEventHandler">
       <UniqueIdentifier>{a59d1e29-2616-4aa7-8e7d-6d37e32006f5}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\KeyEventHandler\SceneKeyEventHandler">
+    <Filter Include="FrameWork\Scene\KeyEventHandler\SceneKeyEventHandler">
       <UniqueIdentifier>{cda3ed8d-85c4-46e3-b7bc-866dda2c2588}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\CoreFramework\Collision\Box\CollisionBBox">
-      <UniqueIdentifier>{7aa2ce29-553d-4831-903b-6c94413dba92}</UniqueIdentifier>
+    <Filter Include="FrameWork\Map\TileSet">
+      <UniqueIdentifier>{c6e49ac4-ff3e-43db-b7ef-c65fa5ac45b3}</UniqueIdentifier>
     </Filter>
-    <Filter Include="FrameWork\CoreFramework\Collision\Box\OverlapBBox">
-      <UniqueIdentifier>{a21cdccb-75e7-4b19-a277-21164e347d67}</UniqueIdentifier>
+    <Filter Include="FrameWork\Map\Layer">
+      <UniqueIdentifier>{82c619fc-3179-4a20-99a9-7d33843b8e12}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -115,7 +103,7 @@
       <Filter>FrameWork\Utils</Filter>
     </ClInclude>
     <ClInclude Include="Game.h">
-      <Filter>FrameWork\GameComponent\Game</Filter>
+      <Filter>FrameWork\Game</Filter>
     </ClInclude>
     <ClInclude Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinystr.h">
       <Filter>FrameWork\TinyXML</Filter>
@@ -126,17 +114,14 @@
     <ClInclude Include="Textures.h">
       <Filter>FrameWork\TextureManager\Textures</Filter>
     </ClInclude>
-    <ClInclude Include="GameObject.h">
-      <Filter>FrameWork\GameComponent\GameObject</Filter>
-    </ClInclude>
     <ClInclude Include="Sprite.h">
       <Filter>FrameWork\TextureManager\Sprites\Sprite</Filter>
     </ClInclude>
     <ClInclude Include="KeyEventHandler.h">
-      <Filter>FrameWork\KeyEventHandler</Filter>
+      <Filter>FrameWork\Scene\KeyEventHandler</Filter>
     </ClInclude>
     <ClInclude Include="KeyboardProcessing.h">
-      <Filter>FrameWork\KeyEventHandler\KeyBoardProcessing</Filter>
+      <Filter>FrameWork\Scene\KeyEventHandler\KeyBoardProcessing</Filter>
     </ClInclude>
     <ClInclude Include="Define.h">
       <Filter>Source Files\Define</Filter>
@@ -154,10 +139,7 @@
       <Filter>FrameWork\TextureManager\Animations</Filter>
     </ClInclude>
     <ClInclude Include="Scene.h">
-      <Filter>FrameWork\GameComponent\Scene</Filter>
-    </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>FrameWork\GameComponent\Camera</Filter>
+      <Filter>FrameWork\Scene</Filter>
     </ClInclude>
     <ClInclude Include="FloatRect.h">
       <Filter>FrameWork\CoreFramework\FloatRect</Filter>
@@ -177,14 +159,17 @@
     <ClInclude Include="Map.h">
       <Filter>FrameWork\Map</Filter>
     </ClInclude>
-    <ClInclude Include="Mario.h">
-      <Filter>Source Files\GameComponent\GameObject\Mario</Filter>
-    </ClInclude>
     <ClInclude Include="PlayerKeyEventHandler.h">
-      <Filter>FrameWork\KeyEventHandler\PlayerKeyEventHandler</Filter>
+      <Filter>FrameWork\Scene\KeyEventHandler\PlayerKeyEventHandler</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionBBox.h">
-      <Filter>FrameWork\CoreFramework\Collision\Box\CollisionBBox</Filter>
+    <ClInclude Include="Object.h">
+      <Filter>GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Layer.h">
+      <Filter>FrameWork</Filter>
+    </ClInclude>
+    <ClInclude Include="TileSet.h">
+      <Filter>FrameWork</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -195,7 +180,7 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Game.cpp">
-      <Filter>FrameWork\GameComponent\Game</Filter>
+      <Filter>FrameWork\Game</Filter>
     </ClCompile>
     <ClCompile Include="..\..\..\..\gamereference\DirectX-SuperMarioBros3\SuperMarioBros3\SuperMarioBros3\tinystr.cpp">
       <Filter>FrameWork\TinyXML</Filter>
@@ -212,17 +197,14 @@
     <ClCompile Include="Textures.cpp">
       <Filter>FrameWork\TextureManager\Textures</Filter>
     </ClCompile>
-    <ClCompile Include="GameObject.cpp">
-      <Filter>FrameWork\GameComponent\GameObject</Filter>
-    </ClCompile>
     <ClCompile Include="Sprite.cpp">
       <Filter>FrameWork\TextureManager\Sprites\Sprite</Filter>
     </ClCompile>
     <ClCompile Include="KeyEventHandler.cpp">
-      <Filter>FrameWork\KeyEventHandler</Filter>
+      <Filter>FrameWork\Scene\KeyEventHandler</Filter>
     </ClCompile>
     <ClCompile Include="KeyboardProcessing.cpp">
-      <Filter>FrameWork\KeyEventHandler\KeyBoardProcessing</Filter>
+      <Filter>FrameWork\Scene\KeyEventHandler\KeyBoardProcessing</Filter>
     </ClCompile>
     <ClCompile Include="Define.cpp">
       <Filter>Source Files\Define</Filter>
@@ -240,10 +222,7 @@
       <Filter>FrameWork\TextureManager\Animations</Filter>
     </ClCompile>
     <ClCompile Include="Scene.cpp">
-      <Filter>FrameWork\GameComponent\Scene</Filter>
-    </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>FrameWork\GameComponent\Camera</Filter>
+      <Filter>FrameWork\Scene</Filter>
     </ClCompile>
     <ClCompile Include="FloatRect.cpp">
       <Filter>FrameWork\CoreFramework\FloatRect</Filter>
@@ -260,14 +239,17 @@
     <ClCompile Include="Map.cpp">
       <Filter>FrameWork\Map</Filter>
     </ClCompile>
-    <ClCompile Include="Mario.cpp">
-      <Filter>Source Files\GameComponent\GameObject\Mario</Filter>
-    </ClCompile>
     <ClCompile Include="PlayerKeyEventHandler.cpp">
-      <Filter>FrameWork\KeyEventHandler\PlayerKeyEventHandler</Filter>
+      <Filter>FrameWork\Scene\KeyEventHandler\PlayerKeyEventHandler</Filter>
     </ClCompile>
-    <ClCompile Include="CollisionBBox.cpp">
-      <Filter>FrameWork\CoreFramework\Collision\Box\CollisionBBox</Filter>
+    <ClCompile Include="Object.cpp">
+      <Filter>GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="Layer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TileSet.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

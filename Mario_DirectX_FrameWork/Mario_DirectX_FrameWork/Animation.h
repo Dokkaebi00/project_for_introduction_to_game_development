@@ -6,7 +6,6 @@
 
 #include"Utils.h"
 #include"Sprite.h"
-#include"GameObject.h"
 #include"AnimationFrame.h"
 #include "Transformation.h"
 using namespace std;
@@ -15,9 +14,6 @@ using namespace std;
 
 class AnimationFrame;
 typedef AnimationFrame* LPANIMATION_FRAME;
-
-class GameObject;
-typedef GameObject* LPGAMEOBJECT;
 
 class Animation
 {
@@ -49,7 +45,6 @@ class Animation
 	// an animation = 1 or alot of frames
 	vector<LPANIMATION_FRAME> frames;
 
-	GameObject* gameobj; 
 	//relative obj with the animation
 
 public:
@@ -78,8 +73,8 @@ public:
 
 	LPANIMATION_FRAME GetAnimFrame();
 
-	void SetGameObject(LPGAMEOBJECT obj);
-	LPGAMEOBJECT GetGameObject();
+	//void SetGameObject(LPGAMEOBJECT obj);
+	//LPGAMEOBJECT GetGameObject();
 
 	int GetNumberOfFrames();
 	int GetCurrentFrame();

@@ -14,11 +14,16 @@ class MonoBehaviour
 protected:
 	//dt (time between 2 frame, define a dt variable in Game class so that we can use this dt 
 	//for all object in game like GameObject, Scene, more easy to handle than each update have an invidual dt
-	Time time;
+	//static Time time;
 
 public:
+	static float dt;
+	static float fixeddt;
+	static float timeScale;
 	
 	virtual void Awake();
+
+	virtual void Start();
 
 	virtual void Update();
 

@@ -1,6 +1,5 @@
 #include "Game.h"
 
-
 Game* Game::__instance = NULL;
 
 void Game::InitDirect3DX(HWND hWnd)
@@ -263,6 +262,13 @@ void Game::Awake()
 	keyboardProcessing->SetHWND(hWnd);
 	keyboardProcessing->InitKeyboard(keyEventHandler);
 
+    mario = new CMario();
+
+	mario->Awake();
+	mario->Start();
+
+	//mario->Init();
+
 	//this is for debug
 	//go = new GameObject();
 	//camera = new Camera();
@@ -271,6 +277,8 @@ void Game::Awake()
 void Game::Update()
 {
 	MonoBehaviour::Update();
+
+	mario->Update();
 
 	//this is for debug
 	//go->Update(dt,camera);
@@ -292,19 +300,21 @@ void Game::Render()
 		//LPSPRITE ex = Sprites::GetInstance()->Get("spr-small-mario-walk-1");
 		//ex->Draw(50.0f, 50.0f, D3DXVECTOR2(1, 1), 1);
 
-		LPANIMATION ex = Animations::GetInstance()->Get("ani-big-mario-idle-front");
+		//LPANIMATION ex = Animations::GetInstance()->Get("ani-small-mario-walk");
 
-		ex->SetScale(D3DXVECTOR2(-1, 1));
+		//ex->SetScale(D3DXVECTOR2(1, 1));
 
-		ex->Render(D3DXVECTOR2(20.f, 20.0f));
+		//ex->Render(D3DXVECTOR2(20.f, 20.0f));
 		
 		//go->Render(camera);
 
-		int n = ex->GetNumberOfFrames();
-		int i = ex->GetCurrentFrame();
+		mario->Render();
 
-		DebugOut(L"[--DEBUG-INFO--] Number of frame: %d \n", n);
-		DebugOut(L"[--DEBUG-INFO--] current frame: %d \n", i);
+		//int n = ex->GetNumberOfFrames();
+		//int i = ex->GetCurrentFrame();
+
+		//DebugOut(L"[--DEBUG-INFO--] Number of frame: %d \n", n);
+		//DebugOut(L"[--DEBUG-INFO--] current frame: %d \n", i);
 		spriteHandler->End();
 
 		d3ddv->EndScene();
@@ -317,11 +327,9 @@ void Game::GameLoop()
 {
 	MSG msg;
 	int done = 0;
-
 	int frameStart = GetTickCount();
-	int deltat = 0;
-
 	float tickPerFrame = float(1000.0f / 120.0f);
+	int deltat = 0;
 
 	while (!done)
 	{
@@ -337,13 +345,18 @@ void Game::GameLoop()
 
 		int now = GetTickCount();
 		deltat = now - frameStart;
-		this->time.SetDt(deltat);
+		this->dt = deltat;
 
 		if (deltat >= tickPerFrame)
 		{
+			frameStart = now;
 			Update();
 			Render();
 			deltat = 0.0f;
+			if (deltat > tickPerFrame)
+			{
+				deltat = 0.0f;
+			}
 		}
 		else
 		{
@@ -379,29 +392,33 @@ LPD3DXSPRITE Game::GetSpriteHandler()
 float Game::GetDeltaTime()
 {
 	MonoBehaviour::GetDt();
-	return this->time.GetDt();
+	return this->dt;
 }
 
 float Game::GetFixedDeltaTime()
 {
 	MonoBehaviour::GetFixedDt();
-	return this->time.GetFixedDt();
+	return this->fixeddt;
 }
 
 void Game::SetTimeScale(float ts)
 {
-	this->time.SetTimeScale(ts);
+	MonoBehaviour::SetTimeScale(ts);
+	this->timeScale = ts;
 }
 
 float Game::GetTimeScale()
 {
-	return this->time.GetTimeScale();
+	MonoBehaviour::GetTimeScale();
+	return this->timeScale;
 }
 
+/*
 Time Game::GetTime()
 {
 	return this->time;
 }
+*/
 
 /*float Game::GetDeltatTime()
 {

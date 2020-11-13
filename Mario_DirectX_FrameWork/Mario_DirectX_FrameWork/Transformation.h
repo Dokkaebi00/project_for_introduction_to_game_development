@@ -6,6 +6,9 @@
 
 class Transformation
 {
+	//set those properties just in case those functions doesnt work correctly
+public:
+
 	D3DXVECTOR2 position;
 	D3DXVECTOR2 scale;
 	float rotation;
